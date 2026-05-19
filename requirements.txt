@@ -1,0 +1,13 @@
+asyncio
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+Pillow>=10.0.0
+
+# 可选 OCR 引擎（安装至少一个）
+easyocr>=1.7.0
+# 或:
+# pytesseract>=0.3.10
+
+# 可选 LLM 抽取支持（不配置 API Key 会自动回退到 Regex）
+openai>=1.0.0

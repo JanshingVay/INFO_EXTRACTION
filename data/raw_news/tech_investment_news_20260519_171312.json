@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "total": 10,
+    "crawled_at": "2026-05-19T17:13:12.064796",
+    "sources": [
+      "pedaily",
+      "36kr",
+      "itjuzi"
+    ],
+    "version": "1.0"
+  },
+  "articles": [
+    {
+      "title": "字节跳动完成15亿美元D轮融资，红杉资本领投",
+      "url": "https://example.com/news/1",
+      "summary": "据知情人士透露，字节跳动已完成15亿美元D轮融资，本轮由红杉资本领投，腾讯、软银跟投。公司估值超过750亿美元。",
+      "publish_time": "2026-01-15 10:30:00",
+      "source_key": "36kr",
+      "source": "36氪",
+      "id": "ac6fb1d43827aba7eee19a2128e6b30f",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "AI芯片初创公司寒武纪获得中金公司10亿元B轮投资",
+      "url": "https://example.com/news/2",
+      "summary": "寒武纪科技宣布完成10亿元人民币B轮融资，投资方为中金公司、国投创业。资金将用于新一代AI芯片研发。",
+      "publish_time": "2026-02-20 14:00:00",
+      "source_key": "pedaily",
+      "source": "投资界",
+      "id": "a4d7aa64aa94d487c93ecc01579229fe",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "智能驾驶公司小马智行完成3亿美元C轮融资",
+      "url": "https://example.com/news/3",
+      "summary": "小马智行（Pony.ai）宣布完成3亿美元C轮融资，由IDG资本领投，红杉中国、五源资本等跟投。",
+      "publish_time": "2026-03-10 09:15:00",
+      "source_key": "36kr",
+      "source": "36氪",
+      "id": "c4db3e6d14a938b81b0b0f99d8d6a48b",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "商汤科技获阿里巴巴领投的5亿美元Pre-IPO轮融资",
+      "url": "https://example.com/news/4",
+      "summary": "商汤科技今日宣布获得由阿里巴巴集团领投的5亿美元Pre-IPO轮融资，投后估值约120亿美元。",
+      "publish_time": "2026-01-28 16:45:00",
+      "source_key": "pedaily",
+      "source": "投资界",
+      "id": "cd862eec7597d21200cf591b3ac39eaa",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "生物科技公司华大智造完成2.5亿美元A+轮融资，高瓴资本投资",
+      "url": "https://example.com/news/5",
+      "summary": "华大智造宣布完成2.5亿美元A+轮融资，投资方包括高瓴资本、淡马锡等知名机构。",
+      "publish_time": "2026-04-05 11:00:00",
+      "source_key": "itjuzi",
+      "source": "IT桔子",
+      "id": "ba7396c0c041f61af2078142f28aa9e4",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "钉钉完成新一轮战略融资，投资方尚未披露",
+      "url": "https://example.com/news/6",
+      "summary": "阿里巴巴旗下钉钉据传已完成新一轮战略融资，具体金额和投资方尚未公开。",
+      "publish_time": "2026-04-18 08:30:00",
+      "source_key": "36kr",
+      "source": "36氪",
+      "id": "fe5de9577b1ffe745e83d4417f27f663",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "美团旗下龙珠资本投资新茶饮品牌'茶颜悦色'，金额达5000万美元",
+      "url": "https://example.com/news/7",
+      "summary": "茶颜悦色获得美团龙珠资本5000万美元（约合3.6亿人民币）战略投资，用于门店扩张和供应链建设。",
+      "publish_time": "2026-02-14 17:20:00",
+      "source_key": "pedaily",
+      "source": "投资界",
+      "id": "ac4217c0eb42adc7c864e9225ed7c6d0",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "大疆创新完成1亿美元天使轮后续融资",
+      "url": "https://example.com/news/8",
+      "summary": "大疆创新近日完成1亿美元天使轮后续融资，本轮由深圳创新投资集团领投。这是今年无人机领域最大的一笔融资。",
+      "publish_time": "2026-03-25 13:00:00",
+      "source_key": "36kr",
+      "source": "36氪",
+      "id": "5ab59ff58e3d9e1ad5df6481f243b78a",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "云从科技获中国互联网投资基金领投的8000万美元B+轮融资",
+      "url": "https://example.com/news/9",
+      "summary": "AI公司云从科技宣布完成8000万美元B+轮融资，由中国互联网投资基金领投，广州基金跟投。",
+      "publish_time": "2026-05-01 10:00:00",
+      "source_key": "pedaily",
+      "source": "投资界",
+      "id": "de2863e1cec27036c560db67884233f3",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    },
+    {
+      "title": "小米集团战略投资蔚来汽车，金额约2亿美元",
+      "url": "https://example.com/news/10",
+      "summary": "小米集团宣布战略投资蔚来汽车约2亿美元，双方将在智能电动汽车领域展开深度合作。",
+      "publish_time": "2026-05-12 15:30:00",
+      "source_key": "36kr",
+      "source": "36氪",
+      "id": "613640b86dd3d5f2ac18c6b688ef847e",
+      "search_keyword": "融资",
+      "crawled_at": "2026-05-19T17:13:12.064761"
+    }
+  ]
+}
