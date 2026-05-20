@@ -1,5 +1,5 @@
 """
-全局配置模块
+全局配置模块 - 核心技术产品发布与升级大事件抽取系统
 """
 import os
 
@@ -8,16 +8,18 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 RAW_NEWS_DIR = os.path.join(DATA_DIR, "raw_news")
 IMAGES_DIR = os.path.join(DATA_DIR, "images")
+EVAL_DIR = os.path.join(DATA_DIR, "evaluations")
 
-for d in [DATA_DIR, RAW_NEWS_DIR, IMAGES_DIR]:
+for d in [DATA_DIR, RAW_NEWS_DIR, IMAGES_DIR, EVAL_DIR]:
     os.makedirs(d, exist_ok=True)
 
 CRAWLER_CONFIG = {
-    "max_concurrency": 10,
-    "request_timeout": 30,
-    "retry_times": 3,
-    "retry_delay": 2,
-    "rate_limit": 1.0,
+    "max_concurrency": 8,
+    "request_timeout": 20,
+    "retry_times": 2,
+    "rate_limit": 0.3,
+    "max_pages": 5,
+    "min_content_length": 120,
     "user_agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -25,34 +27,25 @@ CRAWLER_CONFIG = {
     ),
 }
 
-NEWS_SOURCES = {
-    "36kr": {
-        "name": "36氪",
-        "base_url": "https://36kr.com",
-        "api_url": "https://36kr.com/api/search/article?q={keyword}&page={page}&per_page=20",
-        "keywords": ["融资", "投资", "A轮", "B轮", "C轮", "D轮", "天使轮", "Pre-IPO"],
-    },
-    "pedaily": {
-        "name": "投资界",
-        "base_url": "https://www.pedaily.cn",
-        "api_url": "https://www.pedaily.cn/api/search?keyword={keyword}&page={page}",
-        "keywords": ["融资", "投资", "VC", "PE", "天使轮", "A轮", "B轮", "C轮"],
-    },
-    "itjuzi": {
-        "name": "IT桔子",
-        "base_url": "https://www.itjuzi.com",
-        "api_url": "https://www.itjuzi.com/search?key={keyword}&page={page}",
-        "keywords": ["融资", "投资"],
-    },
-}
+# 科技大事件核心关键词过滤
+TECH_KEYWORDS = [
+    "开源", "架构", "发布", "升级", "漏洞", "算力", "模型", "芯片",
+    "版本", "API", "SDK", "框架", "平台", "系统", "软件", "硬件",
+    "正式版", "公测", "上线", "修复", "更新", "迭代", "里程碑",
+]
 
-EXTRACTION_FIELDS = ["Investor", "Target", "Amount", "Round", "Date"]
+# 科技事件5要素定义
+EXTRACTION_FIELDS = ["developer", "tech_product", "action_type", "version_metric", "date"]
 
 LLM_CONFIG = {
-    "api_url": os.environ.get("LLM_API_URL", "https://api.openai.com/v1/chat/completions"),
-    "api_key": os.environ.get("LLM_API_KEY", ""),
-    "model": os.environ.get("LLM_MODEL", "gpt-3.5-turbo"),
+    "api_url": "https://api.openai.com/v1/chat/completions",
+    "api_key": "",
+    "model": "gpt-3.5-turbo",
+    "temperature": 0.1,
+    "max_tokens": 800,
 }
+
+LLM_CONFIGURED = bool(LLM_CONFIG.get("api_key"))
 
 OCR_CONFIG = {
     "engine": "easyocr",

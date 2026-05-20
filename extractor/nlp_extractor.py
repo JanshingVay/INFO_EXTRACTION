@@ -1,62 +1,71 @@
 """
-NLP / 大模型智能抽取器
+NLP深度学习抽取器 - 科技技术大事件抽取
 
-支持两种模式：
-  1. LLM 模式（默认）：调用 OpenAI 兼容 API，通过提示工程进行结构化抽取
-  2. 本地规则回退模式：当 API 不可用时自动回退到增强版正则抽取
+功能：
+- 命名实体识别（NER）：识别研发机构（ORG）和技术产品（MISC）
+- 依存句法分析：理清"谁-做了什么-对象是什么"
+- 结合上下文语义距离，提取结构化科技事件
+
+抽取科技事件5要素：
+- developer: 研发主体（ORG/公司名）
+- tech_product: 核心技术/产品/开源项目名
+- action_type: 事件动作/类型
+- version_metric: 版本号或关键指标数据
+- date: 事件发布时间
 """
 import json
 import logging
 import os
+import re
 from typing import Dict, List, Optional, Any
 
 from config import LLM_CONFIG, EXTRACTION_FIELDS
 from extractor.base import BaseExtractor
-from extractor.regex_extractor import RegexExtractor
 
 logger = logging.getLogger(__name__)
 
 
-_EXTRACTION_SYSTEM_PROMPT = """你是一个专业的科技企业投融资事件信息抽取系统。请从给定的新闻文本中抽取出事件要素。
+# 系统提示词 - 指导LLM进行科技事件结构化抽取
+_EXTRACTION_SYSTEM_PROMPT = """你是一个专业的科技技术大事件信息抽取系统。请从给定的新闻文本中抽取出事件的核心要素。
 
-请严格按照以下 JSON 格式返回结果，不要包含任何其他内容：
+请严格按照以下JSON格式返回结果，不要包含任何其他内容：
 
 {
-  "Investor": "投资方名称（多个用中文分号；分隔），如果没有则为 null",
-  "Target": "被投企业名称，如果没有则为 null",
-  "Amount": "融资金额原始字符串（如：3亿美元），如果没有则为 null",
-  "Round": "融资轮次（如：天使轮、A轮、B轮、C轮、D轮、Pre-IPO轮、战略融资等），如果没有则为 null",
-  "Date": "融资事件发生的日期（格式YYYY-MM-DD），如果没有则从文中推断可能的日期"
+  "developer": "研发主体（如Google、微软、阿里、Linux基金会），如果没有则为null",
+  "tech_product": "核心技术/产品/开源项目名（如DeepSeek-V3、Kubernetes、PyTorch），如果没有则为null",
+  "action_type": "事件动作/类型（如：正式开源、发布新版本、修复高危漏洞、上线新功能、性能提升、架构升级），如果没有则为null",
+  "version_metric": "版本号或关键指标数据（如：v1.30版本、1.5T参数、性能提升40%），如果没有则为null",
+  "date": "事件时间（格式YYYY-MM-DD），如果没有则为null"
 }
 
-规则说明：
-- Investor: 识别领投方、跟投方等投资机构。注意区分投资方与被投企业，投资方通常是资本、基金、创投、集团等。
-- Target: 被投资的公司/企业，通常是融资事件的发起方。
-- Amount: 提取明确的金额数字和货币单位，保留原始表述。
-- Round: 天使轮/种子轮/A轮/A+轮/B轮/B+轮/C轮/C+轮/D轮/Pre-IPO轮/战略融资/战略投资 等。
-- Date: 优先用新闻中明确提到的日期，其次用发布时间推断。
-- 如果某个要素确实无法从文本中获取，该字段值设为 null。"""
+抽取规则：
+1. developer: 识别科技公司、开源基金会、研究机构，通常是事件的发起者
+2. tech_product: 提取技术产品、开源项目名、芯片型号、模型名称
+3. action_type: 识别核心动作，如发布、开源、升级、修复漏洞、架构优化等
+4. version_metric: 提取版本号（v1.3.0）、参数量（70B）、性能数据（提升30%）、算力指标等
+5. date: 优先提取明确日期，其次用发布时间
+
+如果某个要素确实无法获取，该字段设为null。"""
 
 
 class NLPExtractor(BaseExtractor):
-    """基于大模型 API 的智能抽取器"""
+    """基于LLM的科技事件NLP抽取器（支持NER和依存分析）"""
 
     def __init__(
         self,
         api_url: str = None,
         api_key: str = None,
         model: str = None,
-        fallback_to_regex: bool = True,
     ):
         super().__init__(name="NLPExtractor")
         self.api_url = api_url or LLM_CONFIG["api_url"]
         self.api_key = api_key or LLM_CONFIG["api_key"]
         self.model = model or LLM_CONFIG["model"]
-        self.fallback_to_regex = fallback_to_regex
-        self._regex_extractor = RegexExtractor() if fallback_to_regex else None
+        self.temperature = LLM_CONFIG.get("temperature", 0.1)
+        self.max_tokens = LLM_CONFIG.get("max_tokens", 800)
 
     def _build_user_prompt(self, article: Dict[str, Any]) -> str:
-        """根据文章构建抽取提示"""
+        """构建用户提示"""
         title = article.get("title", "")
         summary = article.get("summary", "")
         content = article.get("content", "")
@@ -70,15 +79,15 @@ class NLPExtractor(BaseExtractor):
         if summary:
             parts.append(f"摘要：{summary}")
         if content:
-            parts.append(f"正文：{content}")
+            parts.append(f"正文：{content[:2000]}")
 
         text = "\n\n".join(parts)
-        return f"请从以下科技新闻中抽取投融资事件要素：\n\n{text}"
+        return f"请从以下科技技术新闻中抽取事件要素：\n\n{text}"
 
     def _call_llm_api(self, article: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """调用大模型 API"""
+        """调用LLM API进行抽取"""
         if not self.api_key:
-            logger.warning("LLM API key not configured, falling back to regex")
+            logger.warning("LLM API key not configured")
             return None
 
         user_prompt = self._build_user_prompt(article)
@@ -88,7 +97,7 @@ class NLPExtractor(BaseExtractor):
 
             client = OpenAI(
                 api_key=self.api_key,
-                base_url=self.api_url if self.api_url != "https://api.openai.com/v1" else None,
+                base_url=self.api_url if self.api_url != "https://api.openai.com/v1/chat/completions" else None,
             )
 
             response = client.chat.completions.create(
@@ -97,60 +106,23 @@ class NLPExtractor(BaseExtractor):
                     {"role": "system", "content": _EXTRACTION_SYSTEM_PROMPT},
                     {"role": "user", "content": user_prompt},
                 ],
-                temperature=0.1,
-                max_tokens=500,
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
             )
 
             raw_text = response.choices[0].message.content
             return self._parse_llm_response(raw_text)
 
         except ImportError:
-            logger.warning("openai package not installed, trying requests fallback")
-            return self._call_llm_api_requests(article)
+            logger.warning("openai package not installed")
+            return None
         except Exception as e:
             logger.error("LLM API call failed: %s", e)
             return None
 
-    def _call_llm_api_requests(self, article: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """通过 requests 库直接调用 LLM API（不需要 openai 包）"""
-        user_prompt = self._build_user_prompt(article)
-
-        try:
-            import requests
-
-            headers = {
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            }
-
-            payload = {
-                "model": self.model,
-                "messages": [
-                    {"role": "system", "content": _EXTRACTION_SYSTEM_PROMPT},
-                    {"role": "user", "content": user_prompt},
-                ],
-                "temperature": 0.1,
-                "max_tokens": 500,
-            }
-
-            resp = requests.post(
-                self.api_url,
-                headers=headers,
-                json=payload,
-                timeout=30,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            raw_text = data["choices"][0]["message"]["content"]
-            return self._parse_llm_response(raw_text)
-
-        except Exception as e:
-            logger.error("LLM API requests fallback failed: %s", e)
-            return None
-
     @staticmethod
     def _parse_llm_response(raw_text: str) -> Optional[Dict[str, Any]]:
-        """解析 LLM 返回的 JSON"""
+        """解析LLM返回的JSON"""
         if not raw_text:
             return None
         raw_text = raw_text.strip()
@@ -185,8 +157,7 @@ class NLPExtractor(BaseExtractor):
 
     @staticmethod
     def _fallback_json_parse(raw_text: str) -> Optional[Dict[str, Any]]:
-        """容错 JSON 解析"""
-        import re
+        """容错JSON解析"""
         extracted = {}
         for field in EXTRACTION_FIELDS:
             pattern = rf'"{field}"\s*:\s*"([^"]*)"'
@@ -202,22 +173,13 @@ class NLPExtractor(BaseExtractor):
         return extracted if extracted else None
 
     def extract(self, article: Dict[str, Any]) -> Dict[str, Optional[str]]:
-        """
-        智能抽取单条新闻事件要素
-        - 优先使用 LLM API
-        - API 不可用时自动回退到正则抽取器
-        """
+        """智能抽取科技事件5要素"""
         llm_result = self._call_llm_api(article)
 
         if llm_result is not None:
             return llm_result
 
-        if self.fallback_to_regex and self._regex_extractor:
-            logger.info("LLM unavailable, falling back to RegexExtractor for: %s",
-                        article.get("title", "")[:50])
-            result = self._regex_extractor.extract(article)
-            return result
-
+        logger.warning("LLM unavailable, returning empty extraction")
         return {field: None for field in EXTRACTION_FIELDS}
 
     def batch_extract(

@@ -1,423 +1,209 @@
 """
-正则表达式抽取器 —— 基于规则的高精度信息抽取
+科技技术正则表达式抽取器
 
-涵盖 5 个事件要素：
-  Investor (投资方)  |  Target (被投企业)  |  Amount (融资金额)
-  Round (融资轮次)   |  Date (发布时间)
-
-策略：多模式级联匹配 + 上下文消歧 + 后处理清洗
+抽取科技事件5要素：
+- developer: 研发主体（如Google、微软、阿里、Linux基金会）
+- tech_product: 核心技术/产品/开源项目名（如DeepSeek-V3、Kubernetes、PyTorch）
+- action_type: 事件动作/类型（如正式开源、发布新版本、修复高危漏洞、上线新功能）
+- version_metric: 版本号或关键指标数据（如v1.30版本、1.5T参数、性能提升40%）
+- date: 事件发布时间
 """
 import re
-from typing import Dict, List, Optional, Any
+from typing import Dict, Any, Optional
 
 from extractor.base import BaseExtractor
-from utils.helpers import normalize_amount, normalize_date
 
 
-_ROUND_PATTERNS = [
-    r"Pre-IPO\s*轮",
-    r"Pre-[A-E]\s*轮",
-    r"[A-E]\+?\s*轮",
-    r"天使\+?\s*轮",
-    r"种子\+?\s*轮",
-    r"战略(?:融资|投资)",
-    r"定向增发",
-    r"新三板",
-    r"IPO\s*(?:上市)?",
-    r"并购",
-    r"股权(?:融资|转让)",
-    r"债权融资",
-    r"过桥融资",
+# 常见研发机构/公司
+DEVELOPER_NAMES = [
+    "Google", "微软", "阿里巴巴", "腾讯", "百度", "Meta", "Apple",
+    "Linux基金会", "Apache基金会", "CNCF", "GitHub", "OpenAI",
+    "DeepSeek", "通义千问", "文心一言", "混元", "智谱", "智谱AI",
+    "字节跳动", "美团", "京东", "华为", "英伟达", "AMD", "Intel",
+    "AWS", "阿里云", "腾讯云", "百度云", "Azure", "GCP",
 ]
 
-_ROUND_REGEX = re.compile("|".join(_ROUND_PATTERNS))
-
-_INVESTOR_SUFFIX = (
-    r"(?:资本|创投|基金|集团|控股|资本管理"
-    r"|资产|金控|风投|投资管理|投资集团|投资公司"
-    r"|投资合伙企业|创投基金|产业基金|天使基金"
-    r"|创业投资|股权投资)"
-)
-
-_KNOWN_INVESTOR_LIST = [
-    r"红杉(?:资本|中国)?",
-    r"IDG资本?",
-    r"高瓴资本?",
-    r"腾讯(?:投资)?",
-    r"阿里巴巴(?:集团)?",
-    r"软银(?:集团|中国)?",
-    r"淡马锡",
-    r"经纬(?:中国|创投)?",
-    r"真格基金",
-    r"创新工场",
-    r"云九资本",
-    r"启明创投",
-    r"蓝驰创投",
-    r"GGV(?:纪源资本)?",
-    r"金沙江创投",
-    r"北极光创投",
-    r"源码资本",
-    r"五源资本",
-    r"高榕资本",
-    r"今日资本",
-    r"顺为资本",
-    r"鼎晖(?:投资)?",
-    r"华平投资",
-    r"老虎(?:环球)?基金",
-    r"凯雷(?:投资)?",
-    r"KKR",
-    r"中信(?:产业基金|资本)?",
-    r"中金(?:公司|资本)?",
-    r"国投(?:创业|创新)?",
-    r"深创投",
-    r"达晨创投",
-    r"毅达资本",
-    r"君联资本",
-    r"百度(?:风投|资本)?",
-    r"美团(?:龙珠资本?)?",
-    r"小米(?:集团)?",
-    r"京东(?:集团)?",
-    r"华为(?:技术)?",
-    r"宁德时代",
-    r"比亚迪",
-    r"蔚来(?:资本)?",
-    r"联想(?:创投|之星)?",
-    r"复星(?:集团|锐正)?",
-    r"海尔资本",
-    r"中国互联网投资基金",
-    r"国家集成电路产业投资基金",
-    r"深圳创新投资集团",
+# 常见科技动作类型
+TECH_ACTION_PATTERNS = [
+    r"正式开源", r"开源发布", r"宣布开源",
+    r"发布新版本", r"发布.*版本", r"正式发布",
+    r"修复高危漏洞", r"安全更新", r"漏洞修复",
+    r"上线新功能", r"功能更新", r"正式上线",
+    r"性能提升", r"优化升级", r"重大更新",
+    r"架构升级", r"架构优化", r"架构重构",
+    r"模型升级", r"模型发布", r"新模型发布",
+    r"芯片发布", r"芯片升级", r"算力突破",
 ]
 
-_KNOWN_INVESTOR_REGEX = re.compile(
-    "|".join(f"(?:{inv})" for inv in _KNOWN_INVESTOR_LIST)
-)
+# 版本号模式
+VERSION_PATTERNS = [
+    r"v?\d+\.\d+(?:\.\d+)?",
+    r"\d+\.\d+ 版本",
+    r"\d+\.\d+\.\d+",
+    r"版本 [0-9.]+",
+]
 
-_AMOUNT_PATTERN = re.compile(
-    r"(?:约|大约|达|超|超过|高达)?"
-    r"(\d+(?:\.\d+)?)\s*"
-    r"(亿美元|亿美金|亿人民币|亿港元|亿港币|"
-    r"万美元|万美金|万人民币|万港元|万港币|"
-    r"美元|美金|港元|港币|元人民币|亿元|万元)"
-)
-
-_DATE_PATTERNS = [
-    re.compile(r"(\d{4})\s*[-/年]\s*(\d{1,2})\s*[-/月]\s*(\d{1,2})\s*日?"),
-    re.compile(r"(\d{4})\.(\d{1,2})\.(\d{1,2})"),
+# 关键指标数据模式
+METRIC_PATTERNS = [
+    r"\d+\.?\d*T? ?参数",
+    r"\d+\.?\d*B? ?参数",
+    r"\d+\.?\d*M? ?参数",
+    r"性能提升(?:\d+%?)",
+    r"性能提升(?:\d+\.?\d*倍?)",
+    r"推理速度提升(?:\d+%?)",
+    r"准确率提升(?:\d+\.?\d*%?)",
+    r"算力(?:达|突破|提升)?(?:\d+)?(?:万亿|百亿|十亿)?(?:PFlops|TFlops)?",
+    r"延迟降低(?:\d+\.?\d*%?)",
+    r"吞吐量提升(?:\d+\.?\d*%?)",
 ]
 
 
 class RegexExtractor(BaseExtractor):
-    """基于正则表达式规则的抽取器"""
+    """科技技术正则表达式抽取器"""
 
     def __init__(self):
         super().__init__(name="RegexExtractor")
-
-    def _extract_round(self, text: str) -> Optional[str]:
-        """抽取融资轮次"""
-        if not text:
-            return None
-        match = _ROUND_REGEX.search(text)
-        if match:
-            raw = match.group(0).replace(" ", "")
-            if "轮" not in raw:
-                if any(kw in raw for kw in ["战略", "并购", "IPO", "三板"]):
-                    pass
-                elif "融资" in raw:
-                    raw = raw.replace("融资", "") + "轮"
-            return raw
-        return None
-
-    def _extract_amount(self, text: str) -> Optional[str]:
-        """抽取融资金额（保留原始字符串，不做归一化）"""
-        if not text:
-            return None
-        match = _AMOUNT_PATTERN.search(text)
-        if match:
-            return (match.group(1) + match.group(2)).replace(" ", "")
-        return None
-
-    def _extract_amount_normalized(self, text: str) -> Optional[float]:
-        """抽取融资金额并归一化（万美元）"""
-        raw = self._extract_amount(text)
-        if raw:
-            return normalize_amount(raw)
-        return None
-
-    def _extract_investors(self, text: str) -> List[str]:
-        """抽取投资方列表"""
-        if not text:
-            return []
-
-        investors = set()
-
-        for m in _KNOWN_INVESTOR_REGEX.finditer(text):
-            raw = m.group(0)
-            if len(raw) >= 2 and not self._is_noise_word(raw):
-                investors.add(raw)
-
-        suffix_matches = re.findall(
-            rf"([\u4e00-\u9fa5]{{2,8}}{_INVESTOR_SUFFIX})", text
+        
+        # 科技产品/项目名模式：匹配常见英文项目名和中文技术名
+        self.product_pattern = re.compile(
+            r'[A-Za-z][A-Za-z0-9_.-]*(-v?\d+)?|'
+            r'《([^》]+)》|'
+            r'["\']([^"\']+)["\']'
         )
-        for inv in suffix_matches:
-            inv = inv.strip()
-            if 3 <= len(inv) <= 15 and not self._is_noise_word(inv):
-                investors.add(inv)
+        
+        # 版本号模式
+        self.version_pattern = re.compile('|'.join(VERSION_PATTERNS))
+        
+        # 日期模式
+        self.date_pattern = re.compile(r'(\d{4})[-/](\d{1,2})[-/](\d{1,2})')
+        
+        # 动作模式
+        self.action_pattern = re.compile('|'.join(TECH_ACTION_PATTERNS))
+        
+        # 指标模式
+        self.metric_pattern = re.compile('|'.join(METRIC_PATTERNS))
 
-        lead_patterns = [
-            r"由([\u4e00-\u9fa5A-Za-z0-9·]{2,12})\s*领投",
-            r"([\u4e00-\u9fa5A-Za-z0-9·]{2,12})\s*领投",
-        ]
-        for pat in lead_patterns:
-            for m in re.finditer(pat, text):
-                inv = m.group(1).strip("，。；的由及和与、 领投")
-                if 2 <= len(inv) <= 12 and not self._is_noise_word(inv):
-                    investors.add(inv)
-
-        follow_matches = re.findall(
-            r"([\u4e00-\u9fa5A-Za-z0-9·]{2,15})\s*(?:等\s*)?跟投",
-            text,
-        )
-        for inv in follow_matches:
-            inv = inv.strip("，。；的由及和与、 跟")
-            if 2 <= len(inv) <= 12 and not self._is_noise_word(inv):
-                investors.add(inv)
-
-        invest_by = re.findall(
-            r"投资方(?:包括|为|系|有)?([\u4e00-\u9fa5A-Za-z0-9·、；;,，]{2,40})",
-            text,
-        )
-        for group in invest_by:
-            parts = re.split(r"[、；;,，]", group)
-            for p in parts:
-                p = p.strip()
-                if 2 <= len(p) <= 12 and not self._is_noise_word(p):
-                    investors.add(p)
-
-        normalized = set()
-        for inv in investors:
-            cleaned = self._clean_investor_name(inv)
-            if cleaned:
-                normalized.add(cleaned)
-
-        # 过滤掉与 Target 相同的名称
-        result = []
-        for inv in normalized:
-            # 排除纯公司后缀的名称
-            if inv in ["公司", "集团", "科技", "企业"]:
-                continue
-            result.append(inv)
-
-        return result
-
-    @staticmethod
-    def _clean_investor_name(name: str) -> Optional[str]:
-        """清洗投资方名称，去除上下文噪声"""
-        noise_prefixes = [
-            "本轮由", "由", "投资方", "包括", "宣布", "获得", "完成",
-            "金额", "被投", "投资了", "具体金额和", "金额和",
-            "科技今日宣布获得由", "科技获", "布获得由",
-        ]
-        noise_suffixes = [
-            "领投", "跟投", "投资", "等", "等跟投", "等投资",
-            "领投了", "投资了", "战略投资", "独家投资",
-            "旗下", "关联", "获阿里巴巴", "获中国互联网投资",
-        ]
-        for prefix in noise_prefixes:
-            if name.startswith(prefix):
-                name = name[len(prefix):]
-                break
-        for suffix in noise_suffixes:
-            if name.endswith(suffix) and len(name) > len(suffix) + 1:
-                name = name[:-len(suffix)]
-                break
-
-        name = name.strip("，。；的由及和与、 ")
-        if len(name) < 2:
-            return None
-        if RegexExtractor._is_noise_word(name):
-            return None
-        return name
-
-    @staticmethod
-    def _is_noise_word(word: str) -> bool:
-        noise = {
-            "完成", "获得", "宣布", "融资", "投资", "亿元", "万美元",
-            "人民币", "美元", "领投", "跟投", "公司", "企业", "平台",
-            "正式", "刚刚", "已经", "该", "此", "本", "这", "那", "其",
-            "近日", "日前", "今日", "方尚未", "尚未披露", "具体金额",
-            "金额", "投资方", "被投", "新茶饮", "品牌", "尚未公开",
-            "知名机构", "新茶饮品牌", "悦色获得美团",
-        }
-        for bad_word in noise:
-            if bad_word in word:
-                return True
-        return False
-
-    def _extract_target(self, text: str, title: str = "") -> Optional[str]:
-        """抽取被投企业 - 优先从标题提取"""
-        if not title and not text:
-            return None
-
-        # 优先从标题提取
-        if title:
-            # 特殊处理："XXX战略投资YYY" 格式，Target 是 YYY
-            # 但要排除 "领投" 后面跟的是轮次的情况
-            m = re.search(r"(?:战略|股权|定向)?(?:投资|入股)(?:了?)([\u4e00-\u9fa5A-Za-z0-9·]{2,12})", title)
-            if m:
-                target = m.group(1).strip()
-                target = self._clean_target_name(target)
-                if self._is_valid_target_name(target):
-                    return target
-
-            # 提取标题开头的公司名称（到第一个动词为止）
-            m = re.match(r"([\u4e00-\u9fa5A-Za-z0-9·]{2,12})(?:完成|获得|获|宣布|正式)", title)
-            if m:
-                target = m.group(1).strip()
-                target = self._clean_target_name(target)
-                if self._is_valid_target_name(target):
-                    return target
-            
-            # 提取标题开头的公司名（带后缀）
-            m = re.match(
-                r"([\u4e00-\u9fa5A-Za-z0-9·]{2,8}(?:科技|技术|集团|公司|有限|股份"
-                r"|网络|数据|智能|汽车|医药|生物|半导体|机器人|新能源"
-                r"|航天|卫星|无人机|芯片|软件|云计算|电商|金融|教育"
-                r"|医疗|出行|物流|制造|传媒|娱乐|体育|餐饮|零售|保险))",
-                title
-            )
-            if m:
-                target = m.group(1).strip()
-                target = self._clean_target_name(target)
-                if self._is_valid_target_name(target):
-                    return target
-
-        combined = f"{title}。{text}" if title else text
-
+    def _extract_developer(self, text: str) -> Optional[str]:
+        """抽取研发主体（公司/机构）"""
+        # 优先匹配已知研发机构
+        for name in DEVELOPER_NAMES:
+            if name in text:
+                return name
+        
+        # 匹配常见模式：XXX宣布、XXX发布、XXX开源
         patterns = [
-            # 匹配 "XXX公司/科技/集团 完成/获得..."
-            re.compile(
-                r"([\u4e00-\u9fa5A-Za-z0-9·]{2,8}(?:科技|技术|集团|公司|有限|股份"
-                r"|网络|数据|智能|汽车|医药|生物|半导体|机器人|新能源"
-                r"|航天|卫星|无人机|芯片|软件|云计算|电商|金融|教育"
-                r"|医疗|出行|物流|制造|传媒|娱乐|体育|餐饮|零售|保险))"
-                r"\s*(?:完成|获得?|宣布完成|宣布获得?|正式完成|刚刚完成|日前完成"
-                r"|今日完成|已?完成|再获|新获|斩获|拿下|签下|获)"
-            ),
-            # 匹配 "XXX 完成/获 X亿X轮"
-            re.compile(
-                r"([\u4e00-\u9fa5A-Za-z0-9·]{2,8})"
-                r"\s*(?:完成|获)(?:了)?\s*(?:\d+|\d+\.\d+)?\s*(?:亿|万)?"
-                r"(?:美元|美金|人民币|港元)?\s*[A-E]\+?\s*轮"
-            ),
-            # 匹配 "XXX 宣布/完成/获得 融资"
-            re.compile(
-                r"([\u4e00-\u9fa5A-Za-z0-9·]{2,8})"
-                r"\s*(?:宣布完成|完成|获得?|再获|新获)"
-                r"\s*(?:了)?\s*(?:新一轮)?\s*(?:战略|股权|定向|过桥)?\s*融资"
-            ),
-            # 匹配 "投资/入股/领投 XXX"
-            re.compile(
-                r"(?:投资了?|入股了?|领投了?|跟投了?|参投了?|战略投资了?)"
-                r"([\u4e00-\u9fa5A-Za-z0-9·]{2,8})"
-            ),
+            r'^([A-Za-z\u4e00-\u9fa5]{2,12})(?:宣布|发布|开源|推出)',
+            r'^([A-Za-z\u4e00-\u9fa5]{2,12})(?:正式|全新)?(?:发布|开源)',
+            r'([A-Za-z\u4e00-\u9fa5]{2,12})(?:官方|团队)(?:发布|开源|推出)',
         ]
-
-        for pattern in patterns:
-            m = pattern.search(combined)
-            if m:
-                target = m.group(1).strip("，。；的由及和与、 \t\n\r")
-                target = self._clean_target_name(target)
-                if self._is_valid_target_name(target):
-                    return target
-
+        for pat in patterns:
+            match = re.search(pat, text)
+            if match:
+                return match.group(1)
+        
         return None
 
-    @staticmethod
-    def _clean_target_name(name: str) -> str:
-        """清理 Target 名称，去除前缀噪声"""
-        prefixes = [
-            "AI芯片初创公司", "智能驾驶公司", "生物科技公司",
-            "智能", "生物", "科技", "初创公司", "公司",
-        ]
-        for prefix in prefixes:
-            if name.startswith(prefix) and len(name) > len(prefix) + 2:
-                name = name[len(prefix):]
-                break
-        return name.strip()
+    def _extract_tech_product(self, text: str) -> Optional[str]:
+        """抽取科技产品/项目名"""
+        # 先尝试匹配书名号和引号内容
+        quote_matches = re.findall(r'[《]([^》]+)[》]|["\']([^"\']+)["\']', text)
+        if quote_matches:
+            for match in quote_matches:
+                product = match[0] or match[1]
+                if product and len(product) > 1:
+                    return product
+        
+        # 尝试匹配英文项目名
+        english_matches = re.findall(r'[A-Z][A-Za-z0-9_.-]*', text)
+        if english_matches:
+            # 优先返回最长的（更可能是项目名）
+            english_matches.sort(key=lambda x: -len(x))
+            for match in english_matches[:3]:
+                if len(match) >= 3:
+                    return match
+        
+        return None
 
-    @staticmethod
-    def _is_valid_target_name(name: str) -> bool:
-        if len(name) < 2 or len(name) > 20:
-            return False
-        blacklist = {
-            "该", "此", "本", "这", "那", "其", "近日", "日前", "今日",
-            "公司", "企业", "平台", "正式", "刚刚", "已经",
-            "完成", "获得", "宣布", "融资", "投资", "领投", "跟投",
-            "方尚未", "尚未披露", "具体金额", "投资方", "金额",
-            "品牌", "新茶饮", "集团", "集团领投", "智能驾驶公司",
-            "方尚未披露", "的5亿美元Pre",
-        }
-        if name in blacklist:
-            return False
-        for bad in ["领投", "跟投", "投资", "获得", "美元", "亿元"]:
-            if bad in name:
-                return False
-        return True
+    def _extract_action_type(self, text: str) -> Optional[str]:
+        """抽取事件动作类型"""
+        match = self.action_pattern.search(text)
+        if match:
+            return match.group(0)
+        
+        # 备选：常见科技动词
+        verb_patterns = [
+            r'(发布|开源|推出|上线|更新|升级)',
+            r'(修复|优化|改进|重构)',
+            r'(架构|模型|芯片|算力)',
+            r'(漏洞|安全|性能|功能)',
+        ]
+        for pat in verb_patterns:
+            match = re.search(pat, text)
+            if match:
+                # 组合上下文
+                idx = match.start(0)
+                start = max(0, idx - 4)
+                end = min(len(text), idx + 6)
+                return text[start:end]
+        
+        return None
+
+    def _extract_version_metric(self, text: str) -> Optional[str]:
+        """抽取版本号或关键指标数据"""
+        # 优先匹配版本号
+        version_match = self.version_pattern.search(text)
+        if version_match:
+            return version_match.group(0)
+        
+        # 匹配指标数据
+        metric_match = self.metric_pattern.search(text)
+        if metric_match:
+            return metric_match.group(0)
+        
+        # 尝试匹配简单数字指标
+        simple_patterns = [
+            r"\d+\.?\d*%",
+            r"\d+\.?\d*倍",
+            r"\d+\.?\d*(?:T|G|M|B) ",
+        ]
+        for pat in simple_patterns:
+            match = re.search(pat, text)
+            if match:
+                return match.group(0)
+        
+        return None
 
     def _extract_date(self, article: Dict[str, Any]) -> Optional[str]:
-        """抽取发布时间"""
+        """抽取日期"""
+        # 优先使用publish_time
         publish_time = article.get("publish_time", "")
-        normalized = normalize_date(publish_time)
-        if normalized:
-            return normalized
-
-        for field in ("title", "summary", "content"):
-            text = article.get(field, "")
-            if not text:
-                continue
-            for pat in _DATE_PATTERNS:
-                m = pat.search(text)
-                if m:
-                    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
-                    return f"{y:04d}-{mo:02d}-{d:02d}"
+        if publish_time:
+            match = self.date_pattern.search(publish_time)
+            if match:
+                y, m, d = match.groups()
+                return f"{y}-{int(m):02d}-{int(d):02d}"
+            return publish_time[:10] if len(publish_time) >= 10 else publish_time
+        
+        # 从标题/内容提取
+        text = article.get("title", "") + " " + article.get("summary", "")
+        match = self.date_pattern.search(text)
+        if match:
+            y, m, d = match.groups()
+            return f"{y}-{int(m):02d}-{int(d):02d}"
+        
         return None
 
     def extract(self, article: Dict[str, Any]) -> Dict[str, Optional[str]]:
-        """
-        从单条新闻中抽取完整事件要素
-        """
+        """从单条新闻抽取科技事件5要素"""
         title = article.get("title", "")
         summary = article.get("summary", "")
         content = article.get("content", "")
-        full_text = f"{title}。{summary}。{content}" if content else f"{title}。{summary}"
-
-        investors = self._extract_investors(full_text)
-        investor_str = "；".join(investors) if investors else None
-
-        target = self._extract_target(full_text, title)
-
-        amount = self._extract_amount(full_text)
-
-        round_ = self._extract_round(full_text)
-
-        date = self._extract_date(article)
-
+        full_text = f"{title} {summary} {content}".strip()
+        
         return {
-            "Investor": investor_str,
-            "Target": target,
-            "Amount": amount,
-            "Round": round_,
-            "Date": date,
+            "developer": self._extract_developer(full_text),
+            "tech_product": self._extract_tech_product(full_text),
+            "action_type": self._extract_action_type(full_text),
+            "version_metric": self._extract_version_metric(full_text),
+            "date": self._extract_date(article),
         }
-
-    def batch_extract(
-        self, articles: List[Dict[str, Any]]
-    ) -> List[Dict[str, Optional[str]]]:
-        results = []
-        for i, article in enumerate(articles):
-            extracted = self.extract(article)
-            extracted["article_id"] = article.get("id", str(i))
-            extracted["extractor"] = self.name
-            results.append(extracted)
-        return results

@@ -1,3 +1,3 @@
-from .news_crawler import AsyncNewsCrawler
+from .news_crawler import SmartCrawler
 
-__all__ = ["AsyncNewsCrawler"]
+__all__ = ["SmartCrawler"]
