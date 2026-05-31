@@ -15,7 +15,6 @@ NLP深度学习抽取器 - 科技技术大事件抽取
 """
 import json
 import logging
-import os
 import re
 from typing import Dict, List, Optional, Any
 
@@ -48,6 +47,13 @@ _EXTRACTION_SYSTEM_PROMPT = """你是一个专业的科技技术大事件信息�
 如果某个要素确实无法获取，该字段设为null。"""
 
 
+def _normalize_base_url(api_url: str) -> str:
+    api_url = (api_url or "").strip().rstrip("/")
+    if api_url.endswith("/chat/completions"):
+        return api_url[: -len("/chat/completions")]
+    return api_url
+
+
 class NLPExtractor(BaseExtractor):
     """基于LLM的科技事件NLP抽取器（支持NER和依存分析）"""
 
@@ -58,7 +64,7 @@ class NLPExtractor(BaseExtractor):
         model: str = None,
     ):
         super().__init__(name="NLPExtractor")
-        self.api_url = api_url or LLM_CONFIG["api_url"]
+        self.api_url = _normalize_base_url(api_url or LLM_CONFIG["api_url"])
         self.api_key = api_key or LLM_CONFIG["api_key"]
         self.model = model or LLM_CONFIG["model"]
         self.temperature = LLM_CONFIG.get("temperature", 0.1)
@@ -97,18 +103,23 @@ class NLPExtractor(BaseExtractor):
 
             client = OpenAI(
                 api_key=self.api_key,
-                base_url=self.api_url if self.api_url != "https://api.openai.com/v1/chat/completions" else None,
+                base_url=self.api_url,
             )
 
-            response = client.chat.completions.create(
-                model=self.model,
-                messages=[
+            request_payload = {
+                "model": self.model,
+                "messages": [
                     {"role": "system", "content": _EXTRACTION_SYSTEM_PROMPT},
                     {"role": "user", "content": user_prompt},
                 ],
-                temperature=self.temperature,
-                max_tokens=self.max_tokens,
-            )
+                "temperature": self.temperature,
+                "max_tokens": self.max_tokens,
+            }
+            if "minimaxi" in self.api_url.lower() or self.model.lower().startswith("minimax"):
+                # MiniMax OpenAI-compatible API can separate reasoning content.
+                request_payload["extra_body"] = {"reasoning_split": True}
+
+            response = client.chat.completions.create(**request_payload)
 
             raw_text = response.choices[0].message.content
             return self._parse_llm_response(raw_text)
@@ -126,6 +137,7 @@ class NLPExtractor(BaseExtractor):
         if not raw_text:
             return None
         raw_text = raw_text.strip()
+        raw_text = re.sub(r"<think>.*?</think>", "", raw_text, flags=re.S).strip()
 
         json_match = None
         if raw_text.startswith("{"):
@@ -140,6 +152,11 @@ class NLPExtractor(BaseExtractor):
             json_match = raw_text[start:end].strip() if end > start else raw_text[start:].strip()
 
         if json_match:
+            json_match = json_match.strip()
+            brace_start = json_match.find("{")
+            brace_end = json_match.rfind("}")
+            if brace_start >= 0 and brace_end > brace_start:
+                json_match = json_match[brace_start : brace_end + 1]
             try:
                 result = json.loads(json_match)
                 extracted = {}
@@ -179,8 +196,10 @@ class NLPExtractor(BaseExtractor):
         if llm_result is not None:
             return llm_result
 
-        logger.warning("LLM unavailable, returning empty extraction")
-        return {field: None for field in EXTRACTION_FIELDS}
+        logger.warning("LLM unavailable, falling back to RegexExtractor")
+        from extractor.regex_extractor import RegexExtractor
+
+        return RegexExtractor().extract(article)
 
     def batch_extract(
         self, articles: List[Dict[str, Any]]

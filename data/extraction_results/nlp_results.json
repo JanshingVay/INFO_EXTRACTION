@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "total": 1,
+    "created_at": "2026-05-31T21:49:25",
+    "corpus_file": "E:\\BUPTStudy\\课程\\信息与知识获取\\final\\lab3\\INFO_EXTRACTION\\data\\raw_news\\from_info_retrieve.json",
+    "extractor": "NLPExtractor",
+    "requested_extractor": "nlp",
+    "limit": 1,
+    "fields": [
+      "developer",
+      "tech_product",
+      "action_type",
+      "version_metric",
+      "date"
+    ]
+  },
+  "results": [
+    {
+      "article_id": "ir_0",
+      "title": "何小鹏：很多机器人公司没做好小脑，他们做的是“脑干、脊椎”",
+      "source": "IT之家",
+      "url": "https://www.ithome.com/0/957/507.htm",
+      "publish_time": "2026-5-30",
+      "extractor": "NLPExtractor",
+      "developer": "小鹏",
+      "tech_product": "很多机器人",
+      "action_type": "发布",
+      "version_metric": null,
+      "date": "2026-05-30",
+      "event_complete_fields": 4
+    }
+  ]
+}

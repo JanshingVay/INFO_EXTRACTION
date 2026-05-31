@@ -1,0 +1,740 @@
+﻿article_id,title,source,url,publish_time,developer,tech_product,action_type,version_metric,date,event_complete_fields,extractor
+ir_0,何小鹏：很多机器人公司没做好小脑，他们做的是“脑干、脊椎”,IT之家,https://www.ithome.com/0/957/507.htm,2026-5-30,小鹏,很多机器人,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_1,《华为应用市场 2025 年度安全与隐私治理报告》发布，防护恶意应用安装 4928 万次,IT之家,https://www.ithome.com/0/957/777.htm,2026-5-31,华为,华为应用市场,发布,4928 万次,2026-05-31,5,OptimizedRegexExtractor
+ir_2,丰田回应将中止雷克萨斯下一代纯电轿车开发：该信息属实,IT之家,https://www.ithome.com/0/957/693.htm,2026-5-30,,LF-ZC,发布,增长 4.6%,2026-05-30,4,OptimizedRegexExtractor
+ir_3,苹果发布 iOS / iPadOS 26.6 首个公测版，新增“已达屏蔽联系人上限”提醒,IT之家,https://www.ithome.com/0/956/844.htm,2026-5-29,Apple,iOS / iPadOS 26.6,发布,26.6,2026-05-29,5,OptimizedRegexExtractor
+ir_4,2026 年 6 月科技事件日历一览表,IT之家,https://www.ithome.com/0/957/722.htm,2026-5-31,,,升级,,2026-05-31,2,OptimizedRegexExtractor
+ir_5,首个杜比视界认证 AR 眼镜套组，雷鸟 GT 系列正式亮相,IT之家,https://www.ithome.com/0/954/267.htm,2026-5-23,360,专业影视级 AR 眼镜,发布,3.0,2026-05-23,5,OptimizedRegexExtractor
+ir_6,【IT之家评测室】《007：初露锋芒》游戏初体验：又一款电影化叙事佳作，NVIDIA DLSS 4.5 助力高帧流畅体验,IT之家,https://www.ithome.com/0/956/879.htm,2026-5-29,NVIDIA,DLSS 4.5,升级,4.5,2026-05-29,5,OptimizedRegexExtractor
+ir_7,国补价 4099 元，联想拯救者 x DNF 手游联合设计 Y700 勇士版平板公布,IT之家,https://www.ithome.com/0/957/534.htm,2026-5-30,联想,至尊版处理器,发布,8.8,2026-05-30,5,OptimizedRegexExtractor
+ir_8,抖音电商展开盲盒潮玩专项治理，严打概率不透明、引流等违规行为,IT之家,https://www.ithome.com/0/953/463.htm,2026-5-21,,9.9 元拆盲盒,,9.9,2026-05-21,3,OptimizedRegexExtractor
+ir_9,刚领完奖金就买保时捷跑车，曝三星数亿韩元奖金让韩国上班族集体破防,IT之家,https://www.ithome.com/0/953/951.htm,2026-5-22,三星,如果不爽,,,2026-05-22,3,OptimizedRegexExtractor
+ir_10,123 云盘：将对长期未登录的免费用户进行服务冻结,IT之家,https://www.ithome.com/0/957/721.htm,2026-5-31,,云盘今日,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_11,WWDC26 预热：苹果下周将展示 14 篇 AI 论文，关联 iOS 27 版图乐园等,IT之家,https://www.ithome.com/0/956/830.htm,2026-5-29,Apple,iOS 27,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_12,经典游戏《冒险岛》怀旧服致歉，交易系统、现金道具等调整内容公布,IT之家,https://www.ithome.com/0/957/705.htm,2026-5-31,,交易系统,升级,10%,2026-05-31,4,OptimizedRegexExtractor
+ir_13,世界超级摩托车锦标赛阿拉贡站 WorldSSP 组别第一回合正赛：张雪机车位列第 8,IT之家,https://www.ithome.com/0/957/614.htm,2026-5-30,Apple,WorldSSP,,,2026-05-30,3,OptimizedRegexExtractor
+ir_14,苏格兰儿童事务专员：没有证据表明社媒禁令能让孩子在网上更安全,IT之家,https://www.ithome.com/0/957/669.htm,2026-5-30,,目前关于禁令的证据仍然有限,适配,,2026-05-30,3,OptimizedRegexExtractor
+ir_15,京东要开大商场，推出全新复合商业空间 JD SPACE 京东天地,IT之家,https://www.ithome.com/0/953/716.htm,2026-5-22,京东,全新复合商业空间,发布,,2026-05-22,4,OptimizedRegexExtractor
+ir_16,酷态科 6 号 mini 充电器 99 → 65 元新低：2C+1A、支持 90W 小米澎湃秒充,IT之家,https://www.ithome.com/0/957/681.htm,2026-5-30,华为,ADC2.0,适配,90W,2026-05-30,5,OptimizedRegexExtractor
+ir_17,重庆国资 34.5% 入主：消息称赛力斯 6 月将推新汽车品牌，字节跳动火山引擎深度参与,IT之家,https://www.ithome.com/0/957/485.htm,2026-5-30,字节跳动,晚点 Auto,发布,34.5,2026-05-30,5,OptimizedRegexExtractor
+ir_18,三星 Galaxy Watch9 Classic 智能手表曝光，AI 智能洞察佩戴者健康,IT之家,https://www.ithome.com/0/957/453.htm,2026-5-30,三星,博文,发布,8 W,2026-05-30,5,OptimizedRegexExtractor
+ir_19,AI 社会自治测试：Grok 四天崩溃、Gemini 犯罪率最高,IT之家,https://www.ithome.com/0/957/480.htm,2026-5-30,,每个智能体,发布,4.6,2026-05-30,4,OptimizedRegexExtractor
+ir_20,雷军幽默回应武契奇“买不起小米汽车”：总统先生，YU7 标准版 23.35 万元,IT之家,https://www.ithome.com/0/955/664.htm,2026-5-27,小米,买不起小米汽车,适配,23.35,2026-05-27,5,OptimizedRegexExtractor
+ir_21,猫头鹰 Noctua 预告 2026 台北电脑展将展示热虹吸一体式水冷散热器,IT之家,https://www.ithome.com/0/957/421.htm,2026-5-30,,预告,发布,2026 台,2026-05-30,4,OptimizedRegexExtractor
+ir_22,Steam 手柄震动马达变身扬声器，可“演唱”任意歌曲,IT之家,https://www.ithome.com/0/957/775.htm,2026-5-31,GitHub,下载软件,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_23,拘了！荣耀王飞汇报“博主虚假对比 Magic V6 与友商产品折痕”事件最新进展,IT之家,https://www.ithome.com/0/957/733.htm,2026-5-31,荣耀,博主虚假对比 Magic V6 与友商产品折痕,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_24,LG 推出 32 英寸商用电子纸海报，2K 分辨率 E,IT之家,https://www.ithome.com/0/957/522.htm,2026-5-30,,操作系统,发布,17.8,2026-05-30,4,OptimizedRegexExtractor
+ir_25,我国成功发射卫星互联网技术试验卫星，用于开展手机宽带直连卫星等技术试验验证,IT之家,https://www.ithome.com/0/957/696.htm,2026-5-31,,用于开展手机,,646 次,2026-05-31,3,OptimizedRegexExtractor
+ir_26,鼓型风冷再进化：zalman 带来 260W TDP 新品 ZET7,IT之家,https://www.ithome.com/0/957/804.htm,2026-5-31,,上带来了鼓型处理器,,260W,2026-05-31,3,OptimizedRegexExtractor
+ir_27,奕境曾清林谈辅助驾驶“智驾险”和“兜底承诺”差异，点赞比亚迪城市领航兜底“独一无二”,IT之家,https://www.ithome.com/0/957/788.htm,2026-5-31,华为,王传福,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_28,微软 XBOX CEO 夏尔马承认发布会展示友商平台 logo 系“失误”，自己将对此负责,IT之家,https://www.ithome.com/0/957/622.htm,2026-5-30,微软,夏尔马承认发布会展示友商平台,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_29,当AI遇上F5G,IT之家,https://www.ithome.com/0/957/209.htm,2026-5-29,华为,感官系统,升级,20 倍,2026-05-29,5,OptimizedRegexExtractor
+ir_30,6999 → 4699 元：OPPO Find X8 Ultra 手机京东直降,IT之家,https://www.ithome.com/0/957/665.htm,2026-5-30,OPPO,至尊版处理器,发布,16GB,2026-05-30,5,OptimizedRegexExtractor
+ir_31,雷鸟发布旗舰 AR 眼镜 GT / GT Max：最大 59 度视场角，1899 元起,IT之家,https://www.ithome.com/0/956/197.htm,2026-5-27,360,雷鸟 GT 系列,发布,86%,2026-05-27,5,OptimizedRegexExtractor
+ir_32,【IT之家开箱】黑金配色，简约设计，绿联 NAS 私有云 DXP4800 GT 开箱图赏,IT之家,https://www.ithome.com/0/953/536.htm,2026-5-21,,UGREEN Logo,适配,3.2,2026-05-21,4,OptimizedRegexExtractor
+ir_33,比亚迪城市领航兜底首例赔付落地：24 小时内完成技术判定，腾势 Z9GT 事故获确认,IT之家,https://www.ithome.com/0/957/802.htm,2026-5-31,比亚迪,辅助驾驶系统,发布,5.0,2026-05-31,5,OptimizedRegexExtractor
+ir_34,宏碁推出多款游戏新品：两款笔记本、一款串流掌机，还有键盘、背包,IT之家,https://www.ithome.com/0/957/386.htm,2026-5-29,英伟达,多款游戏新品,发布,256GB,2026-05-29,5,OptimizedRegexExtractor
+ir_35,影石刘靖康公布 Luna 相机第一人称套件测试视频，临时加需导致延迟到 6 月上市,IT之家,https://www.ithome.com/0/957/726.htm,2026-5-31,,很抱歉由于我临时加需求导致 Luna 相机延迟到 6 月上市,发布,6 倍,2026-05-31,4,OptimizedRegexExtractor
+ir_36,火箭大爆炸后，消息称蓝色起源发射至少中断 6 个月,IT之家,https://www.ithome.com/0/957/711.htm,2026-5-31,,马斯克在社交平台,修复,,2026-05-31,3,OptimizedRegexExtractor
+ir_37,全国首个绿色算力全栈 AI 平台在呼和浩特上线，兼容国产芯片与主流算力架构,IT之家,https://www.ithome.com/0/957/682.htm,2026-5-30,,兼容国产芯片,上线,,2026-05-30,3,OptimizedRegexExtractor
+ir_38,消息称三星正研发手机液冷散热系统，有望解决 Galaxy 系列机型发热问题,IT之家,https://www.ithome.com/0/957/580.htm,2026-5-30,苹果,消息称三星正研发手机液冷散热系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_39,微软 Win11 预览版焕新开始菜单：可隐藏推荐 / 固定区域，切换小尺寸,IT之家,https://www.ithome.com/0/957/457.htm,2026-5-30,微软,和所有应用,发布,26300.8553,2026-05-30,5,OptimizedRegexExtractor
+ir_40,国产开放世界二游《望月》新实机发布，6 月 19 日开启线下试玩,IT之家,https://www.ithome.com/0/957/491.htm,2026-5-30,,其载具系统,发布,90%,2026-05-30,4,OptimizedRegexExtractor
+ir_41,全球限 30 辆：奔驰 AMG CLE 63 Mythos 路测图曝光,IT之家,https://www.ithome.com/0/957/449.htm,2026-5-30,,CLE 63,发布,339.1,2026-05-30,4,OptimizedRegexExtractor
+ir_42,200 万家尼泊尔商户能扫云闪付了，银联国际与 Fonepay 达成互联互通,IT之家,https://www.ithome.com/0/957/348.htm,2026-5-29,,云闪付网络支付平台,发布,95%,2026-05-29,4,OptimizedRegexExtractor
+ir_43,消息称 Valve Steam Machine 初始定价已达 1000 美元，如今可能更贵,IT之家,https://www.ithome.com/0/957/703.htm,2026-5-31,,Valve Steam Machine,,512GB,2026-05-31,3,OptimizedRegexExtractor
+ir_44,联想来酷 Air14 今日开售：酷睿 5 315 处理器、重 990g，晒单国补后 2999.15 元,IT之家,https://www.ithome.com/0/957/469.htm,2026-5-30,英特尔,Core5 315 12G 512G,发布,315 处理器,2026-05-30,5,OptimizedRegexExtractor
+ir_45,郭明錤：苹果 iPhone 18 Pro / Max 可变光圈镜头成本高 50%，舜宇光学供应 40~50%,IT之家,https://www.ithome.com/0/957/398.htm,2026-5-30,苹果,iPhone 18,发布,50%,2026-05-30,5,OptimizedRegexExtractor
+ir_46,宏碁宣布三款联发科 SoC 大屏平板电脑，至高搭载天玑 8300,IT之家,https://www.ithome.com/0/957/426.htm,2026-5-30,联发科,三款联发科,发布,8300 芯片,2026-05-30,5,OptimizedRegexExtractor
+ir_47,非 Win12：微软下周将升级 Win11，携手英伟达开启 PC 新时代,IT之家,https://www.ithome.com/0/957/411.htm,2026-5-30,微软,Win11,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_48,微软发布 Win11 多个预览频道新版：改进开始菜单等,IT之家,https://www.ithome.com/0/957/396.htm,2026-5-30,微软,Win11,发布,26220.8544,2026-05-30,5,OptimizedRegexExtractor
+ir_49,全新梅赛德斯,IT之家,https://www.ithome.com/0/957/533.htm,2026-5-30,,动力系统,发布,122.1,2026-05-30,4,OptimizedRegexExtractor
+ir_50,广州南站：因贵广客专设备故障影响临时停运列车免费退改签,IT之家,https://www.ithome.com/0/957/613.htm,2026-5-30,,官方...,发布,2976 次,2026-05-30,4,OptimizedRegexExtractor
+ir_51,消息称京东考虑收购英国老牌零售平台 The Very Group，潜在交易规模达 20 亿英镑,IT之家,https://www.ithome.com/0/954/440.htm,2026-5-23,京东,消息称京东考虑收购英国老牌零售平台,发布,182.74,2026-05-23,5,OptimizedRegexExtractor
+ir_52,"宏碁扩充 ""Panther Lake"" 笔电家族，提供 18"" 大屏、0.96kg 超轻等机型",IT之家,https://www.ithome.com/0/957/402.htm,2026-5-30,英特尔,Panther Lake,发布,0.96,2026-05-30,5,OptimizedRegexExtractor
+ir_53,消息称小米 6 月 18 日在印度发布 REDMI Turbo 5/REDMI 17 5G 手机,IT之家,https://www.ithome.com/0/955/302.htm,2026-5-26,小米,REDMI Turbo 5/REDMI 17 5G,发布,6.59,2026-05-26,5,OptimizedRegexExtractor
+ir_54,975g还能不烫手？联想YOGA Air 14 Ultra，真办公散热好不烫手的笔记本,IT之家,https://www.ithome.com/0/957/066.htm,2026-5-29,英特尔,Air 14,优化,13.9,2026-05-29,5,OptimizedRegexExtractor
+ir_55,Pearl Abyss 听劝了：《红色沙漠》1.09 更新补丁新增手柄重映射功能,IT之家,https://www.ithome.com/0/957/674.htm,2026-5-30,,操作系统,发布,1.09,2026-05-30,4,OptimizedRegexExtractor
+ir_56,抢攻亚太地区企业级 AI 市场，OpenAI 与日本云服务商 Data Section 达成战略合作,IT之家,https://www.ithome.com/0/957/550.htm,2026-5-30,OpenAI,与日本云服务,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_57,双排铜管 + 美芝压缩机 1401 元：TCL 真省电 Pro 二代 1.5 匹空调 618 新低,IT之家,https://www.ithome.com/0/957/354.htm,2026-5-29,京东,APF 5.60,升级,1.5,2026-05-29,5,OptimizedRegexExtractor
+ir_58,OPPO 就母亲节文案事件发布问责通告，中国区业务负责人段要辉职级直降两级,IT之家,https://www.ithome.com/0/948/677.htm,2026-5-11,OPPO,属于 OPPO 历史上罕见严厉的处罚力度,发布,,2026-05-11,4,OptimizedRegexExtractor
+ir_59,"宏碁推出多款 ""Wildcat Lake"" 家用 / 商用笔记本电脑",IT之家,https://www.ithome.com/0/957/397.htm,2026-5-30,英特尔,Wildcat Lake,发布,100%,2026-05-30,5,OptimizedRegexExtractor
+ir_60,限时加赠双月卡：百度网盘 SVIP 超级会员 14 月卡 189 元年内新低,IT之家,https://www.ithome.com/0/955/699.htm,2026-5-27,百度,购买前需在百度网盘开启手机,,13.5,2026-05-27,4,OptimizedRegexExtractor
+ir_61,安卓版 8.0.74 最新官方内测版下载发布,IT之家,https://www.ithome.com/0/957/380.htm,2026-5-29,,本文由机器人,发布,8.0.74,2026-05-29,4,OptimizedRegexExtractor
+ir_62,认购需求强劲，消息称霍尼韦尔旗下量子计算公司 Quantinuum 拟扩大 IPO 规模,IT之家,https://www.ithome.com/0/957/436.htm,2026-5-30,,应用框架等全栈量子计算平台,,10%,2026-05-30,3,OptimizedRegexExtractor
+ir_63,刘强东最新内部讲话：京东必须想尽一切办法保住兄弟们的饭碗,IT之家,https://www.ithome.com/0/956/125.htm,2026-5-27,京东,京东将建成最大物理世界运营商,上线,,2026-05-27,4,OptimizedRegexExtractor
+ir_64,4399 → 2808 元：荣耀 WIN 官方 88VIP 直降，骁龙 8E5 + 10000 mAh+ 内置散热,IT之家,https://www.ithome.com/0/957/482.htm,2026-5-30,荣耀,至尊版处理器,发布,512GB,2026-05-30,5,OptimizedRegexExtractor
+ir_65,验证载人登月系统交会对接能力，美国 NASA 将于 6 月 9 日公布“阿尔忒弥斯 3 号”任务乘组名单,IT之家,https://www.ithome.com/0/957/801.htm,2026-5-31,,验证载人登月系统,,,2026-05-31,2,OptimizedRegexExtractor
+ir_66,苹果 iPhone 18 机模曝光：4 种颜色，主打樱桃色,IT之家,https://www.ithome.com/0/957/401.htm,2026-5-30,苹果,iPhone 18,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_67,鸿蒙版 App 获 8.0.18.33 尝鲜升级，折叠屏 / 平板分栏显示功能上线,IT之家,https://www.ithome.com/0/957/237.htm,2026-5-29,华为,今日在华为应用,发布,8.0.18.33,2026-05-29,5,OptimizedRegexExtractor
+ir_68,Meta 等四大社交平台就青少年心理健康诉讼与美国一学区和解，同意支付 2700 万美元,IT之家,https://www.ithome.com/0/957/688.htm,2026-5-30,Meta,等四大社交平台,,1.83,2026-05-30,4,OptimizedRegexExtractor
+ir_69,Linux 应用商店 Flathub 将禁止新提交应用使用 AI 生成代码，维护者直言“我受够了”,IT之家,https://www.ithome.com/0/957/479.htm,2026-5-30,,将禁止新提交应用,开源,,2026-05-30,3,OptimizedRegexExtractor
+ir_70,美国一男子向诈骗分子出售 700 万名老人数据，被判十年以上监禁,IT之家,https://www.ithome.com/0/957/351.htm,2026-5-29,,在电汇服务平台,,3531.8,2026-05-29,3,OptimizedRegexExtractor
+ir_71,驰为 CoreBook Air 笔记本发布：酷睿 Ultra 5 226V 处理器、14 寸 2.8K 90Hz 屏幕,IT之家,https://www.ithome.com/0/957/789.htm,2026-5-31,英特尔,Ultra 5,发布,2.8,2026-05-31,5,OptimizedRegexExtractor
+ir_72,畅享 90 系列新成员？两款华为新机入网，电池容量 6100mAh、8500mAh,IT之家,https://www.ithome.com/0/957/435.htm,2026-5-30,华为,处理器太弱了,发布,150W,2026-05-30,5,OptimizedRegexExtractor
+ir_73,通用汽车推出全新悍马 X 概念车：硬派气质依旧，只秀肌肉不量产,IT之家,https://www.ithome.com/0/957/515.htm,2026-5-30,通用汽车,高度可重构的中型纯电汽车,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_74,先抢京东 618 数码 5 折券，20:00 说不定就有啥好东西：酷态科 30W 快充头 18.9 元探底,IT之家,https://www.ithome.com/0/957/608.htm,2026-5-30,华为,CUKTECH 30W,,30W,2026-05-30,4,OptimizedRegexExtractor
+ir_75,宁德时代：巧克力换电累计落站 1650 座，今年预计突破 3000 座,IT之家,https://www.ithome.com/0/957/509.htm,2026-5-30,,11 纵 9 横,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_76,七彩虹将星 X16 Pro 游戏本新增酷睿 i5,IT之家,https://www.ithome.com/0/957/502.htm,2026-5-30,英特尔,i5-14450HX 16G 512G RTX5070,适配,16GB,2026-05-30,5,OptimizedRegexExtractor
+ir_77,不依赖新光刻工艺！麒麟 2027、昇腾 990 芯片在路上，华为何庭波“韬定律”论文要点大揭秘,IT之家,https://www.ithome.com/0/954/778.htm,2026-5-25,华为,在今日的国际电路与系统,发布,990 芯片,2026-05-25,5,OptimizedRegexExtractor
+ir_78,含“河南蒜薹滞销弃收”“Wi,IT之家,https://www.ithome.com/0/957/475.htm,2026-5-30,,自今年 5 月起,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_79,比亚迪方程豹个性轿车“方程 S GT”官图发布，S 系列新车第三季度上市,IT之家,https://www.ithome.com/0/957/737.htm,2026-5-31,比亚迪,方程 S GT,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_80,天涯社区上线“天涯重启者数字徽章”，持有者将能参与制定、修改社区规则,IT之家,https://www.ithome.com/0/957/694.htm,2026-5-30,天涯社区,天涯社区重启在即,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_81,为避《GTA6》锋芒，《神鬼寓言》宣布跳票至 2027 年一季度,IT之家,https://www.ithome.com/0/957/424.htm,2026-5-30,,GTA6,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_82,乘联分会崔东树：2026 年 1,IT之家,https://www.ithome.com/0/957/758.htm,2026-5-31,,成为拉动行业增长的核心引擎,发布,增长 51%,2026-05-31,4,OptimizedRegexExtractor
+ir_83,外卖新规明起实施，美团将支持全量商家自主设置“有 / 无堂食”等标识,IT之家,https://www.ithome.com/0/957/800.htm,2026-5-31,美团,记者搜索,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_84,消息称育碧《雷曼：传奇》重制版游戏 10 月 1 日发售，有望与《宇宙机器人》《光与影：33 号远征队》联动,IT之家,https://www.ithome.com/0/957/451.htm,2026-5-30,,宇宙机器人,发布,39.99,2026-05-30,4,OptimizedRegexExtractor
+ir_85,英伟达推出 LocateAnything，主打 AI 高速、高精度检测对象,IT之家,https://www.ithome.com/0/957/446.htm,2026-5-30,NVIDIA,LocateAnything,发布,H100 GPU,2026-05-30,5,OptimizedRegexExtractor
+ir_86,人像摄影教学书籍惊现多张疑似 AI 合成“6 指照片”，出版社致歉称“将提供无条件退款服务”,IT之家,https://www.ithome.com/0/913/700.htm,2026-1-16,,6 指照片,,159 张,2026-01-16,3,OptimizedRegexExtractor
+ir_87,苹果 M6 MacBook Pro 爆料：升级均热板设计、优化风扇散热,IT之家,https://www.ithome.com/0/955/161.htm,2026-5-26,苹果,伴随着芯片,发布,,2026-05-26,4,OptimizedRegexExtractor
+ir_88,一汽大众 ID. AURA T6 登陆粤港澳车展，龙船特别版同步亮相,IT之家,https://www.ithome.com/0/957/382.htm,2026-5-29,大众集团,全新五座中型 SUV,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_89,63g 轻量化模具：雷蛇炼狱蝰蛇 V3 专业版鼠标 1099 → 584 元双重补贴,IT之家,https://www.ithome.com/0/957/776.htm,2026-5-31,京东,FOCUS PRO 30K,优化,9.5,2026-05-31,5,OptimizedRegexExtractor
+ir_90,韦布望远镜观测远古小红点星系，证实黑洞早于星系诞生,IT之家,https://www.ithome.com/0/957/739.htm,2026-5-31,,这是一项重大发现,,678.67,2026-05-31,3,OptimizedRegexExtractor
+ir_91,2499 → 709 元破冰新低：添可 20000Pa 平躺洗地机 Stretch Max 探底清仓,IT之家,https://www.ithome.com/0/957/337.htm,2026-5-29,,88VIP 会员 + 154.88 元淘金币,适配,709.12,2026-05-29,4,OptimizedRegexExtractor
+ir_92,中兴 G5 Pro 高性能版 5G 移动路由器 CPE 开售：双 2.5G 网口，2099 元,IT之家,https://www.ithome.com/0/956/290.htm,2026-5-28,京东,四核处理器,适配,2.5,2026-05-28,5,OptimizedRegexExtractor
+ir_93,联合年卡 158 元：爱奇艺黄金会员 + 京东 PLUS 直降，赠 68 元美团券包,IT之家,https://www.ithome.com/0/957/558.htm,2026-5-30,京东,爱奇艺登录手机,适配,1 次,2026-05-30,5,OptimizedRegexExtractor
+ir_94,中国空间站第十批科学实验样品返回并交付科学家，神二十一航天员乘组平安抵京,IT之家,https://www.ithome.com/0/957/412.htm,2026-5-30,,空间站应用,,3 次,2026-05-30,3,OptimizedRegexExtractor
+ir_95,16+512G 版 3858 元：小米 15 Ultra 手机 12 期免息，赠 399 元影像套装,IT之家,https://www.ithome.com/0/957/492.htm,2026-5-30,小米,xxx 金币数,适配,16GB,2026-05-30,5,OptimizedRegexExtractor
+ir_96,《女神异闻录 4：复兴版》等多款未公开游戏遭韩国评级泄露，Paradox 联手乐高打造《乐高：天际线》,IT之家,https://www.ithome.com/0/957/799.htm,2026-5-31,,女神异闻录 4,,,2026-05-31,2,OptimizedRegexExtractor
+ir_97,国产高端轴功率仪打破进口依赖，首次批量进入大型 LNG 船核心供应链,IT之家,https://www.ithome.com/0/957/714.htm,2026-5-31,,轴是船舶动力系统,优化,17.5,2026-05-31,4,OptimizedRegexExtractor
+ir_98,终于能听出无损与母带的区别了：松下 Technics AZ80 降噪耳机 2099 → 979 元新低,IT之家,https://www.ithome.com/0/957/745.htm,2026-5-31,京东,方便快速连接手机,适配,3 次,2026-05-31,5,OptimizedRegexExtractor
+ir_99,中国首款：比亚迪自研 4nm 智驾芯片璇玑 A3 发布，支持 L3、L4 自动驾驶,IT之家,https://www.ithome.com/0/956/780.htm,2026-5-28,比亚迪,智驾芯片,发布,4nm,2026-05-28,5,OptimizedRegexExtractor
+ir_100,华为上架 MEDELI C25 Mini 音乐键盘：适用于 MatePad Pro Max，“一台平板就是一支乐队”,IT之家,https://www.ithome.com/0/957/513.htm,2026-5-30,华为,华为自研专业软件 +1,发布,3 次,2026-05-30,5,OptimizedRegexExtractor
+ir_101,球星亚马尔预热 Beats Studio Pro 2 耳机：全新设计，粉色配色,IT之家,https://www.ithome.com/0/957/728.htm,2026-5-31,苹果,Pro 2,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_102,一汽悦意 08 开启预售：提供纯电与增程动力，10.49 万元起,IT之家,https://www.ithome.com/0/957/367.htm,2026-5-29,高通,FAW,,10.49,2026-05-29,4,OptimizedRegexExtractor
+ir_103,澳大利亚一软件公司因转向 AI 裁掉数千名员工，CEO 收到暴力威胁,IT之家,https://www.ithome.com/0/957/579.htm,2026-5-30,,澳大利亚一软件,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_104,OPPO Pad Air5 平板“星动白”配色开售：2099 元起，12.1 英寸 120Hz 屏幕、天玑 7300 Ultra 芯片,IT之家,https://www.ithome.com/0/957/013.htm,2026-5-29,OPPO,操作系统,适配,12.1,2026-05-29,5,OptimizedRegexExtractor
+ir_105,腾讯搜狗输入法上线“跨设备复制粘贴”，图片、文本、链接都能传,IT之家,https://www.ithome.com/0/956/362.htm,2026-5-28,腾讯,腾讯搜狗输入法,上线,,2026-05-28,4,OptimizedRegexExtractor
+ir_106,Hermes Agent 加入工具搜索，“AI 养马”更省 tokens,IT之家,https://www.ithome.com/0/957/478.htm,2026-5-30,,AI 养马,开源,5 台,2026-05-30,4,OptimizedRegexExtractor
+ir_107,小米米家扫拖机器人 6 Pro 国补探新低：水箱版 2343 元、上下水版 2665 元,IT之家,https://www.ithome.com/0/957/691.htm,2026-5-30,小米,小米米家扫拖机器人,升级,15%,2026-05-30,5,OptimizedRegexExtractor
+ir_108,小米米家首款枪灰色花洒开售：超大置物台 + 顶喷，999 元,IT之家,https://www.ithome.com/0/957/612.htm,2026-5-30,小米,采用,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_109,小米米家无线吸尘器 4 Pro 开启预售：230AW 无损吸力，以旧换新 1219 元,IT之家,https://www.ithome.com/0/957/779.htm,2026-5-31,小米,这款吸尘器采用了双风道自集尘系统,发布,1498.55,2026-05-31,5,OptimizedRegexExtractor
+ir_110,3888 → 2666 元：松下 V8 家庭版智能马桶家年内探底,IT之家,https://www.ithome.com/0/957/663.htm,2026-5-30,京东,,适配,3 次,2026-05-30,4,OptimizedRegexExtractor
+ir_111,我国“南天门计划”最新进展曝光，央视公布多款空天装备细节,IT之家,https://www.ithome.com/0/957/751.htm,2026-5-31,,〈南天门计划〉上海 288 基地（科幻乐园）官宣启动,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_112,十年来首次涨价：.org 域名批发价 6 月 1 日起上调,IT之家,https://www.ithome.com/0/957/786.htm,2026-5-31,,Porkbun,发布,9.93,2026-05-31,4,OptimizedRegexExtractor
+ir_113,关于 macOS 27，该知道的我都为大家拿到了,IT之家,https://www.ithome.com/0/956/191.htm,2026-5-27,苹果,macOS 27,发布,,2026-05-27,4,OptimizedRegexExtractor
+ir_114,人民日报专访华为何庭波：今年秋季的新麒麟手机芯片，性能等相比去年是“跳跃性”提升,IT之家,https://www.ithome.com/0/956/274.htm,2026-5-28,华为,今年秋季的新麒麟手机芯片,,65353535W,2026-05-28,4,OptimizedRegexExtractor
+ir_115,英伟达黄仁勋谈 AI 应用、Token 消耗：浪费一点钱没关系，千万别浪费时间,IT之家,https://www.ithome.com/0/956/884.htm,2026-5-29,英伟达,你不会被 AI 取代,,,2026-05-29,3,OptimizedRegexExtractor
+ir_116,软银豪掷 750 亿欧元，在法国建设 5 吉瓦 AI 数据中心,IT之家,https://www.ithome.com/0/957/698.htm,2026-5-31,OpenAI,OpenAI,发布,5921.39,2026-05-31,5,OptimizedRegexExtractor
+ir_117,英特尔 ATX12VO V3 供电标准曝光，闲置效率提高 29%,IT之家,https://www.ithome.com/0/957/481.htm,2026-5-30,英特尔,为了让电源和系统,发布,29%,2026-05-30,5,OptimizedRegexExtractor
+ir_118,鸿蒙版 App 获 8.0.18.34 尝鲜升级,IT之家,https://www.ithome.com/0/957/547.htm,2026-5-30,华为,今日在华为应用,发布,8.0.18.34,2026-05-30,5,OptimizedRegexExtractor
+ir_119,华硕天选 7 标准版上架：锐龙 7 H 260 配 RTX 5050/5060，16+512GB 版本 7999 元起,IT之家,https://www.ithome.com/0/957/438.htm,2026-5-30,AMD,H 260,上线,512GB,2026-05-30,5,OptimizedRegexExtractor
+ir_120,华硕推出 ROG 魔盒 Air 路由器套装：首发 2349 元，PLUS 用户国补后 1952.1 元,IT之家,https://www.ithome.com/0/957/494.htm,2026-5-30,京东,ROG,发布,1952.1,2026-05-30,5,OptimizedRegexExtractor
+ir_121,微软 XBOX 开测新特性：显示手柄图像、支持输入色码精确选色,IT之家,https://www.ithome.com/0/957/430.htm,2026-5-30,微软,直接从玩家头像中提取颜色应用,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_122,宏碁推出 AR Vision GR0 与 GI0 智能眼镜，前者配 Micro OLED 屏,IT之家,https://www.ithome.com/0/957/429.htm,2026-5-30,宏碁,AR Vision GR0,发布,95%,2026-05-30,5,OptimizedRegexExtractor
+ir_123,消息称《使命召唤：现代战争 4》游戏将移除“更新后需重启”提示,IT之家,https://www.ithome.com/0/957/414.htm,2026-5-30,,使命召唤,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_124,2026年数据治理性价比最优方案推荐：数据治理方案避坑指南！,IT之家,https://www.ithome.com/0/957/790.htm,2026-5-31,360,2026 年中国数据治理市场白皮书,开源,增长 28.7%,2026-05-31,5,OptimizedRegexExtractor
+ir_125,华为徐直军：芯片“韬定律”需要整个产业界参与进来，但不打算去说服谁,IT之家,https://www.ithome.com/0/957/178.htm,2026-5-29,华为,国际电路与系统,发布,28 纳米,2026-05-29,5,OptimizedRegexExtractor
+ir_126,微软 Teams 将上线效率模式：缓解卡顿、优化视频会议质量,IT之家,https://www.ithome.com/0/957/428.htm,2026-5-30,Microsoft,效率模式,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_127,LLMShare 攻击披露：ChatGPT 共享页变恶意入口，通过谷歌搜索精准投毒,IT之家,https://www.ithome.com/0/957/434.htm,2026-5-30,OpenAI,网站因访问量过大暂时不可用,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_128,小米蓝牙音箱 C 开售：3D 幻彩灯光、多台串联播放，券后 242.19 元,IT之家,https://www.ithome.com/0/957/712.htm,2026-5-31,小米,Auracast,适配,242.19,2026-05-31,5,OptimizedRegexExtractor
+ir_129,微星宣布全球首款三模 QD,IT之家,https://www.ithome.com/0/957/408.htm,2026-5-30,360,全球首款三模,发布,2026 台,2026-05-30,5,OptimizedRegexExtractor
+ir_130,段永平向江西安福县无偿捐赠 1 万股贵州茅台股票，市值超千万元,IT之家,https://www.ithome.com/0/957/169.htm,2026-5-29,,其实只是 1 万股茅台,适配,1327.73,2026-05-29,4,OptimizedRegexExtractor
+ir_131,微软启动 Win11 老式对话框大规模现代化重构，文件复制对话框已完成升级,IT之家,https://www.ithome.com/0/957/704.htm,2026-5-31,微软,计划对操作系统,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_132,亨通光电拟分拆亨通华海至科创板上市，海洋通信业务独立发展,IT之家,https://www.ithome.com/0/957/463.htm,2026-5-30,华为,依托科创板独立融资平台,发布,27.17,2026-05-30,5,OptimizedRegexExtractor
+ir_133,小米米家洗衣机迷你双区洗烘 1kg 开售：95℃ 高温煮洗，首发 1499 元,IT之家,https://www.ithome.com/0/957/660.htm,2026-5-30,小米,,适配,1.0,2026-05-30,4,OptimizedRegexExtractor
+ir_134,618 预热大促 16 日继续：小米 15 Ultra 立打 6 折享 12 期免息，30 秒速读首发期攻略,IT之家,https://www.ithome.com/0/949/525.htm,2026-5-12,苹果,Xiaomi 15 Ultra,适配,3 次,2026-05-12,5,OptimizedRegexExtractor
+ir_135,降价力度堪比旗舰手机：小米全效空气净化器 Ultra 增强版 5799 → 2428 元,IT之家,https://www.ithome.com/0/957/695.htm,2026-5-30,小米,降价力度堪比旗舰手机,发布,15%,2026-05-30,5,OptimizedRegexExtractor
+ir_136,整机十年质保：小米米家空调 26 款巨省电大 1.5 匹 1519 元首发，换新仅 1119 元,IT之家,https://www.ithome.com/0/957/588.htm,2026-5-30,小米,米家空调巨省电 2026 款,发布,1.5,2026-05-30,5,OptimizedRegexExtractor
+ir_137,涉案超 330 万元、抓获嫌疑人 266 人，安徽警方破获特大网络交友诈骗案,IT之家,https://www.ithome.com/0/957/753.htm,2026-5-31,,安徽省淮北市公安局杜集分局成功侦破一起利用虚假外卖平台,,,2026-05-31,2,OptimizedRegexExtractor
+ir_138,去年底旗舰手机最新激活量曝光，华为 Mate 80 单品逼近 400 万,IT之家,https://www.ithome.com/0/957/708.htm,2026-5-31,华为,去年底旗舰手机,发布,99.6,2026-05-31,5,OptimizedRegexExtractor
+ir_139,大平层一次扫完：科沃斯 T90 PRO 活水洗地机器人 4499 → 3099 元上下水新低,IT之家,https://www.ithome.com/0/957/683.htm,2026-5-30,京东,活水洗地机器人,适配,8.5,2026-05-30,5,OptimizedRegexExtractor
+ir_140,宏碁推出锐龙 AI Max+ 395 迷你工作站与 1.26L LGA 迷你主机,IT之家,https://www.ithome.com/0/957/405.htm,2026-5-30,AMD,锐龙,发布,1.26,2026-05-30,5,OptimizedRegexExtractor
+ir_141,消息称微软打造 Copilot 超级应用：统一 AI 入口，整合编程 / 聊天等,IT之家,https://www.ithome.com/0/957/487.htm,2026-5-30,Microsoft,Delivering one Copilot,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_142,吉利熊猫勇士明日上市，纯电小车市场再添新选择,IT之家,https://www.ithome.com/0/957/780.htm,2026-5-31,,会将于,发布,4.69,2026-05-31,4,OptimizedRegexExtractor
+ir_143,航天英雄杨利伟：我国载人登月计划正常推进,IT之家,https://www.ithome.com/0/957/384.htm,2026-5-29,,,,3 次,2026-05-29,2,OptimizedRegexExtractor
+ir_144,华为鸿蒙 3D 影像壁纸最新适配计划公开，覆盖 Mate 70、Pura 80 等系列机型,IT之家,https://www.ithome.com/0/957/782.htm,2026-5-31,华为,Mate 70,升级,6.1.0.120,2026-05-31,5,OptimizedRegexExtractor
+ir_145,热门游戏改编《我的世界大电影 2》片名公开，定档明年 7 月 23 日北美上映,IT之家,https://www.ithome.com/0/957/740.htm,2026-5-31,,我的世界大电影 2,发布,9.58,2026-05-31,4,OptimizedRegexExtractor
+ir_146,iOS 版 8.0.74 最新官方正式版下载发布,IT之家,https://www.ithome.com/0/956/783.htm,2026-5-28,,本文由机器人,发布,8.0.74,2026-05-28,4,OptimizedRegexExtractor
+ir_147,【IT之家实拍】雷鸟 GT Max 智能眼镜图赏：突破光学痛点，把 267 吋巨幕戴在头上,IT之家,https://www.ithome.com/0/956/208.htm,2026-5-27,,孔雀光引擎 3.0 Max,发布,3.0,2026-05-27,4,OptimizedRegexExtractor
+ir_148,T2 CEO 泽尔尼克承认《文明 7》《无主之地 4》存在失误，但 2K 整体表现依然强劲,IT之家,https://www.ithome.com/0/957/488.htm,2026-5-30,,文明 7,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_149,龙艺集团评价如何？结合行业政策看用工合作价值,IT之家,https://www.ithome.com/0/957/792.htm,2026-5-31,,0 质量事故,,,2026-05-31,2,OptimizedRegexExtractor
+ir_150,奇瑞 iCAR 超级 V23 赛博暗影极客版上市，售 16.08 万元,IT之家,https://www.ithome.com/0/957/450.htm,2026-5-30,360,度全景影像系统,发布,16.08,2026-05-30,5,OptimizedRegexExtractor
+ir_151,AI搜索重构流量格局，2026国内GEO优化领域核心人物全景扫描,IT之家,https://www.ithome.com/0/957/773.htm,2026-5-31,DeepSeek,让品牌被 AI 推荐,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_152,技嘉确认将推出限定版 INFINITY 系列主板、显卡、机箱与电脑周边产品,IT之家,https://www.ithome.com/0/957/732.htm,2026-5-31,NVIDIA,ENTER INFINITY,发布,2026 台,2026-05-31,5,OptimizedRegexExtractor
+ir_153,【IT之家图赏】vivo S60 手机「星星海」上手实拍：星芒光刻勾勒夏日星海,IT之家,https://www.ithome.com/0/956/987.htm,2026-5-29,vivo,会进行全程直播报道,发布,6.59,2026-05-29,5,OptimizedRegexExtractor
+ir_154,多名特斯拉前员工坦言不信赖 FSD，更有人称“给钱我都不坐 Robotaxi”,IT之家,https://www.ithome.com/0/957/566.htm,2026-5-30,特斯拉,给钱我都不坐 Robotaxi,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_155,腾讯生存新作《失控进化》7 月 9 日公测，PC / 安卓 / 鸿蒙 / 苹果 iOS 多端互通,IT之家,https://www.ithome.com/0/956/223.htm,2026-5-27,苹果,动态攻防系统,发布,,2026-05-27,4,OptimizedRegexExtractor
+ir_156,消息称小米 REDMI K90 单品激活突破 200 万台，基本是两家同档竞品机的销量之和,IT之家,https://www.ithome.com/0/957/462.htm,2026-5-30,小米,K100 系列还有 pm 嘛,适配,200 万台,2026-05-30,5,OptimizedRegexExtractor
+ir_157,机构预测：谷歌 Android XR 智能眼镜今年销量将达 200 万台,IT之家,https://www.ithome.com/0/953/636.htm,2026-5-21,Meta,镜片内嵌显示屏的专业扩展现实眼镜,发布,200 万台,2026-05-21,5,OptimizedRegexExtractor
+ir_158,不再弹出未知开发者警告，微软将为 macOS 版 PowerShell 提供 GateKeeper 公证,IT之家,https://www.ithome.com/0/953/844.htm,2026-5-22,微软,无法打开 XXX,升级,,2026-05-22,4,OptimizedRegexExtractor
+ir_159,618 预热大促 520 小高潮开启：华为 MatePad Mini 悦读版 2058 元，30 秒速读攻略,IT之家,https://www.ithome.com/0/951/577.htm,2026-5-17,华为,MatePad Mini,发布,3 次,2026-05-17,5,OptimizedRegexExtractor
+ir_160,特斯拉 FSD（监督版）获爱沙尼亚批准，即将推送,IT之家,https://www.ithome.com/0/957/725.htm,2026-5-31,特斯拉,爱沙尼亚也成为欧洲第三个允许这套神经网络系统,发布,3.0 版,2026-05-31,5,OptimizedRegexExtractor
+ir_161,华为发表半导体韬定律：预计到 2031 年，基于该定律的高端芯片晶体管密度将达到 1.4 纳米制程的同等水平,IT之家,https://www.ithome.com/0/954/677.htm,2026-5-25,华为,基于该定律的高端芯片,发布,1.4,2026-05-25,5,OptimizedRegexExtractor
+ir_162,SpaceX 上市前“收大礼”：获美太空军 41.6 亿美元超级合同,IT之家,https://www.ithome.com/0/957/410.htm,2026-5-30,,分散复杂系统,,41.6,2026-05-30,3,OptimizedRegexExtractor
+ir_163,7499 → 6399 元：小米 17 Ultra 手机 16+512G 国补探新低,IT之家,https://www.ithome.com/0/957/672.htm,2026-5-30,小米,Ultra 16GB,适配,16GB,2026-05-30,5,OptimizedRegexExtractor
+ir_164,消息称华为协同认证功能正在逐步适配上线，可在锁屏状态下免解锁使用小艺部分语音指令,IT之家,https://www.ithome.com/0/955/765.htm,2026-5-27,华为,眼镜芯片,上线,2.8,2026-05-27,5,OptimizedRegexExtractor
+ir_165,华为 MateBook 14 鸿蒙版限时优惠 400 元，国补到手价 5015 元起,IT之家,https://www.ithome.com/0/957/425.htm,2026-5-30,华为,MateBook 14,发布,2.8,2026-05-30,5,OptimizedRegexExtractor
+ir_166,618电脑、平板、手机以旧换新攻略：想帮帮AI智换让旧机换新更划算,IT之家,https://www.ithome.com/0/957/212.htm,2026-5-29,,服务智能体,,,2026-05-29,2,OptimizedRegexExtractor
+ir_167,2026 款吉利牛仔上市：新增“武士黑”配色，限时 7.59 万,IT之家,https://www.ithome.com/0/957/662.htm,2026-5-30,,智能座舱系统,,7.59,2026-05-30,3,OptimizedRegexExtractor
+ir_168,"宏碁宣布 27"" UHD 3D、QHD 540Hz / HD 1000Hz 电竞显示器",IT之家,https://www.ithome.com/0/957/419.htm,2026-5-30,360,UHD 3,发布,2026 台,2026-05-30,5,OptimizedRegexExtractor
+ir_169,"华硕 ""RC74XA"" 掌机在韩获得认证，消息称基于 AMD 锐龙 Z2 Extreme",IT之家,https://www.ithome.com/0/957/716.htm,2026-5-31,AMD,RC74XA,,2026 台,2026-05-31,4,OptimizedRegexExtractor
+ir_170,消息称因战略分歧，三星与 OpenAI 定制 AI 芯片研发项目陷入停滞,IT之家,https://www.ithome.com/0/957/706.htm,2026-5-31,OpenAI,打造人工智能芯片,,,2026-05-31,3,OptimizedRegexExtractor
+ir_171,AMD 锐龙 Z2 GO 定制处理器：联想拯救者 Legion Go S 掌机 3173 元国补新低,IT之家,https://www.ithome.com/0/957/741.htm,2026-5-31,AMD,定制处理器,适配,10%,2026-05-31,5,OptimizedRegexExtractor
+ir_172,小米米家洗衣机 Pro 波轮 10kg 开售：1.28 洗净比、9 重减震降噪，899 元,IT之家,https://www.ithome.com/0/955/073.htm,2026-5-25,小米,重减震智能平衡系统,升级,1.28,2026-05-25,5,OptimizedRegexExtractor
+ir_173,依然“很能打”，约 30% 惠普 PC 仍用 Win10,IT之家,https://www.ithome.com/0/957/407.htm,2026-5-30,微软,惠普个人系统,升级,30%,2026-05-30,5,OptimizedRegexExtractor
+ir_174,芝奇展示 CU,IT之家,https://www.ithome.com/0/957/409.htm,2026-5-30,英特尔,CU,发布,16GB,2026-05-30,5,OptimizedRegexExtractor
+ir_175,一颗流星在美国马萨诸塞州上空爆炸，全州听见巨响,IT之家,https://www.ithome.com/0/957/700.htm,2026-5-31,,TNT,,25.7,2026-05-31,3,OptimizedRegexExtractor
+ir_176,（更新：已解决）曝 Mac App Store 版微软 OneDrive 升级后无法打开，暂无直接解决方法,IT之家,https://www.ithome.com/0/954/375.htm,2026-5-23,微软,请将此应用,升级,26.084.0504,2026-05-23,5,OptimizedRegexExtractor
+ir_177,宏碁展示 ProDesigner 系列显示器新品，搭载 31.5 英寸 4K QD,IT之家,https://www.ithome.com/0/957/510.htm,2026-5-30,,ProDesigner,适配,31.5,2026-05-30,4,OptimizedRegexExtractor
+ir_178,【IT之家评测室】把 267 吋巨幕戴在头上、将 AI 融入日常：雷鸟 GT Max / V4 智能眼镜评测,IT之家,https://www.ithome.com/0/956/195.htm,2026-5-27,,观影 AR 一哥,,增长 98%,2026-05-27,3,OptimizedRegexExtractor
+ir_179,供应链消息：苹果 OLED MacBook Pro 的屏幕即将批量投产,IT之家,https://www.ithome.com/0/953/616.htm,2026-5-21,苹果,难度远高于手机,发布,8.6,2026-05-21,5,OptimizedRegexExtractor
+ir_180,1 分钟速读 5 月 30 日 618 开门红秒杀攻略：倒数 2 小时，速速保价,IT之家,https://www.ithome.com/0/955/061.htm,2026-5-25,百度,WPS 超级会员 3 年,适配,3 次,2026-05-25,5,OptimizedRegexExtractor
+ir_181,新一代华为鸿蒙智家官宣 6 月 1 日发布，主打“全生态 AI 进化”,IT之家,https://www.ithome.com/0/955/690.htm,2026-5-27,华为,全生态 AI 进化,发布,6.0,2026-05-27,5,OptimizedRegexExtractor
+ir_182,小米米家空调 巨省电 大 1.5 匹今晚开售：双排蒸发器+高效压缩机，国补 1529.15 元,IT之家,https://www.ithome.com/0/957/465.htm,2026-5-30,小米,米家空调 巨省电 2026 款,发布,1.5,2026-05-30,5,OptimizedRegexExtractor
+ir_183,3C 认证实施规则迎来新调整，移动电源新增多项安全测试,IT之家,https://www.ithome.com/0/957/793.htm,2026-5-31,,新版实施规则的公告,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_184,零跑首款 MPV 车型 D99 内饰首秀，定位“科技豪华旗舰”,IT之家,https://www.ithome.com/0/957/293.htm,2026-5-29,,科技豪华旗舰 MPV,适配,3.9,2026-05-29,4,OptimizedRegexExtractor
+ir_185,小米 MIX 5 手机曝光：真全面屏回归、磁吸镜头技术，登陆全球市场,IT之家,https://www.ithome.com/0/946/089.htm,2026-5-3,小米,MIX 5,发布,,2026-05-03,4,OptimizedRegexExtractor
+ir_186,【IT之家评测室】OPPO Reno16 Pro 体验：把实况照片玩出新高度,IT之家,https://www.ithome.com/0/955/604.htm,2026-5-26,OPPO,OPPO,发布,,2026-05-26,4,OptimizedRegexExtractor
+ir_187,20000mAh+210W：酷态科 15 号 Ultra 电能柱 399 → 294 元发车,IT之家,https://www.ithome.com/0/957/685.htm,2026-5-30,华为,对主流品牌手机,适配,210W,2026-05-30,5,OptimizedRegexExtractor
+ir_188,16GB +1TB 摄影师套装：vivo X300 Pro 手机 8299 → 5942 元国补新低,IT之家,https://www.ithome.com/0/957/797.htm,2026-5-31,vivo,手机补贴,适配,16GB,2026-05-31,5,OptimizedRegexExtractor
+ir_189,524 元，安克声阔 Soundcore Boom Go 3i 蓝牙音箱开售,IT之家,https://www.ithome.com/0/957/484.htm,2026-5-30,京东,Go 3,优化,15W,2026-05-30,5,OptimizedRegexExtractor
+ir_190,先睹为快：苹果 iOS 27 全新 Siri 界面示意图曝光,IT之家,https://www.ithome.com/0/956/782.htm,2026-5-28,OpenAI,iOS 27,发布,,2026-05-28,4,OptimizedRegexExtractor
+ir_191,9.1 cm 厚度 + 31 英寸柔光灯：小米米家智能晾衣机 2 国补后 553 元,IT之家,https://www.ithome.com/0/957/668.htm,2026-5-30,小米,智感系统,升级,9.1,2026-05-30,5,OptimizedRegexExtractor
+ir_192,美团：今年已配合执法机关打击黑产案件 47 起，重拳整治“幽灵外卖”,IT之家,https://www.ithome.com/0/957/486.htm,2026-5-30,美团,食安政企共治平台,升级,2.4,2026-05-30,5,OptimizedRegexExtractor
+ir_193,1999 元，小米推出米家即热饮水机 Max 制冰版,IT之家,https://www.ithome.com/0/955/047.htm,2026-5-25,小米,米家即热饮水机,发布,40 颗,2026-05-25,5,OptimizedRegexExtractor
+ir_194,小米米家空调强劲风立式超 3 匹开售：1800m³/h 风量、APF 4.90，国补价 5099.2 元起,IT之家,https://www.ithome.com/0/957/678.htm,2026-5-30,小米,APF 4.90,适配,4.90,2026-05-30,5,OptimizedRegexExtractor
+ir_195,监控软件 pcTattletale 开发者认罪，承认纵容软件被用于非法监视配偶,IT之家,https://www.ithome.com/0/911/714.htm,2026-1-9,,约 5 分钟内接触到手机,发布,,2026-01-09,3,OptimizedRegexExtractor
+ir_196,Win11 成新门槛，CDPR 更新《赛博朋克 2077》PC 版系统要求,IT之家,https://www.ithome.com/0/957/783.htm,2026-5-31,微软,赛博朋克 2077,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_197,JetBrains 官宣弃用独立版 DataSpell，九月迁移至 PyCharm Pro,IT之家,https://www.ithome.com/0/957/468.htm,2026-5-30,,继续维护一个单独应用,开源,,2026-05-30,3,OptimizedRegexExtractor
+ir_198,钱学森从未说过“人再笨还学不会微积分吗”,IT之家,https://www.ithome.com/0/957/505.htm,2026-5-30,,,,,2026-05-30,1,OptimizedRegexExtractor
+ir_199,龙芯官宣基于全自主指令集架构的云桌面解决方案已具备支撑政企日常办公等核心场景成熟能力,IT之家,https://www.ithome.com/0/957/701.htm,2026-5-31,,龙芯桌面与服务器平台,发布,2.5,2026-05-31,4,OptimizedRegexExtractor
+ir_200,工信部：前 4 个月我国软件业务收入 46686 亿元，同比增长 10.9%,IT之家,https://www.ithome.com/0/957/719.htm,2026-5-31,,软件业,发布,增长 10.9%,2026-05-31,4,OptimizedRegexExtractor
+ir_201,工信部：截至 4 月末我国 5G 基站数首次突破 500 万个，5G 移动电话用户超 12.62 亿,IT之家,https://www.ithome.com/0/955/123.htm,2026-5-26,,根据工信部昨日,发布,12.62,2026-05-26,4,OptimizedRegexExtractor
+ir_202,缓解亏损压力，消息称 Meta 明年将推 AI 吊坠寻找新收入,IT之家,https://www.ithome.com/0/957/418.htm,2026-5-30,Meta,订阅服务和智能助手,发布,4.02,2026-05-30,5,OptimizedRegexExtractor
+ir_203,几何未来预热全新机箱 Model 7 (Extreme)：悬浮 + 三舱设计,IT之家,https://www.ithome.com/0/957/795.htm,2026-5-31,,Model 7,发布,2026 台,2026-05-31,4,OptimizedRegexExtractor
+ir_204,IT早报 0531：微软宣布下周携手英伟达开启 PC 新时代；深圳网约车市场已饱和官方发风险提示；苹果 iPhone 18 机模曝光；MiniMax 启动 A 股 IPO 进程...,IT之家,https://www.ithome.com/0/957/702.htm,2026-5-31,微软,iPhone 18,发布,99%,2026-05-31,5,OptimizedRegexExtractor
+ir_205,最高降价 99%，小米 MiMo 首次公开模型推理系统全链路优化技术细节,IT之家,https://www.ithome.com/0/957/621.htm,2026-5-30,小米,首次公开模型推理系统,优化,99%,2026-05-30,5,OptimizedRegexExtractor
+ir_206,AI 开始给人类打分：Claude 评分标准曝光，优秀人类得 7.5 分,IT之家,https://www.ithome.com/0/957/493.htm,2026-5-30,,这哪里是冷冰冰的软件,,7.5,2026-05-30,3,OptimizedRegexExtractor
+ir_207,免费培训开发 App，苹果底特律开发者学院毕业生超 1800 人,IT之家,https://www.ithome.com/0/957/404.htm,2026-5-30,苹果,教授应用,发布,71%,2026-05-30,5,OptimizedRegexExtractor
+ir_208,“死了么”App 被“收编”：改名“在么在么”，用于独居、空巢老人监测,IT之家,https://www.ithome.com/0/954/638.htm,2026-5-24,,老人 — App — 子女 — 社区 — 应急,发布,44.4,2026-05-24,4,OptimizedRegexExtractor
+ir_209,特斯拉中国为 Model Y 推出手动伸缩遮阳帘，售价 1499 元,IT之家,https://www.ithome.com/0/957/781.htm,2026-5-31,特斯拉,廉价版 Model Y 自带物理遮阳帘,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_210,微软 Win11/10/7 原版 ISO 光盘镜像下载大全（2026,IT之家,https://www.ithome.com/0/655/926.htm,2022-11-23,微软,zh-cn_windows_11_business_editions_version_25h2_updated_april_2026_x64_dvd_a69989f0.iso,发布,7.98,2022-11-23,5,OptimizedRegexExtractor
+ir_211,马斯克发视频展示 Cybercab 自动驶出工厂，即将开启商业化运营,IT之家,https://www.ithome.com/0/957/713.htm,2026-5-31,特斯拉,Cybercab,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_212,AMD Radeon RX 9070 GRE 显卡全球市场起价偷跑：549 美元,IT之家,https://www.ithome.com/0/957/729.htm,2026-5-31,NVIDIA,RX 9070,,6%,2026-05-31,4,OptimizedRegexExtractor
+ir_213,库洛《鸣潮》华为 HarmonyOS 鸿蒙版即将上线，《赛博朋克：边缘行者》联动 6 月 8 日正式开启,IT之家,https://www.ithome.com/0/957/406.htm,2026-5-30,华为,将于,发布,3.4 版,2026-05-30,5,OptimizedRegexExtractor
+ir_214,【IT之家开箱】荣耀 600 Pro「青苹果」图赏：手握“青苹果”，清爽又治愈,IT之家,https://www.ithome.com/0/956/155.htm,2026-5-27,苹果,醒图等应用,发布,2294.15,2026-05-27,5,OptimizedRegexExtractor
+ir_215,小米米家冰箱 Pro 对开 620L 开售：双系统双循环，首发价 2499 元,IT之家,https://www.ithome.com/0/957/689.htm,2026-5-30,小米,支持双系统,升级,99.99,2026-05-30,5,OptimizedRegexExtractor
+ir_216,2026年学习平板选购指南：专业教研 + AI 赋能，5 款旗舰机型深度解析,IT之家,https://www.ithome.com/0/957/032.htm,2026-5-29,,Ultra,升级,95%,2026-05-29,4,OptimizedRegexExtractor
+ir_217,Steam 页面确认：《使命召唤：现代战争 4》存在生成式 AI 制作的内容,IT之家,https://www.ithome.com/0/957/752.htm,2026-5-31,,使命召唤,优化,,2026-05-31,3,OptimizedRegexExtractor
+ir_218,830mm 宽 594mm 厚：海尔小红花冰箱 500L 京东 3710 → 2129 元破冰新低,IT之家,https://www.ithome.com/0/957/667.htm,2026-5-30,京东,,适配,3 次,2026-05-30,4,OptimizedRegexExtractor
+ir_219,中国队缺席 2026 亚运会《英雄联盟》项目名单：王者荣耀、和平精英获直通资格，永劫无间、第五人格需参加预选赛,IT之家,https://www.ithome.com/0/957/399.htm,2026-5-30,荣耀,韩国 2026 亚运会电竞项目代表选手最终候选名单公布,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_220,传阿里京东美团竞购朴朴超市：京东否认接触，阿里、美团暂无回应,IT之家,https://www.ithome.com/0/955/009.htm,2026-5-25,阿里,,,,2026-05-25,2,OptimizedRegexExtractor
+ir_221,AI 编程工具普及背后：效率提升的假象与代码维护的隐患,IT之家,https://www.ithome.com/0/957/744.htm,2026-5-31,,原因是员工为冲榜单过度调用智能体,开源,,2026-05-31,3,OptimizedRegexExtractor
+ir_222,测试版应用现端倪，消息称苹果将为 Apple Music 推出免费 / 低价订阅套餐,IT之家,https://www.ithome.com/0/957/448.htm,2026-5-30,Apple,测试版应用,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_223,黑鲨凤鸣 Pro 耳夹式耳机预售：单耳重 5g、IPX5 防水，299 元,IT之家,https://www.ithome.com/0/955/698.htm,2026-5-27,京东,LHDC 5.0,适配,1 万次,2026-05-27,5,OptimizedRegexExtractor
+ir_224,谷歌 DeepMind CEO 哈萨比斯：AGI 最快三年内到来，研发速度远超预期,IT之家,https://www.ithome.com/0/957/154.htm,2026-5-29,DeepMind,谷歌 DeepMind CEO 哈萨比斯痛批“AI 裁员论,升级,,2026-05-29,4,OptimizedRegexExtractor
+ir_225,618 原价预约开启：英伟达 RTX 5070 FE 公版显卡京东 4599 元 20:00 开抢,IT之家,https://www.ithome.com/0/957/611.htm,2026-5-30,英伟达,RTX 5070,发布,250W,2026-05-30,5,OptimizedRegexExtractor
+ir_226,2026 美加墨世界杯来袭，中国移动咪咕与华为发布超千兆 3D 观赛方案,IT之家,https://www.ithome.com/0/957/483.htm,2026-5-30,华为,咪视界 3D 专区 + 3D 视界智慧盒 +3D 眼镜 +120Hz 电视,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_227,红魔散热器 8 Pro 霜月白特别版开售，首发 229 元,IT之家,https://www.ithome.com/0/957/664.htm,2026-5-30,京东,温控系统,优化,提升 30%,2026-05-30,5,OptimizedRegexExtractor
+ir_228,鸿蒙智行尚界 Z7/Z7T 在沪开启首批交付：全系标配华为乾崑智驾，21.98 万元起,IT之家,https://www.ithome.com/0/957/460.htm,2026-5-30,华为,尚界汽车,发布,21.98,2026-05-30,5,OptimizedRegexExtractor
+ir_229,Meta 通过追踪员工鼠标来训练 AI，或触犯欧盟隐私相关规定,IT之家,https://www.ithome.com/0/957/609.htm,2026-5-30,Google,通用数据保护条例（IT之家注,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_230,马斯克辟谣：SpaceX 下调 IPO 估值的报道不实,IT之家,https://www.ithome.com/0/957/750.htm,2026-5-31,特斯拉,直接在自家社交平台,发布,13.57,2026-05-31,5,OptimizedRegexExtractor
+ir_231,IT之家 2026 夏季招聘（可远程）,IT之家,https://www.ithome.com/0/823/017.htm,2026-1-1,,熟悉处理器,,,2026-01-01,2,OptimizedRegexExtractor
+ir_232,因报价严重低估公司价值，环球音乐集团拒绝比尔 · 阿克曼旗下公司收购要约,IT之家,https://www.ithome.com/0/957/796.htm,2026-5-31,腾讯,Pershing Square,适配,30.40,2026-05-31,5,OptimizedRegexExtractor
+ir_233,国内航线燃油附加费 6 月 5 日起下调，最高降 20 元,IT之家,https://www.ithome.com/0/957/774.htm,2026-5-31,,,,,2026-05-31,1,OptimizedRegexExtractor
+ir_234,宏碁推出优跃 FUN A312 平板电脑：10.1 英寸 800P 面板，联发科 MT8768 + 4G + 64G 售 525 元,IT之家,https://www.ithome.com/0/957/356.htm,2026-5-29,京东,优跃,发布,10.1,2026-05-29,5,OptimizedRegexExtractor
+ir_235,深圳网约车市场已饱和，官方发布风险提示,IT之家,https://www.ithome.com/0/957/473.htm,2026-5-30,,2026 年 4 月份深圳市网约车行业运营动态与风险提示,发布,142247 张,2026-05-30,4,OptimizedRegexExtractor
+ir_236,奥思维重磅发布开源鸿蒙商用车智能座舱AIOS引领产业升级,IT之家,https://www.ithome.com/0/957/139.htm,2026-5-29,奥思维重磅发布,基于开源鸿蒙的智能座舱 AIOS 实践,开源,6.1,2026-05-29,5,OptimizedRegexExtractor
+ir_237,消息称荣耀新机开案 6.89 英寸、7 英寸大直屏，搭配万级大电池,IT之家,https://www.ithome.com/0/957/499.htm,2026-5-30,苹果,±2K OLED 大直屏,升级,6.89,2026-05-30,5,OptimizedRegexExtractor
+ir_238,小米 17 Max 手机发布：8000mAh 电池、2 亿像素徕卡主摄，国补到手价 4299 元起,IT之家,https://www.ithome.com/0/953/605.htm,2026-5-21,小米,系列手机,发布,6.9,2026-05-21,5,OptimizedRegexExtractor
+ir_239,苹果 iOS 27 爆料：用 Gemini 训练本地 AI，部分 Siri 请求转向谷歌云,IT之家,https://www.ithome.com/0/956/836.htm,2026-5-29,Google,iOS 27,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_240,从 5G 到未来的 6G，高通专家：专利保护可为技术商业化提供稳定支撑,IT之家,https://www.ithome.com/0/955/212.htm,2026-5-26,高通,IMT 面向 2030 及未来发展的框架和总体目标建议书,发布,,2026-05-26,4,OptimizedRegexExtractor
+ir_241,2099 元，中兴 G5 Pro 高性能版 5G 移动路由器 CPE 将于 5 月 28 日开售,IT之家,https://www.ithome.com/0/954/221.htm,2026-5-22,京东,四核处理器,适配,4.29,2026-05-22,5,OptimizedRegexExtractor
+ir_242,杨元庆：联想将在天津投建新一代 AI 算力产品研发制造中心,IT之家,https://www.ithome.com/0/957/002.htm,2026-5-29,联想,2026 世界智能产业博览会,发布,40%,2026-05-29,5,OptimizedRegexExtractor
+ir_243,YouTube 将用 AI 改造你的首页：可根据需求生成个性化视频列表,IT之家,https://www.ithome.com/0/956/694.htm,2026-5-28,,Your custom feed,发布,,2026-05-28,3,OptimizedRegexExtractor
+ir_244,Epic CEO 斯威尼喷 Steam Deck 涨价，暗讽 G 胖买游艇,IT之家,https://www.ithome.com/0/956/904.htm,2026-5-29,,Epic Games CEO,,,2026-05-29,2,OptimizedRegexExtractor
+ir_245,小米 YU7 GT 正式发布：38.99 万元起，“大满配”42.99 万元,IT之家,https://www.ithome.com/0/953/623.htm,2026-5-21,小米,原汁原味纯血 GT+ 跑车级 SUV,发布,38.99,2026-05-21,5,OptimizedRegexExtractor
+ir_246,戴尔推出 Pro Precision 5 Series 16 移动工作站：至高 64 GB LPCAMM2 内存、RTX Pro 2000 显卡,IT之家,https://www.ithome.com/0/957/432.htm,2026-5-30,英伟达,Pro Precision 5 Series 16,发布,64 GB,2026-05-30,5,OptimizedRegexExtractor
+ir_247,微软确认：6 月 8 日 Xbox 发布会没有“Project Helix”主机新消息,IT之家,https://www.ithome.com/0/957/459.htm,2026-5-30,微软,Project Helix,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_248,MONA 系列首款 SUV，小鹏 L03 罗兰紫色实车曝光,IT之家,https://www.ithome.com/0/957/743.htm,2026-5-31,小鹏,年内,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_249,6000 多公里全程零干预：特斯拉 FSD 完成全球首次横穿加拿大自动驾驶,IT之家,https://www.ithome.com/0/957/718.htm,2026-5-31,特斯拉,一群热衷电动汽车,发布,V14.3.3 版,2026-05-31,5,OptimizedRegexExtractor
+ir_250,以持久战穿透市场喧嚣，Remedy CEO 不惧《控制：共振》撞档《GTA6》,IT之家,https://www.ithome.com/0/957/504.htm,2026-5-30,,GTA6,,,2026-05-30,2,OptimizedRegexExtractor
+ir_251,2B 参数“四两拨千斤”，智元自研世界模型 GE 2.0 登顶 WorldArena 榜单,IT之家,https://www.ithome.com/0/957/692.htm,2026-5-30,,智元自研世界模型,发布,2.0,2026-05-30,4,OptimizedRegexExtractor
+ir_252,《海尔兄弟 2》先导片官宣 6 月 1 日播出，动画计划 2027 年春节上线,IT之家,https://www.ithome.com/0/957/742.htm,2026-5-31,腾讯,海尔兄弟 2,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_253,吉利被曝再度整合智驾团队，官方对此不予回应,IT之家,https://www.ithome.com/0/957/658.htm,2026-5-30,华为,36 氪汽车,,,2026-05-30,3,OptimizedRegexExtractor
+ir_254,全球首款 24 英寸 4K 160Hz 显示器优派 VX24G26J 上市：首发 2199 元,IT之家,https://www.ithome.com/0/957/417.htm,2026-5-30,京东,K 160,适配,1.8,2026-05-30,5,OptimizedRegexExtractor
+ir_255,因北汽集团、吉利李书福合计持股近 20%，奔驰或在美国面临禁售禁产,IT之家,https://www.ithome.com/0/957/709.htm,2026-5-31,,2026 年联网汽车安全法案,,20%,2026-05-31,3,OptimizedRegexExtractor
+ir_256,会员 618 狂促合集：WPS 超会 58 元 / 年、115 官方 75 元 / 年探底，B站百度网盘夸克直降,IT之家,https://www.ithome.com/0/956/648.htm,2026-5-28,百度,WPS 超级会员 3 年,,3 次,2026-05-28,4,OptimizedRegexExtractor
+ir_257,新增 PC 级桌面、YOYO 伴学助手等，荣耀平板MagicOS 6 月更新公布,IT之家,https://www.ithome.com/0/957/466.htm,2026-5-30,荣耀,伴学助手,升级,2.0,2026-05-30,5,OptimizedRegexExtractor
+ir_258,美团针对不同商家类型将上线更多真实标签，堂食标签已全量开放设置,IT之家,https://www.ithome.com/0/957/310.htm,2026-5-29,美团,外卖平台,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_259,【20:00~20:15 速抢不限量大红包】全网 618 开门红 20:00 开抢，华为 Mate80 手机 618 元秒杀,IT之家,https://www.ithome.com/0/957/610.htm,2026-5-30,华为,淘宝无门槛红包可直接在各平台,适配,3 次,2026-05-30,5,OptimizedRegexExtractor
+ir_260,开发商 Infinity Ward ：要让《现代战争 4》回归《使命召唤》系列的根源,IT之家,https://www.ithome.com/0/957/607.htm,2026-5-30,,现代战争 4,,,2026-05-30,2,OptimizedRegexExtractor
+ir_261,曝苹果即将开启 2026 年返校季促销活动，赠品尚不明确,IT之家,https://www.ithome.com/0/956/834.htm,2026-5-29,Apple,Apple Pencil Pro,,,2026-05-29,3,OptimizedRegexExtractor
+ir_262,微软 Office 2019 for Mac 下月停止支持，旧系统用户只能使用功能受限模式,IT之家,https://www.ithome.com/0/956/841.htm,2026-5-29,Microsoft,Office 2019,升级,,2026-05-29,4,OptimizedRegexExtractor
+ir_263,MiniMax 签署辅导协议，正式启动 A 股 IPO 进程,IT之家,https://www.ithome.com/0/957/415.htm,2026-5-30,华为,官方预告 MiniMax M3 系列 AI 模型即将登场,开源,111.39,2026-05-30,5,OptimizedRegexExtractor
+ir_264,中国汽车流通协会成立奔驰、宝马、保时捷三大品牌经销商分会，应对转型升级严峻考验,IT之家,https://www.ithome.com/0/957/542.htm,2026-5-30,,2026 中国汽车经销商大会,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_265,6 月起影响你我生活的新规：疲劳驾驶认定规则变化、明确“开门杀”责任等,IT之家,https://www.ithome.com/0/957/727.htm,2026-5-31,,细化外卖平台,升级,,2026-05-31,3,OptimizedRegexExtractor
+ir_266,魔法扫帚用上麻瓜技术：剧版《哈利 · 波特》道具频繁被盗，剧组植入微型芯片定位,IT之家,https://www.ithome.com/0/947/627.htm,2026-5-8,,剧组植入微型芯片,,,2026-05-08,2,OptimizedRegexExtractor
+ir_267,180℃ 活性蒸汽：石头洗地机 A30 Pro Steam 2.0 国补后 2350 元,IT之家,https://www.ithome.com/0/957/679.htm,2026-5-30,京东,Steam 2.0,适配,2.0,2026-05-30,5,OptimizedRegexExtractor
+ir_268,三体公司原 CEO 许垚被执行死刑：毒杀游族网络创始人林奇,IT之家,https://www.ithome.com/0/955/198.htm,2026-5-26,,警情通报显示,发布,,2026-05-26,3,OptimizedRegexExtractor
+ir_269,你的手机变遥控器，OpenAI 扩展 Codex 远程控制支持 Win10/Win11,IT之家,https://www.ithome.com/0/957/422.htm,2026-5-30,OpenAI,你的手机,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_270,华为余承东不谦虚了：全新一代问界 M9 是地球已上市的车里最强悍 SUV，没有之一,IT之家,https://www.ithome.com/0/956/059.htm,2026-5-27,华为,最强悍 SUV,发布,47.98,2026-05-27,5,OptimizedRegexExtractor
+ir_271,让 Win11 PC 共享文件、外设，英特尔发布 Thunderbolt Share 雷电共享技术,IT之家,https://www.ithome.com/0/957/427.htm,2026-5-30,英特尔,Thunderbolt Share,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_272,微星 Claw 8 EX AI+ 掌机实物亮相，确认升级人体工学防滑握把,IT之家,https://www.ithome.com/0/957/723.htm,2026-5-31,英特尔,Claw 8,发布,100%,2026-05-31,5,OptimizedRegexExtractor
+ir_273,10 名车主诉特斯拉 FSD 欺诈案国内开庭，索赔 395 万余元,IT之家,https://www.ithome.com/0/957/387.htm,2026-5-29,特斯拉,Autopilot 自动辅助驾驶套件,发布,6.4,2026-05-29,5,OptimizedRegexExtractor
+ir_274,IT早报 0530：10 名车主诉特斯拉 FSD 欺诈案国内开庭；Claude Opus 4.8 被指蒸馏中国 AI；黄仁勋评价华为韬定律；央视曝光某国用 41 种网络武器攻击我高校...,IT之家,https://www.ithome.com/0/957/400.htm,2026-5-30,英伟达,Opus 4.8,发布,4.8,2026-05-30,5,OptimizedRegexExtractor
+ir_275,抖音电商严打“抖音 618 专属金卡”等引流诈骗：未发放相关实体卡片,IT之家,https://www.ithome.com/0/956/243.htm,2026-5-28,,抖音 618 专属金卡,发布,,2026-05-28,3,OptimizedRegexExtractor
+ir_276,春晚小品《你准喜欢》玩梗“旧的呢”玩一半，转转 App 发文称对不起大家没钱上春晚,IT之家,https://www.ithome.com/0/922/229.htm,2026-2-17,,刷手机,,,2026-02-17,2,OptimizedRegexExtractor
+ir_277,6799 元 → 4174 元：大疆 ROMO P 透明机身扫拖机器人 6 折国补新低,IT之家,https://www.ithome.com/0/957/619.htm,2026-5-30,京东,透明机身扫拖机器人,发布,15%,2026-05-30,5,OptimizedRegexExtractor
+ir_278,武汉大学就 OPPO 母亲节文案发声：极不认同内容表述和价值倾向,IT之家,https://www.ithome.com/0/948/487.htm,2026-5-10,OPPO,OPPO 文案价值观,,,2026-05-10,3,OptimizedRegexExtractor
+ir_279,Mac App Store 版微软 OneDrive 更新 26.084.0504，修复无法打开问题,IT之家,https://www.ithome.com/0/954/388.htm,2026-5-23,微软,但许多用户更新以后发现应用,发布,26.084.0504,2026-05-23,5,OptimizedRegexExtractor
+ir_280,金河田预告碳化硅 (SiC) 方案 Vortexis Platinum 高功率电源,IT之家,https://www.ithome.com/0/957/784.htm,2026-5-31,,高算力平台,发布,2026 台,2026-05-31,4,OptimizedRegexExtractor
+ir_281,“吃瓜前线”“大福肉丸子”MCN 向雷军和小米集团致歉,IT之家,https://www.ithome.com/0/957/605.htm,2026-5-30,小米,昨日在今日头条平台,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_282,QQ 鸿蒙版 App 获 9.2.25 新版本邀测升级：支持设置在线状态，新增 QQ 邮箱、 QQ 钱包插件,IT之家,https://www.ithome.com/0/957/452.htm,2026-5-30,华为,昨日在华为应用,升级,9.2.25,2026-05-30,5,OptimizedRegexExtractor
+ir_283,苹果 Apple Music 服务中断，部分用户可能遇到间歇性问题,IT之家,https://www.ithome.com/0/957/403.htm,2026-5-30,Apple,根据苹果官方系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_284,白帽黑客公开 Windows 零日漏洞，微软强硬回应引争议,IT之家,https://www.ithome.com/0/957/697.htm,2026-5-31,微软,梦魇日蚀（Nightmare Eclipse）,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_285,OpenAI 升级 GPT,IT之家,https://www.ithome.com/0/957/437.htm,2026-5-30,OpenAI,GPT,发布,5.5,2026-05-30,5,OptimizedRegexExtractor
+ir_286,雷鸟 V4 AI 拍摄眼镜发布：首发方形传感器，售价 2199 元起,IT之家,https://www.ithome.com/0/956/192.htm,2026-5-27,高通,雷鸟 V4,发布,0.2,2026-05-27,5,OptimizedRegexExtractor
+ir_287,开源兼容层 Wine 11.10 发布：升级 VKD3D 2.0，修复 17 个 Bug,IT之家,https://www.ithome.com/0/957/464.htm,2026-5-30,Meta,VKD3D 2.0,开源,11.10,2026-05-30,5,OptimizedRegexExtractor
+ir_288,2026年家用除二手烟负离子空气净化器排行：高性价比选购攻略,IT之家,https://www.ithome.com/0/957/772.htm,2026-5-31,,年空净行业技术全面,升级,,2026-05-31,3,OptimizedRegexExtractor
+ir_289,小米汽车：YU7 全系，从标准版到 GT 均采用「铠甲笼式钢铝混合车身」,IT之家,https://www.ithome.com/0/957/699.htm,2026-5-31,小米,小米汽车,发布,90.2,2026-05-31,5,OptimizedRegexExtractor
+ir_290,299 元，黑鲨首款 AI 智能耳机“凤鸣耳夹式耳机 Pro”首销,IT之家,https://www.ithome.com/0/957/731.htm,2026-5-31,京东,凤鸣耳夹式耳机 Pro,适配,332.1,2026-05-31,5,OptimizedRegexExtractor
+ir_291,嘉合劲威神可推出搭载国产芯片的 DDR5 RDIMM 服务器内存条,IT之家,https://www.ithome.com/0/957/787.htm,2026-5-31,AMD,嘉合劲威神可推出搭载国产芯片,发布,16GB,2026-05-31,5,OptimizedRegexExtractor
+ir_292,首发 1099 元，中兴星云 PoE 子母路由 1 拖 3 套装今日开售,IT之家,https://www.ithome.com/0/957/495.htm,2026-5-30,京东,主路由采用中兴自研第三代主芯片,发布,3000Mb,2026-05-30,5,OptimizedRegexExtractor
+ir_293,文石 Note X6 墨水屏读写办公本首销：10.3 英寸、高通 6690，售价 3299 元,IT之家,https://www.ithome.com/0/957/747.htm,2026-5-31,京东,并对百款应用,优化,10.3,2026-05-31,5,OptimizedRegexExtractor
+ir_294,成渝中线高铁铺轨施工启动，通车后成都至重庆 50 分钟可达,IT之家,https://www.ithome.com/0/957/506.htm,2026-5-30,,现场同步启用工程线智能化行车调度系统,,提升 30%,2026-05-30,3,OptimizedRegexExtractor
+ir_295,美国运营商 AT&T 用户买手机遭乱收费自行维权无门，向 FCC 投诉后迅速获赔,IT之家,https://www.ithome.com/0/922/817.htm,2026-2-22,苹果,用户买手机,发布,380.8,2026-02-22,5,OptimizedRegexExtractor
+ir_296,1 分钟速读 5 月 31 日 618 开门红 4 小时秒杀攻略：百度网盘 13.5 元 / 月探底，速速保价,IT之家,https://www.ithome.com/0/957/803.htm,2026-5-31,百度,WPS 超级会员 3 年,适配,13.5,2026-05-31,5,OptimizedRegexExtractor
+ir_297,英国歌手杜阿 · 利帕起诉三星案最新进展：后者否认不当行为，愿意达成建设性解决方案,IT之家,https://www.ithome.com/0/950/955.htm,2026-5-15,三星,三星未经授权使用英国歌手杜阿 · 利帕照片营销电视,,1.02,2026-05-15,4,OptimizedRegexExtractor
+ir_298,努比亚 M153 豆包手机推送 Obric UI 2 大版本更新：新增华为 Freeclip2 配对弹窗、锁屏 AI 空间，支持跨设备记忆迁移,IT之家,https://www.ithome.com/0/957/455.htm,2026-5-30,华为,豆包手机,发布,v2.2.0.0,2026-05-30,5,OptimizedRegexExtractor
+ir_299,消息称尊界 S800 成功后华为在跟国产头部供应商合作，帮助后者发展高端子品牌和子型号产品,IT之家,https://www.ithome.com/0/957/748.htm,2026-5-31,华为,这个核心能力拔高了中国汽车,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_300,开放麒麟 openKylin 3.0 Alpha1 预览版发布，系统底层架构整体翻新,IT之家,https://www.ithome.com/0/957/385.htm,2026-5-29,,openKylin 3.0,发布,3.0,2026-05-29,4,OptimizedRegexExtractor
+ir_301,摩托罗拉官宣 Edge 70 Pro+ 手机：天玑 8500 Extreme 芯片,IT之家,https://www.ithome.com/0/957/471.htm,2026-5-30,联发科,Edge 70,升级,6.8,2026-05-30,5,OptimizedRegexExtractor
+ir_302,HBO 奇幻剧《龙之家族》第三季定档 6 月 22 日，最终预告片曝光喉道海战,IT之家,https://www.ithome.com/0/957/474.htm,2026-5-30,,了热门剧集,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_303,1 个月烧掉 5 亿美元，报道称企业对 AI 热情开始降温,IT之家,https://www.ithome.com/0/957/496.htm,2026-5-30,微软,要不要用 AI,发布,33.9,2026-05-30,5,OptimizedRegexExtractor
+ir_304,微软 5 月可选更新放开 C:\Users\ 命名限制，不再只截取邮箱前 5 位,IT之家,https://www.ithome.com/0/957/470.htm,2026-5-30,微软,仍可能需要重装系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_305,Double IH 热旋速热 + FBAC 风舱速冷：松下 Xtra 零零煲电饭煲 899 → 378 元新低,IT之家,https://www.ithome.com/0/957/687.htm,2026-5-30,京东,风舱速冷系统,升级,8.8,2026-05-30,5,OptimizedRegexExtractor
+ir_306,苹果 macOS 26.6 开发者预览版 Beta 1 发布,IT之家,https://www.ithome.com/0/955/627.htm,2026-5-27,Apple,macOS 26.6,发布,26.6,2026-05-27,5,OptimizedRegexExtractor
+ir_307,海盗船 CX750W 电源开售：80PLUS 铜牌认证、499 元,IT之家,https://www.ithome.com/0/957/444.htm,2026-5-30,京东,CX750W,适配,750W,2026-05-30,5,OptimizedRegexExtractor
+ir_308,京东红包今日 10:00 再加码，累计打卡 6 天限量抢 2 元红包,IT之家,https://www.ithome.com/0/957/715.htm,2026-5-31,京东,,适配,3 次,2026-05-31,4,OptimizedRegexExtractor
+ir_309,上门取送 6.18 元远低闲鱼：京东快递 618 大降价，寄全国 19.9 → 6.18 元,IT之家,https://www.ithome.com/0/957/540.htm,2026-5-30,京东,,适配,6.18,2026-05-30,4,OptimizedRegexExtractor
+ir_310,微软放宽 Win11 摄像头限制，视频会议和录制将不再冲突,IT之家,https://www.ithome.com/0/957/413.htm,2026-5-30,Microsoft,让多个应用使用你的摄像头,发布,26200.8524,2026-05-30,5,OptimizedRegexExtractor
+ir_311,技嘉推出 D5 Single Boost：单通道内存自动超频 8400MT/s，带宽接近双通道,IT之家,https://www.ithome.com/0/957/735.htm,2026-5-31,英特尔,D5 Single Boost,发布,10%,2026-05-31,5,OptimizedRegexExtractor
+ir_312,首次原生支持 AMD HDMI VRR，SteamOS 3.8.6 Beta 版发布,IT之家,https://www.ithome.com/0/957/456.htm,2026-5-30,AMD,SteamOS 3.8.6,发布,3.8.6 Beta,2026-05-30,5,OptimizedRegexExtractor
+ir_313,【视频】每一帧都清晰！荣耀600 系列首发全焦段4K Live，随手拍出电影感,IT之家,https://www.ithome.com/0/955/028.htm,2026-5-25,荣耀,Live,,,2026-05-25,3,OptimizedRegexExtractor
+ir_314,双滤芯架构 + 双扇叶设计：小米米家空气净化器 6 国补后 1799 → 926 元,IT之家,https://www.ithome.com/0/957/666.htm,2026-5-30,小米,可构成强劲双气流系统,升级,926.76,2026-05-30,5,OptimizedRegexExtractor
+ir_315,在火狐 Firefox 安装“所有”扩展会发生什么：打开浏览器就得 40 分钟，几乎无法使用,IT之家,https://www.ithome.com/0/938/180.htm,2026-4-11,Meta,打开浏览器,开源,8.4,2026-04-11,5,OptimizedRegexExtractor
+ir_316,2027 款斯柯达柯迪亚克 Kodiaq 路测图曝光,IT之家,https://www.ithome.com/0/957/447.htm,2026-5-30,,代模块化信息娱乐系统,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_317,华为徐直军“感谢”美国制裁：使得我们国家半导体产业链能够真正地成长起来，现在势头好得很,IT之家,https://www.ithome.com/0/957/730.htm,2026-5-31,华为,以及逻辑折叠芯片,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_318,北京太空智算研究院在亦庄成立，2028 年前完成首发试验星研制与发射,IT之家,https://www.ithome.com/0/957/684.htm,2026-5-30,京东,星载算力芯片,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_319,20 亿美元机器人独角兽将民宿当实验室：多套 Airbnb 房源受损，房东发起诉讼,IT之家,https://www.ithome.com/0/957/734.htm,2026-5-31,,亿美元机器人,,12383.50,2026-05-31,3,OptimizedRegexExtractor
+ir_320,广东：“港车北上”政策延长至 2031 年,IT之家,https://www.ithome.com/0/957/604.htm,2026-5-30,,依托数字政府一体化平台,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_321,宁德时代首席科学家吴凯：钠离子电池今年规模量产，下一步聚焦锂空气电池,IT之家,https://www.ithome.com/0/957/477.htm,2026-5-30,,储能四大领域同步推进应用,发布,175W,2026-05-30,4,OptimizedRegexExtractor
+ir_322,Epic 喜加二：《孤星猎人》《Calico》游戏免费领取,IT之家,https://www.ithome.com/0/956/817.htm,2026-5-28,,Calico,,,2026-05-28,2,OptimizedRegexExtractor
+ir_323,公安部道路交通安全研究中心马明月：自动驾驶在遵守交规方面仍有很大不足,IT之家,https://www.ithome.com/0/957/489.htm,2026-5-30,特斯拉,未来汽车,,,2026-05-30,3,OptimizedRegexExtractor
+ir_324,接近太阳光的护眼灯怎么选？三项黄金标准值得参考,IT之家,https://www.ithome.com/0/957/791.htm,2026-5-31,,Solmilar 源生自然光,升级,,2026-05-31,3,OptimizedRegexExtractor
+ir_325,韩 AI 芯片企业 FuriosaAI 携手博通开发下一代 2nm 推理加速器,IT之家,https://www.ithome.com/0/956/278.htm,2026-5-28,,这一芯片,发布,2nm,2026-05-28,4,OptimizedRegexExtractor
+ir_326,新一代全域智能操作系统麒麟 100 正式发布：打通移动与桌面生态，支持双系统无感切换,IT之家,https://www.ithome.com/0/957/431.htm,2026-5-30,,新一代全域智能操作系统,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_327,4599 → 1699 元：石头 P10S Pro 扫拖机器人上市 2 年立打 3.69 折,IT之家,https://www.ithome.com/0/957/671.htm,2026-5-30,京东,扫拖机器人,适配,3.69,2026-05-30,5,OptimizedRegexExtractor
+ir_328,时隔三年：水墨风武侠国漫《镖人》第二季定档 6 月 11 日腾讯视频独播,IT之家,https://www.ithome.com/0/957/458.htm,2026-5-30,腾讯,在各大评分平台,发布,8.3,2026-05-30,5,OptimizedRegexExtractor
+ir_329,消息称千里科技将整合吉利辅助驾驶团队，剑指“第二个华为”,IT之家,https://www.ithome.com/0/957/383.htm,2026-5-29,华为,36 氪汽车,,,2026-05-29,3,OptimizedRegexExtractor
+ir_330,湖北电信与华为打造 5G,IT之家,https://www.ithome.com/0/954/393.htm,2026-5-23,华为,随时随地 20Mbps,优化,1.8,2026-05-23,5,OptimizedRegexExtractor
+ir_331,对谈蔚来李斌：特斯拉 FSD 进中国是好事，真用起来就知道了,IT之家,https://www.ithome.com/0/957/186.htm,2026-5-29,特斯拉,CBA 总决赛必须得看,发布,2.47,2026-05-29,5,OptimizedRegexExtractor
+ir_332,漫步者推出 HECATE G3 Max 底座版无线头戴耳机，首发价 374 元,IT之家,https://www.ithome.com/0/957/794.htm,2026-5-31,京东,HECATE G3 Max,发布,10%,2026-05-31,5,OptimizedRegexExtractor
+ir_333,英伟达黄仁勋评价韬定律：对华为来说是突破，但对台积电不是威胁,IT之家,https://www.ithome.com/0/956/852.htm,2026-5-29,英伟达,逻辑折叠（ LogicFolding）,发布,4 倍,2026-05-29,5,OptimizedRegexExtractor
+ir_334,8.0.74 for iOS 正式版更新，横屏通话 / 本机登录等大量功能灰度,IT之家,https://www.ithome.com/0/957/357.htm,2026-5-29,,若将手机,发布,8.0.74,2026-05-29,4,OptimizedRegexExtractor
+ir_335,"联想 NVIDIA N1X 笔电现身保加利亚电商，处理器包含 ""675"" ""650"" 等款式",IT之家,https://www.ithome.com/0/957/720.htm,2026-5-31,NVIDIA,675,,15.3,2026-05-31,4,OptimizedRegexExtractor
+ir_336,消息称微软下周发布英伟达处理器 Windows PC，戴尔也会跟进,IT之家,https://www.ithome.com/0/957/690.htm,2026-5-30,微软,PC 的新时代,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_337,乐道沈斐总结焕新款 L60 汽车六大维度升级关键信息，称智驾进入第一梯队,IT之家,https://www.ithome.com/0/957/738.htm,2026-5-31,英伟达,ONVO,发布,11.9,2026-05-31,5,OptimizedRegexExtractor
+ir_338,乘客被困隧道超 2 小时，官方通报 D1804 次列车受电弓遭异物击打,IT之家,https://www.ithome.com/0/957/490.htm,2026-5-30,,官方通报,发布,1804 次,2026-05-30,4,OptimizedRegexExtractor
+ir_339,IT之家，十五岁～,IT之家,https://www.ithome.com/0/950/954.htm,2026-5-15,,IT之家,,,2026-05-15,2,OptimizedRegexExtractor
+ir_340,苹果 iOS 描述文件下载大全 & 完全使用攻略：玩测试版 / 限制升级……,IT之家,https://www.ithome.com/0/342/425.htm,2021-6-18,Apple,例如更新开发者预览版系统,升级,16.4,2021-06-18,5,OptimizedRegexExtractor
+ir_341,华为麒麟 2026 芯片官方剧透：晶体管密度提升 53.5％，峰值频率首超 3GHz,IT之家,https://www.ithome.com/0/954/746.htm,2026-5-25,华为,在今日的国际电路与系统,,2026 芯片,2026-05-25,4,OptimizedRegexExtractor
+ir_342,科大讯飞 AI 眼镜发布：支持 122 种语言翻译，售价 4299 元,IT之家,https://www.ithome.com/0/956/742.htm,2026-5-28,科大讯飞,眼前的超级 AI 助理,发布,,2026-05-28,4,OptimizedRegexExtractor
+ir_343,特斯拉监督版 FSD 官宣登陆中国,IT之家,https://www.ithome.com/0/953/120.htm,2026-5-21,特斯拉,这标志着该系统,发布,782.9,2026-05-21,5,OptimizedRegexExtractor
+ir_344,全球运载能力最大：星火空间官宣正在研发我国第一款电循环液体运载火箭“进化一号”,IT之家,https://www.ithome.com/0/957/746.htm,2026-5-31,,国内首家专注于电循环液体运载火箭航天运输系统,,27.5,2026-05-31,3,OptimizedRegexExtractor
+ir_345,全新理想 L8 车型 6 月底上市，“六座”变“五座”,IT之家,https://www.ithome.com/0/957/304.htm,2026-5-29,理想,日晚举行的理想汽车,发布,72.7,2026-05-29,5,OptimizedRegexExtractor
+ir_346,赢了才能开电脑，开发者耗时 10 个月自制 UEFI 小游戏合集,IT之家,https://www.ithome.com/0/912/185.htm,2026-1-10,GitHub,UEFI 小游戏合集,开源,,2026-01-10,4,OptimizedRegexExtractor
+ir_347,微软 GitHub Copilot 改计费模式后成本暴涨，引开发者吐槽,IT之家,https://www.ithome.com/0/957/707.htm,2026-5-31,微软,纷纷在社交平台,,196.7,2026-05-31,4,OptimizedRegexExtractor
+ir_348,京东否认竞购英国电商平台 The Very Group,IT之家,https://www.ithome.com/0/955/808.htm,2026-5-27,京东,京东否认竞购英国电商平台,,182.97,2026-05-27,4,OptimizedRegexExtractor
+ir_349,华为 FreeBuds SE 4 ANC 新增海岛蓝配色，首发 169 元,IT之家,https://www.ithome.com/0/957/420.htm,2026-5-30,华为,SE 4,发布,145.55,2026-05-30,5,OptimizedRegexExtractor
+ir_350,【IT之家评测室】绿联 NAS 私有云 DXP4800 GT 深度体验：四盘位配双万兆，这配置太“GT”了,IT之家,https://www.ithome.com/0/953/580.htm,2026-5-21,,GT,发布,64GB,2026-05-21,4,OptimizedRegexExtractor
+ir_351,漫威动画《X 战警 97》第二季定档 7 月 1 日上线 Disney+：金刚狼绝境归来，变种人穿越时空迎战天启,IT之家,https://www.ithome.com/0/957/472.htm,2026-5-30,,Disney,发布,,2026-05-30,3,OptimizedRegexExtractor
+ir_352,区分买断版，苹果 Creator Studio 订阅版应用升级液态玻璃风格图标,IT之家,https://www.ithome.com/0/956/249.htm,2026-5-28,苹果,订阅版应用,发布,,2026-05-28,4,OptimizedRegexExtractor
+ir_353,复旦学姐，估值1000亿,36氪科技,https://36kr.com/p/3831510606473090,2026-05-31,Meta,AI云,开源,,2026-05-31,4,OptimizedRegexExtractor
+ir_354,实测 Claude Opus 4.8：活干得更漂亮了，话说得更难听了,36氪科技,https://36kr.com/p/3830314524927877,2026-05-29,OpenAI,Opus 4.8,发布,4.8,2026-05-29,5,OptimizedRegexExtractor
+ir_355,上海大模型龙头，启动A股上市,36氪科技,https://36kr.com/p/3831159799834249,2026-05-30,智谱,上海大模型,发布,409.09%,2026-05-30,5,OptimizedRegexExtractor
+ir_356,小鹏“失血”闯关物理AI的三个赛道,36氪科技,https://36kr.com/p/3830314552125065,2026-05-29,特斯拉,物理AI,发布,17.6%,2026-05-29,5,OptimizedRegexExtractor
+ir_357,苹果用AI重新发明了图像压缩：同样画质，文件只要三分之一,36氪科技,https://36kr.com/p/3831176819124103,2026-05-30,苹果,都还是在数学指标的框架,发布,2605.05148,2026-05-30,5,OptimizedRegexExtractor
+ir_358,马斯克「夸下的海口」，值2万亿美元吗？,36氪科技,https://36kr.com/p/3831272431593093,2026-05-30,特斯拉,物理世界操作系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_359,罗永浩不干了，一个时代结束了,36氪科技,https://36kr.com/p/3830314476349063,2026-05-29,苹果,东半球最好手机,发布,100%,2026-05-29,5,OptimizedRegexExtractor
+ir_360,越来越多打工人对着电脑“嘀嘀咕咕”,36氪科技,https://36kr.com/p/3830314735380096,2026-05-29,百度,6・18,发布,1000台,2026-05-29,5,OptimizedRegexExtractor
+ir_361,思必驰要上市了，但AI语音的护城河没了,36氪科技,https://36kr.com/p/3830312452630150,2026-05-29,OpenAI,但大模型,,6.01,2026-05-29,4,OptimizedRegexExtractor
+ir_362,AI等来了王传福,36氪科技,https://36kr.com/p/3830057055281411,2026-05-29,特斯拉,中国首款自研4nm高阶智驾芯片,发布,4nm,2026-05-29,5,OptimizedRegexExtractor
+ir_363,小鹏2026Q1业绩会，何小鹏：人形机器人年底量产，2027年向商业客户交付,36氪科技,https://36kr.com/p/3830070855509892,2026-05-29,小鹏,人形机器人,发布,17.6%,2026-05-29,5,OptimizedRegexExtractor
+ir_364,绩后暴涨40%，起底戴尔财报：AI下半场，一场“得物理基础设施者得天下”的军备竞赛,36氪科技,https://36kr.com/p/3830087925393031,2026-05-29,,聊天软件,发布,40%,2026-05-29,4,OptimizedRegexExtractor
+ir_365,生物学变天：小扎的新开源模型，彻底掀翻谷歌AlphaFold王座,36氪科技,https://36kr.com/p/3830290697414528,2026-05-29,DeepMind,小扎的新开源模型,开源,5 倍,2026-05-29,5,OptimizedRegexExtractor
+ir_366,700亿融资赶紧到位吧，DeepSeek 开始限制重生、修改次数了,36氪科技,https://36kr.com/p/3831137120395271,2026-05-30,DeepSeek,上门服务直约平台,发布,6次,2026-05-30,5,OptimizedRegexExtractor
+ir_367,王小川和李开复，领着六小虎“AI的迫降”,36氪科技,https://36kr.com/p/3831204618477824,2026-05-30,OpenAI,AI的迫降,发布,2.0,2026-05-30,5,OptimizedRegexExtractor
+ir_368,黄仁勋“入职”清华：老黄为什么加入这张“圆桌”？,36氪科技,https://36kr.com/p/3830251287078531,2026-05-29,Meta,英伟达已经基本将中国AI芯片,,,2026-05-29,3,OptimizedRegexExtractor
+ir_369,智谱和Minimax，市值差了4000多亿港元,36氪科技,https://36kr.com/p/3830290263500678,2026-05-29,智谱,企业级Agent和企业级通用大模型,发布,23.18,2026-05-29,5,OptimizedRegexExtractor
+ir_370,36氪政府服务全面升级，助推产业破局发展,36氪科技,https://www.36kr.com/p/2492318105786505,2023-10-27,36氪政府服务全面,政府服务内容,升级,,2023-10-27,4,OptimizedRegexExtractor
+ir_371,7位车圈大佬深圳开炮：没有利润的销量是虚假繁荣，行业淘汰赛正加速,36氪科技,https://36kr.com/p/3830312676779910,2026-05-29,蔚来,零跑汽车,,,2026-05-29,3,OptimizedRegexExtractor
+ir_372,新能源车险终于要赚钱了？人保Q1承保利润71亿创纪录,36氪科技,https://36kr.com/p/3830160293388289,2026-05-29,比亚迪,,,40%,2026-05-29,3,OptimizedRegexExtractor
+ir_373,华尔街最火00后,36氪科技,https://36kr.com/p/3832884398598024,2026-05-31,OpenAI,不梭哈风头无两的AI芯片,,,2026-05-31,3,OptimizedRegexExtractor
+ir_374,翻倍又闪崩！AI故事讲不下去了？,36氪科技,https://36kr.com/p/3832898367170185,2026-05-31,阶跃星辰,消费+AI科技,发布,20%,2026-05-31,5,OptimizedRegexExtractor
+ir_375,比亚迪首款4nm车规智驾芯片，含金量几何？,36氪科技,https://36kr.com/p/3830122454541954,2026-05-29,比亚迪,比亚迪首款4nm车规智驾芯片,发布,4nm,2026-05-29,5,OptimizedRegexExtractor
+ir_376,“中国最会烧钱的4个男人，坐上了同一张牌桌”,36氪科技,https://36kr.com/p/3831900268865157,2026-05-31,智谱,中国最会烧钱的4个男人,发布,增长131.9%,2026-05-31,5,OptimizedRegexExtractor
+ir_377,4大顶尖模型被扔进虚拟小镇求生，GPT全员饿死，Grok四天灭世,36氪科技,https://36kr.com/p/3830290559756161,2026-05-29,,4大顶尖模型,,4.1,2026-05-29,3,OptimizedRegexExtractor
+ir_378,机器人不像人，还算“赛博物种”吗？,36氪科技,https://36kr.com/p/3831238496167808,2026-05-30,,机器人是否要做成人形,适配,,2026-05-30,3,OptimizedRegexExtractor
+ir_379,量子计算迎来“晶圆厂时刻”，谁先受益？,36氪科技,https://36kr.com/p/3830200651032195,2026-05-29,,芯片与科学法案,发布,,2026-05-29,3,OptimizedRegexExtractor
+ir_380,Mac mini卖断货，「断头」MacBook成了AI新宠？,36氪科技,https://36kr.com/p/3831375939018753,2026-05-30,苹果,随着Mac快速进入到自研芯片,发布,256GB,2026-05-30,5,OptimizedRegexExtractor
+ir_381,普渡机器人创始人张涛出席BEYOND Expo开幕式，共话“数实共生”下的Physical AI路径,36氪科技,https://36kr.com/p/3830212844808070,2026-05-29,,普渡机器人,,000台,2026-05-29,3,OptimizedRegexExtractor
+ir_382,玻璃基板产业化进展到哪了？,36氪科技,https://36kr.com/p/3831206839477897,2026-05-30,英伟达,玻璃基板的产业化应用,适配,0.003,2026-05-30,5,OptimizedRegexExtractor
+ir_383,讯飞AI眼镜亮相BEYOND Expo 2026，拓展AI终端走向真实场景新路径,36氪科技,https://36kr.com/p/3830205689357954,2026-05-29,科大讯飞,Expo 2026,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_384,第二十一届光博会在武汉开幕（组图）,新华网科技,http://www.news.cn/tech/20260519/c4101dd5aa6d479fb6bf3b6c14c945a5/c.html,2026-05-19,,pagebreak,,,2026-05-19,2,OptimizedRegexExtractor
+ir_385,AI算力驱动需求爆发 国产光通信产品出海热销,新华网科技,http://www.news.cn/tech/20260529/264d6cd1dffd4681b9e03617807f5442/c.html,2026-05-29,,海外订单排期已延至2028年,升级,100%,2026-05-29,4,OptimizedRegexExtractor
+ir_386,进取｜5·30全国科技工,新华网科技,https://www.news.cn/tech/20260530/51650e066721451aacc55d3bfe005b2a/c.html,2026-05-30,,9.9,,9.9,2026-05-30,3,OptimizedRegexExtractor
+ir_387,中国第42次南极考察队“雪龙2”号凯旋,新华网科技,http://www.news.cn/tech/20260520/9545d47809fc409293a76ca2ae15035a/c.html,2026-05-20,,雪龙2,,42次,2026-05-20,3,OptimizedRegexExtractor
+ir_388,水运业向智向海加快融合,新华网科技,http://www.news.cn/tech/20260528/10bbf6f57d944b36bd0135bf0d8cbf9d/c.html,2026-05-28,,智能航运2030行动计划,发布,,2026-05-28,3,OptimizedRegexExtractor
+ir_389,国产大模型从拼免费转向拼价值,新华网科技,http://www.news.cn/tech/20260528/28805586af874ce6bba5beb3b68957b8/c.html,2026-05-28,智谱,国产大模型,发布,,2026-05-28,4,OptimizedRegexExtractor
+ir_390,梅宏院士寄语青年科研人：用好AI、夯实基础、敢闯科技无人区,新华网科技,http://www.news.cn/tech/20260529/39742278177340a2badc1ee08d0f1dda/c.html,2026-05-29,,for Science,,,2026-05-29,2,OptimizedRegexExtractor
+ir_391,4月我国网约车订单量达9.24亿单,新华网科技,http://www.news.cn/tech/20260529/81858e655ad04d90b025a7d03375e52b/c.html,2026-05-29,腾讯,据交通运输部网约车监管信息交互系统,,1.7,2026-05-29,4,OptimizedRegexExtractor
+ir_392,360发布智能体安全报告：Skill成智能体风险新入口,新华网科技,https://www.news.cn/tech/20260525/7bf4998c12894a7183432528ad25c756/c.html,2026-05-25,360,端+云+管理平台,发布,,2026-05-25,4,OptimizedRegexExtractor
+ir_393,从产品出海到定义规则，Ulike解密中国美肤科技全球化之路,新华网科技,https://www.news.cn/tech/20260522/a318f24ab67f42ed8ae8cdb0bf8d57af/c.html,2026-05-22,,2026家用脱毛仪行业科学与标准白皮书,发布,16%,2026-05-22,4,OptimizedRegexExtractor
+ir_394,新华视点｜拥抱人工智能 共绘美好愿景,新华网科技,http://www.news.cn/tech/20260521/d6f8968b2d3841f6a8cb37b4a9a7da78/c.html,2026-05-21,,AI启新旅·数智共生态,升级,,2026-05-21,3,OptimizedRegexExtractor
+ir_395,智瞰AI丨触摸具身智能的“最后一厘米”,新华网科技,https://www.news.cn/tech/20260112/050d9582525c4d5db8c5acedf8983b5d/c.html,2026-01-12,,最... 新华网北京1月12日电 题,,,2026-01-12,2,OptimizedRegexExtractor
+ir_396,1至4月全国规模以上工业企业利润增长18.2%,新华网科技,http://www.news.cn/tech/20260528/48fcbf1e5d8f4ff3aa9a1bc6825f7167/c.html,2026-05-28,,数据显示,发布,增长18.2%,2026-05-28,4,OptimizedRegexExtractor
+ir_397,6G将让机器人“更丝滑” 张平院士：通感一体重塑具身智能,新华网科技,https://www.news.cn/tech/20260327/8855899e193b43da93c5498a7b6c9728/c.html,2026-03-27,,6G将让机器人,,,2026-03-27,2,OptimizedRegexExtractor
+ir_398,智瞰AI｜明东：人与机器和谐共存是永恒的命题,新华网科技,https://www.news.cn/tech/20250418/40f59f8af27d4630b16fa14a059c7a06/c.html,2025-04-18,脑机交互与人机共融海河实验室,未来的创新技术及落地应用,发布,,2025-04-18,4,OptimizedRegexExtractor
+ir_399,两部门发文布局人工智能计量能力建设,新华网科技,http://www.news.cn/tech/20260529/27f702f274654a8d8641ea09af4501a0/c.html,2026-05-29,,人工智能计量体系和能力建设指引（2026版）,,,2026-05-29,2,OptimizedRegexExtractor
+ir_400,2026世界智能产业博览会预计将实现百分百绿电保障,新华网科技,http://www.news.cn/tech/20260528/b0cde70a3417473fbeab3e036af4407f/c.html,2026-05-28,,通过绿色电力证书交易系统,适配,800张,2026-05-28,4,OptimizedRegexExtractor
+ir_401,“九章四号”问世 中国科学家再建最强“量子计算优越性”,新华网科技,http://www.news.cn/tech/20260514/15f45732f6b54fa580e11cda2fda6204/c.html,2026-05-14,美国谷歌公司,迭代,发布,54次,2026-05-14,5,OptimizedRegexExtractor
+ir_402,两部门联合发文破解AI“测不准”“数据荒”难题,新华网科技,http://www.news.cn/tech/20260529/4df44d2977db49ef8e60923aa248fc64/c.html,2026-05-29,,人工智能计量体系和能力建设指引（2026版）,适配,,2026-05-29,3,OptimizedRegexExtractor
+ir_403,在意大利比萨的实验室看人与机器人“共生”,新华网科技,http://www.news.cn/tech/20260528/7cc06ce7366d43e59bc7553ac362920c/c.html,2026-05-28,,在意大利比萨的实验室看人与机器人,,,2026-05-28,2,OptimizedRegexExtractor
+ir_404,消费新图景｜人工智能点燃未来场景 重塑消费体验,新华网科技,http://www.news.cn/tech/20260526/7231cfc6d6b7439082ec517300bac027/c.html,2026-05-26,,机器人服务链,升级,,2026-05-26,3,OptimizedRegexExtractor
+ir_405,市场监管总局开展专项行动整治“内卷式”竞争,新华网科技,http://www.news.cn/tech/20260528/db7d8bd8e7054bdd893c8bf0baeb0210/c.html,2026-05-28,,并通过国家企业信用信息公示系统,修复,,2026-05-28,3,OptimizedRegexExtractor
+ir_406,科学圆桌会,新华网科技,http://www.news.cn/tech/20260529/de6b8bb9566f4225b49eb568e5597146/c.html,2026-05-29,,,修复,,2026-05-29,2,OptimizedRegexExtractor
+ir_407,智瞰AI｜戴文渊：“百模大战”不是太多，而是远远不够,新华网科技,https://www.news.cn/tech/20250213/6547dab3be0c4e6eb744881e78041b30/c.html,2025-02-13,,新生儿体重预测模型,适配,,2025-02-13,3,OptimizedRegexExtractor
+ir_408,智瞰AI｜张平文：大模型不是终点 人工智能还会出现新赛道,新华网科技,https://www.news.cn/tech/20250730/cda19d3f2482433fadf480ad3d27fa4d/c.html,2025-07-30,DeepSeek,拓展了数学学科应用,升级,,2025-07-30,4,OptimizedRegexExtractor
+ir_409,AI不断突破验证，人类如何“自证为人”,新华网科技,http://www.news.cn/tech/20260528/5e61023dcff8487582c99b3e23f2a3e1/c.html,2026-05-28,,我不是机器人,升级,,2026-05-28,3,OptimizedRegexExtractor
+ir_410,科技自立自强之院士说,新华网科技,https://www.news.cn/tech/20260521/fbfa7405f9b54e3090ce04d56de00002/c.html,2026-05-21,,也是环境光学工程化应用,,,2026-05-21,2,OptimizedRegexExtractor
+ir_411,工信部：开展执法行动 规范废旧动力电池回收利用,新华网科技,http://www.news.cn/tech/20260529/2d80399ee5d242b0aa891f1121c62ad2/c.html,2026-05-29,,工业和信息化部召开全国新能源汽车,发布,,2026-05-29,3,OptimizedRegexExtractor
+ir_412,关于人民网,人民网科技,http://www.people.com.cn/GB/50142/420117/index.html,1997-1-1,,AI之眼,发布,,1997-01-01,3,OptimizedRegexExtractor
+ir_413,媒体资源部,人民网科技,http://www.people.com.cn/GB/208743/403202/index.html,,,828企业服务平台,,,,1,OptimizedRegexExtractor
+ir_414,特斯拉败了！FSD全自动驾驶承诺未兑现 车主起诉后获赔1万美元,凤凰网科技,https://tech.ifeng.com/c/8tZWtTEYNzJ,2026-05-31,特斯拉,是甲骨文公司软件,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_415,荣耀王飞：虚假对比Magic V6与友商产品折痕的博主已被行政拘留,凤凰网科技,https://tech.ifeng.com/c/8tZUAUoW3Lm,2026-05-31,荣耀,博主虚假对比 Magic V6 与友商产品折痕,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_416,谷歌阿里集体转向：为人服务时代过去了｜浪潮,凤凰网科技,https://tech.ifeng.com/c/8tJ1K5wnZ75,2026-05-21,阿里,正在从人变成智能体,发布,7倍,2026-05-21,5,OptimizedRegexExtractor
+ir_417,20亿美元机器人独角兽将民宿当实验室，房东发起诉讼,凤凰网科技,https://tech.ifeng.com/c/8tZTXmqcT6O,2026-05-31,,20亿美元机器人,,12383.50,2026-05-31,3,OptimizedRegexExtractor
+ir_418,对话理想CTO：我们为什么敢在芯片上“烧钱”？,凤凰网科技,https://tech.ifeng.com/c/8t463IfxvVZ,2026-05-12,英伟达,我们为什么敢在芯片,发布,,2026-05-12,4,OptimizedRegexExtractor
+ir_419,RTX 3070都能月入1500元，显卡挖矿又死灰复燃了？,凤凰网科技,https://tech.ifeng.com/c/8tZiPGhZeJ9,2026-05-31,AMD,RTX 3070,上线,1.5,2026-05-31,5,OptimizedRegexExtractor
+ir_420,中国成功发射通信技术试验卫星二十四号，开展多频段高速率通信验证,凤凰网科技,https://tech.ifeng.com/c/8tPxswWOROK,2026-05-27,,提供关键的在轨试验数据支持,升级,645 次,2026-05-27,4,OptimizedRegexExtractor
+ir_421,云鲸上市前夕，张峻彬首谈恐惧：一把手的孤独无人能体会,凤凰网科技,https://tech.ifeng.com/c/8tSottvMqyN,2026-05-28,小米,扫地机器人,,95.28万台,2026-05-28,4,OptimizedRegexExtractor
+ir_422,智慧厨房凭什么颠覆中国人的烹饪习惯？,凤凰网科技,https://tech.ifeng.com/c/8rXmKEOb0RC,2026-03-17,,了多个重磅产品,发布,,2026-03-17,3,OptimizedRegexExtractor
+ir_423,iQOO15T体验：电竞手机，现在有了本分选择,凤凰网科技,https://tech.ifeng.com/c/8tYG0sf5oqq,2026-05-30,联发科,电竞手机,发布,6.18,2026-05-30,5,OptimizedRegexExtractor
+ir_424,小红书这步棋，赌大了,凤凰网科技,https://tech.ifeng.com/c/8tZVa9Ve07U,2026-05-31,,短视频全量版权的互联网社区平台,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_425,X平台疯传！这个国产开源模型，把信息图生成整明白了,凤凰网科技,https://tech.ifeng.com/c/8tWxv145NBI,2026-05-30,商汤,这个国产开源模型,开源,2.0,2026-05-30,5,OptimizedRegexExtractor
+ir_426,OpenAI官宣退役o3与GPT,凤凰网科技,https://tech.ifeng.com/c/8tZMvetFqYz,2026-8-26,OpenAI,两个模型,发布,4.5,2026-08-26,5,OptimizedRegexExtractor
+ir_427,日本太空企业AstroX要从气球上发射火箭：成本砍半、无需发射场,凤凰网科技,https://tech.ifeng.com/c/8tV6YlA62LW,2026-05-28,,火箭（rocket）,发布,2130.1,2026-05-28,4,OptimizedRegexExtractor
+ir_428,奕境曾清林谈辅助驾驶“智驾险”和“兜底承诺”差异,凤凰网科技,https://tech.ifeng.com/c/8tZlyk0BjuA,2026-05-31,华为,奕境汽车,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_429,AI写小说的套路被扒光了：Claude爱平铺，GPT总做梦，Gemini只会“他如何如何”,凤凰网科技,https://tech.ifeng.com/c/8tZMmYs0nL5,2026-5-28,Google,AI写作鉴别指南,,2604.03136,2026-05-28,4,OptimizedRegexExtractor
+ir_430,我们到底需要怎样的自动驾驶？,凤凰网科技,https://tech.ifeng.com/c/8sV9gddL0aK,2026-04-21,,基于像滴滴这样已经构建海量出行场景的平台,,,2026-04-21,2,OptimizedRegexExtractor
+ir_431,“全球最小的智能戒指”：Oura Ring 5发布,凤凰网科技,https://tech.ifeng.com/c/8tVxgPG1Rjc,2026-05-29,,Ring 5,发布,40%,2026-05-29,4,OptimizedRegexExtractor
+ir_432,全球首次实现：中国突破超大规模AI药物筛选技术，千亿级分子库秒级检索,凤凰网科技,https://tech.ifeng.com/c/8tSottvMqxm,2026-05-27,,研发的面向超大规模药物发现的人工智能虚拟筛选平台,发布,16 万亿次,2026-05-27,4,OptimizedRegexExtractor
+ir_433,对话自变量CEO王潜：一个月后，机器人就可以接单进家了,凤凰网科技,https://tech.ifeng.com/c/8sWlBeFgxsw,2026-04-22,,我认为马拉松和我们完全是两个领域,发布,,2026-04-22,3,OptimizedRegexExtractor
+ir_434,元太：彩色可塑形电子纸概念车将在COMPUTEX 2026全球首度亮相,凤凰网科技,https://tech.ifeng.com/c/8tRUGRAhtnb,2026-05-26,,COMPUTEX 2026,发布,2026 台,2026-05-26,4,OptimizedRegexExtractor
+ir_435,手机没电还能定位？原来苹果留了一手,凤凰网科技,https://tech.ifeng.com/c/8tYA2JlBI2m,2026-05-30,苹果,查找我的手机,,,2026-05-30,3,OptimizedRegexExtractor
+ir_436,因北汽、吉利两家中国车企持股近20% 奔驰或会被“赶出”美国,凤凰网科技,https://tech.ifeng.com/c/8tZEinENiB6,2027-1-1,,2026年联网汽车安全法案,,20%,2027-01-01,3,OptimizedRegexExtractor
+ir_437,Anthropic“阴谋”曝光：被指故意阉割旧模型,凤凰网科技,https://tech.ifeng.com/c/8tZiqq2HKqp,2026-05-31,苹果,被指故意阉割旧模型,发布,4.8,2026-05-31,5,OptimizedRegexExtractor
+ir_438,两个广东人的五次撞车，撞出最强开源双雄的底气？,凤凰网科技,https://tech.ifeng.com/c/8sYPQuP3nLH,2026-04-24,DeepSeek,全新系列模型,开源,5.4,2026-04-24,5,OptimizedRegexExtractor
+ir_439,花800块就能听懂猫狗讲话？这AI靠谱吗？,凤凰网科技,https://tech.ifeng.com/c/8tZVcIuXx6j,2026-05-31,,结合手机,发布,94.6,2026-05-31,4,OptimizedRegexExtractor
+ir_440,华为Pura 90，一次不涨价的进攻,凤凰网科技,https://tech.ifeng.com/c/8sejKpw0jdh,2026-04-27,苹果,Pura 90,发布,20%,2026-04-27,5,OptimizedRegexExtractor
+ir_441,加入“清华圈”，黄仁勋放不下中国,凤凰网科技,https://tech.ifeng.com/c/8tZfDbjXrKR,2026-05-31,英伟达,AI已经导致大量失业,,,2026-05-31,3,OptimizedRegexExtractor
+ir_442,网友反馈其三星Galaxy S25 FE手机夜间充电爆炸，事发时使用第三方20W充电器,凤凰网科技,https://tech.ifeng.com/c/8tSottvMqyR,2026-05-28,三星,FE手机,升级,20W,2026-05-28,5,OptimizedRegexExtractor
+ir_443,英伟达版“MacBook Pro”曝光：老黄自研了CPU,凤凰网科技,https://tech.ifeng.com/c/8tZiqq2HKqK,2026-05-31,微软,MacBook Pro,发布,25.0528,2026-05-31,5,OptimizedRegexExtractor
+ir_444,三年800万辆，千里科技秀出最强肌肉,凤凰网科技,https://tech.ifeng.com/c/8sTsWXsXUhl,2026-04-22,荣耀,AI+车,发布,,2026-04-22,4,OptimizedRegexExtractor
+ir_445,华为“韬定律”问世后，美国用AI决战的幻想基本破产了,凤凰网科技,https://tech.ifeng.com/c/8tZH67ByNFl,2026-05-30,OpenAI,华为提出通过逻辑折叠等优化技术降低系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_446,NASA宣布永久月球基地计划：2026年启动三项任务，2028年载人登月,凤凰网科技,https://tech.ifeng.com/c/8tPxswWOROO,2026-05-27,NASA,不早于 2026 年秋季,发布,,2026-05-27,4,OptimizedRegexExtractor
+ir_447,小学生画了撇胡子骗过AI年龄验证，硅谷工程师沉默了,凤凰网科技,https://tech.ifeng.com/c/8tZiPGhZeGc,2026-05-31,,社交平台,,,2026-05-31,2,OptimizedRegexExtractor
+ir_448,打1针管一辈子，超超超长效降脂药真的来了？,凤凰网科技,https://tech.ifeng.com/c/8tPxP7tkeJo,2026-05-26,理想,一项重磅研究,发布,62%,2026-05-26,5,OptimizedRegexExtractor
+ir_449,辽宁小伙回应模仿黄仁勋爆火：100多买的皮夹克 否认月入10万,凤凰网科技,https://tech.ifeng.com/c/8tZZ4MnfbOZ,2026-05-31,英伟达,模仿黄仁勋后月入10万,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_450,华为徐直军“感谢”美国制裁,凤凰网科技,https://tech.ifeng.com/c/8tZSGIm4VAe,2026-05-31,华为,以及逻辑折叠芯片,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_451,最失败的AI硬件，被苹果、OpenAI、 Meta抢着“复活”,凤凰网科技,https://tech.ifeng.com/c/8tZccIKw6ib,2026-05-31,OpenAI,号称让你脱离手机,发布,1000 万台,2026-05-31,5,OptimizedRegexExtractor
+ir_452,曝华为Mate 80单品激活量近400万 断层领先去年底旗舰手机,凤凰网科技,https://tech.ifeng.com/c/8tZIqLvPZDu,2026-05-31,华为,断层领先去年底旗舰手机,发布,99.6,2026-05-31,5,OptimizedRegexExtractor
+ir_453,中国空间站第十批科学实验样品交付科学家：共41公斤 包含人工胚胎,凤凰网科技,https://tech.ifeng.com/c/8tXex40jaBJ,2026-05-30,,脑类器官等生命类科学实验样品已转运至中国科学院空间应用,优化,,2026-05-30,3,OptimizedRegexExtractor
+ir_454,对话仲泰：不做应用做分发，24岁创始人要当AI时代的“大众点评”｜浪潮对话,凤凰网科技,https://tech.ifeng.com/c/8tOFNop2vsP,2026-05-25,DeepSeek,不做应用,,,2026-05-25,3,OptimizedRegexExtractor
+ir_455,“外卖大战”后，骑手过剩：行业需400万人，实际涌入2000万人，超过5人抢1单,凤凰网科技,https://tech.ifeng.com/c/8tYW5khFsVN,2026-05-30,阿里,随着平台,,,2026-05-30,3,OptimizedRegexExtractor
+ir_456,对话追觅手机一号位：只做超高端，老板也只是一张“资源卡”,凤凰网科技,https://tech.ifeng.com/c/8t9HK2VGZrs,2026-05-15,苹果,对话追觅手机,发布,,2026-05-15,4,OptimizedRegexExtractor
+ir_457,黄仁勋谈年轻人失业：你不会被AI取代 但会被一种人替代,凤凰网科技,https://tech.ifeng.com/c/8tZaN4gFiPL,2026-05-31,英伟达,你不会被AI取代,,,2026-05-31,3,OptimizedRegexExtractor
+ir_458,三星研发纯液冷手机散热，解决Galaxy发热问题,凤凰网科技,https://tech.ifeng.com/c/8tYHbnAUfsl,2026-05-30,苹果,三星研发纯液冷手机,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_459,监管加码补贴收紧，外卖大战落幕，但消费入口争夺战才刚刚开始,凤凰网科技,https://tech.ifeng.com/c/8tZjQbsEAeF,2026-2-10,阿里,网络餐饮第三方平台食品安全治理合作框架协议,发布,,2026-02-10,4,OptimizedRegexExtractor
+ir_460,英国终于承认：中国已成科技强国 西方优势不多了,凤凰网科技,https://tech.ifeng.com/c/8tT9Ttyfyhj,2026-05-27,,美国目前领先的科技主要是在先进芯片,发布,增长5%,2026-05-27,4,OptimizedRegexExtractor
+ir_461,首发麒麟2026！华为Mate 90系列提档9月底发布：韬定律解除芯片提升压力,凤凰网科技,https://tech.ifeng.com/c/8tZNKQs9sLm,2025-11-25,Intel,韬定律解除芯片,发布,提升53.5%,2025-11-25,5,OptimizedRegexExtractor
+ir_462,OpenAI明升，Anthropic暗涨：AI包月折扣没了,凤凰网科技,https://tech.ifeng.com/c/8tZb8FcPXUZ,2026-4-2,OpenAI,Anthropic侧的企业续约和新版模型,,2180.16,2026-04-02,4,OptimizedRegexExtractor
+ir_463,奥迪高管吐槽设计同质化严重：车灯都成了眯眯眼,凤凰网科技,https://tech.ifeng.com/c/8tZhafuhBG5,2026-05-31,,上汽奥迪营销事业部副总经理谢施奇公开吐槽当前汽车,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_464,加投200亿！英特尔携资深玩家加码玻璃基板,凤凰网科技,https://tech.ifeng.com/c/8tZlddBUZCl,2026-05-31,英特尔,玻璃基板在先进封装领域的应用,适配,67.2%,2026-05-31,5,OptimizedRegexExtractor
+ir_465,260亿美元，“全华班”撑起全球AI编程估值最高公司,凤凰网科技,https://tech.ifeng.com/c/8tZeNveJZIy,2026-05-31,,全球首位AI软件工程师,,2.5倍,2026-05-31,3,OptimizedRegexExtractor
+ir_466,Meta正在开发一款人工智能吊坠,凤凰网科技,https://tech.ifeng.com/c/8tZEDHo49eX,2026-05-31,OpenAI,Wearables for Work,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_467,这个能让iPhone充电更爽的协议，反而先让配件厂商爽到了,凤凰网科技,https://tech.ifeng.com/c/8tZePmggRs2,2026-05-31,苹果,iPhone 17 专属 40W AVS 协议快充,适配,40W,2026-05-31,5,OptimizedRegexExtractor
+ir_468,AI权威清洗：一张肉眼难辨的图片，就能让GPT,凤凰网科技,https://tech.ifeng.com/c/8tZRCg5oQBZ,2026-05-31,,问问 AI,,5.4,2026-05-31,3,OptimizedRegexExtractor
+ir_469,理想高管：目前没见到过任何一台SUV 滤震舒适性超过全新L9 Ultra,凤凰网科技,https://tech.ifeng.com/c/8tZh1ryOO5O,2026-05-31,理想,理想汽车,发布,提升30%,2026-05-31,5,OptimizedRegexExtractor
+ir_470,nova十周年大作！华为nova 16系列下周亮相：顶流代言+麒麟9系芯片,凤凰网科技,https://tech.ifeng.com/c/8tYdAIjaoKa,2026-05-30,华为,麒麟9系芯片,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_471,小米MiMo首次公开模型推理系统全链路优化技术细节,网易科技,https://www.163.com/dy/article/KU6U2UCC0534A4SC.html,2026-05-30,小米,小米MiMo首次公开模型推理系统,优化,,2026-05-30,4,OptimizedRegexExtractor
+ir_472,抖音电商否认“上半年GMV未达预期”传闻,网易科技,https://www.163.com/tech/article/J7URIJRP00098IEO.html,2024-07-25,网易,上半年GMV未达预期,,,2024-07-25,3,OptimizedRegexExtractor
+ir_473,华策影视与浙文智能公司达成合作,网易科技,https://www.163.com/dy/article/KU60DKBN0534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_474,杨雄里院士：脑机接口让人拥有读心术？有可能，但必须规避风险,网易科技,https://www.163.com/tech/article/IU9G3N9A000999D9.html,2024-03-27,网易,NBA CBA,,,2024-03-27,3,OptimizedRegexExtractor
+ir_475,财跃星辰AI 小财神 V1.4 更新上线4大核心功能 全面提升投资体验,网易科技,https://www.163.com/dy/article/KU6H13DL05198CJN.html,2026-05-30,网易,4大核心功能,升级,V1.4,2026-05-30,5,OptimizedRegexExtractor
+ir_476,生物制造迎来“超级风口” 合成生物学大科学装置重大突破,网易科技,https://www.163.com/dy/article/KU6DA4H905198CJN.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_477,安全监护APP“死了么”又活过来了,网易科技,https://www.163.com/dy/article/KU8UGL0T0534A4SC.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_478,企业蒙受巨额损失，CrowdStrike 向受灾客户发放 10 美元礼品卡,网易科技,https://www.163.com/dy/article/J7U6TVB60511B8LM.html,2024-07-25,网易,CrowdStrike,,,2024-07-25,3,OptimizedRegexExtractor
+ir_479,抖音、B站、视频号三面围堵，利润跌27%：快手只剩“可灵”这张牌？,网易科技,https://www.163.com/tech/article/KU1DR67G00098IEO.html,2026-05-28,网易,NBA CBA,,27%,2026-05-28,4,OptimizedRegexExtractor
+ir_480,特斯拉股价重挫12%，创2020年9月以来最大跌幅,网易科技,https://www.163.com/dy/article/J7U6MLJR0519DDQ2.html,2024-07-25,特斯拉,NBA CBA,,12%,2024-07-25,4,OptimizedRegexExtractor
+ir_481,一周新车盘点｜宋Ultra DM,网易科技,https://www.163.com/dy/article/KU8U5T580534A4SC.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_482,特殊日子，宇树科技王兴兴获奖状,网易科技,https://www.163.com/dy/article/KU7927V50512B07B.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_483,哈工大团队揭秘癌基因调控新机制,网易科技,https://www.163.com/dy/article/KU39EQK30514R9OJ.html,2026-05-29,网易,NBA CBA,,,2026-05-29,3,OptimizedRegexExtractor
+ir_484,独家,网易科技,https://www.163.com/tech/article/KC7NNC53000999D9.html,2025-10-19,网易,NBA CBA,,,2025-10-19,3,OptimizedRegexExtractor
+ir_485,20亿小参数赶超英伟达旗舰模型 上海世界模型“裸考”登顶国际权威榜单,网易科技,https://www.163.com/dy/article/KU74SJ5D05198CJN.html,2026-05-30,英伟达,20亿小参数赶超英伟达旗舰模型,,,2026-05-30,3,OptimizedRegexExtractor
+ir_486,马斯克称考虑取消投资，墨西哥总统回击：说这话太草率,网易科技,https://www.163.com/tech/article/J7U9LG7700097U7T.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_487,麒麟软件发布两款全新操作系统,网易科技,https://www.163.com/dy/article/KU62JT7505198CJN.html,2026-05-30,网易,麒麟软件发布两款全新操作系统,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_488,AI视频进入「生产线」调研,网易科技,https://www.163.com/dy/article/KU38K0GQ0511I947.html,2026-05-29,网易,NBA CBA,,,2026-05-29,3,OptimizedRegexExtractor
+ir_489,环球下周看点：英伟达芯片帝国扩张 博通、慧与科技发布财报,网易科技,https://www.163.com/dy/article/KU84FA7Q05198CJN.html,2026-05-31,英伟达,英伟达芯片,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_490,Anthropic估值超OpenAI达9650亿,网易科技,https://www.163.com/dy/article/KU37RSDD0550WHYR.html,2026-05-29,OpenAI,NBA CBA,,,2026-05-29,3,OptimizedRegexExtractor
+ir_491,“2024新一代人工智能（深圳）创业创新大赛”总决赛收官 八方地动获得冠军,网易科技,https://www.163.com/tech/article/JI86G67500099E4I.html,2024-11-30,网易,2024新一代人工智能（深圳）创业创新大赛,,,2024-11-30,3,OptimizedRegexExtractor
+ir_492,Find记录世界，Reno记录生活：OPPO的两条影像赛道与一场审美迁徙,网易科技,https://www.163.com/tech/article/KU3R462V00098IEO.html,2026-05-29,OPPO,NBA CBA,,,2026-05-29,3,OptimizedRegexExtractor
+ir_493,为什么OpenAI今年可能会亏损50亿美元？,网易科技,https://www.163.com/tech/article/J7U9OTHO00097U7T.html,2024-07-25,OpenAI,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_494,7月25日外媒科学网站摘要：安慰剂是如何缓解疼痛的？,网易科技,https://www.163.com/tech/article/J7UM9CVT00097U81.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_495,估值超200亿元，百川智能完成50亿元A轮融资，北上深国资入局,网易科技,https://www.163.com/dy/article/J7ULIOFR05118DFD.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_496,宁德时代吴凯：今年将有一系列钠离子电池产品实现规模化量产,网易科技,https://www.163.com/dy/article/KU6E7A890512B07B.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_497,一个月烧掉5亿美元！科技巨头“AI Token消耗赛”踩下急刹,网易科技,https://www.163.com/dy/article/KU70NHD905198CJN.html,2026-05-30,网易,AI Token消耗赛,,,2026-05-30,3,OptimizedRegexExtractor
+ir_498,车圈大佬发声：价格战远去，但竞争仍残酷！,网易科技,https://www.163.com/dy/article/KU5VPB2L0530NLC9.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_499,宁德时代首席科学家吴凯：今年将实现钠离子电池规模量产 下一步聚焦锂空气电池研发,网易科技,https://www.163.com/dy/article/KU60JMDM05198CJN.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_500,无忧传媒创始人雷彬艺：“活人感”才是内容的灵魂，纯炫技不解决问题,网易科技,https://www.163.com/dy/article/KU6KM9G50534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_501,vivo S60系列：读懂年轻人的“独特星光”,网易科技,https://www.163.com/dy/article/KU6I7TUA05198CJN.html,2026-05-30,vivo,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_502,AI走向物理世界的“临门一脚”还差什么？｜直击BEYOND Expo 2026,网易科技,https://www.163.com/dy/article/KU79S51605198CJN.html,2026-05-30,网易,Expo 2026,,,2026-05-30,3,OptimizedRegexExtractor
+ir_503,欧盟要跟Anthropic谈Mythos,网易科技,https://www.163.com/dy/article/KU384SBP0511B8LM.html,2026-05-29,网易,NBA CBA,,,2026-05-29,3,OptimizedRegexExtractor
+ir_504,芯片三巨头齐聚！COMPUTEX下周揭幕 哪些亮点值得期待？,网易科技,https://www.163.com/dy/article/KU79ESIB05198CJN.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_505,武汉萝卜快跑涨价，基本与网约车持平？我们测了一下,网易科技,https://www.163.com/dy/article/J7T2DVUB0519U3I5.html,2024-07-24,网易,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_506,丰田回应中止下一代纯电轿车开发,网易科技,https://www.163.com/dy/article/KU773N0G05198CJN.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_507,马斯克要跟扎克伯格“笼斗”！随时随地、任何规则,网易科技,https://www.163.com/dy/article/J7V1ONQ9051481US.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_508,当互联网内容创,网易科技,https://www.163.com/dy/article/KU661J5H0534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_509,薇娅倒下之后，“网红之都”的崩坏和重建,网易科技,https://www.163.com/tech/article/H233FE2H000999C0.html,2022-03-10,网易,NBA CBA,,,2022-03-10,3,OptimizedRegexExtractor
+ir_510,巴黎奥运会系列报道｜商汤日日新大模型亮相,网易科技,https://www.163.com/tech/article/J7V4OLU400098IEO.html,2024-07-25,网易,商汤日日新大模型,发布,,2024-07-25,4,OptimizedRegexExtractor
+ir_511,非洲之王，为何在印度栽跟头？,网易科技,https://www.163.com/dy/article/J7T1CR9L0539M9HP.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_512,英伟达、微软一同发布神秘预告 传闻中的PC芯片下周亮相？,网易科技,https://www.163.com/dy/article/KU54VN9705198CJN.html,2026-05-30,微软,传闻中的PC芯片,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_513,行业还在玩文字游戏时，东风日产“三无忧”掀桌了,网易科技,https://www.163.com/dy/article/KU92LQ9A0534A4SC.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_514,飞行时代首款增程全倾转eVTOL产品获34架意向订单,网易科技,https://www.163.com/dy/article/KU6QHGU50534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_515,再投200亿！英特尔携资深玩家加码玻璃基板 机构：行业有望进入商业化元年,网易科技,https://www.163.com/dy/article/KU8CQKTR05198CJN.html,2026-05-31,英特尔,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_516,阶跃星辰开源Step 3.7 Flash大模型,网易科技,https://www.163.com/dy/article/KU38P3RH0511B8LM.html,2026-05-29,网易,Flash大模型,开源,3.7,2026-05-29,5,OptimizedRegexExtractor
+ir_517,辉瑞公布博瑞纳CROWN研究7年随访数据,网易科技,https://www.163.com/dy/article/KU6J7TM40534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_518,“逐帧时代”终结？自变量机器人全球首个“事件级预测能力”世界模型落地 具身智能加速规模化商用竞争,网易科技,https://www.163.com/dy/article/KU68NIIB0512B07B.html,2026-05-30,网易,自变量机器人,,,2026-05-30,3,OptimizedRegexExtractor
+ir_519,戴尔诺基亚又回来了！市值暴涨1.7万亿美元，AI开始重估老牌科技公司,网易科技,https://www.163.com/tech/article/KU8GIRNA00097U7T.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_520,报告｜同程旅行：奥运会开幕首周巴黎酒店预订热度同比涨4倍,网易科技,https://www.163.com/tech/article/J7UFGHVC00098IEO.html,2024-07-25,网易,NBA CBA,,4倍,2024-07-25,4,OptimizedRegexExtractor
+ir_521,谁在中国“围猎”AIGC？,网易科技,https://www.163.com/tech/article/HTMAA02R000999C0.html,2023-02-16,网易,NBA CBA,,,2023-02-16,3,OptimizedRegexExtractor
+ir_522,孟晚舟重获自由，华为闯过至暗关口了吗？,网易科技,https://www.163.com/tech/article/GKOA7MFT000999C0.html,2021-09-25,华为,NBA CBA,,,2021-09-25,3,OptimizedRegexExtractor
+ir_523,小红书变局：卖老股、边裁员边扩招，为上市“加速”,网易科技,https://www.163.com/dy/article/J7UC02TG05198R91.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_524,天涯社区正式上线“天涯重启者数字徽章”,网易科技,https://www.163.com/dy/article/KU7ATCHK0534A4SC.html,2026-05-30,网易,天涯社区正式,上线,,2026-05-30,4,OptimizedRegexExtractor
+ir_525,撬动创新药开发 人工智能虚拟筛选平台在天津发布,网易科技,https://www.163.com/dy/article/KU777U7E05198CJN.html,2026-05-30,网易,人工智能虚拟筛选平台,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_526,快手拆了可灵，字节拆豆包还会远么,网易科技,https://www.163.com/dy/article/KU5V2F8R0511N33R.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_527,雷克萨斯将在华生产全新纯电车型，并销往日本？官方：不予置评,网易科技,https://www.163.com/dy/article/J7SQBHRO0511B8LM.html,2024-07-24,网易,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_528,马斯克询问网友：特斯拉向xAI投50亿美元行不行,网易科技,https://www.163.com/tech/article/J7U9I0D300097U7T.html,2024-07-25,特斯拉,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_529,网红企业家风云榜：雷军成顶流，俞敏洪反超董明珠,网易科技,https://www.163.com/dy/article/J7UDK8C00519APGA.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_530,软银集团拟在法国建设欧洲最大AI数据中心,网易科技,https://www.163.com/dy/article/KU919AJ80534A4SC.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_531,抖音再攻图文，不止“围猎”小红书,网易科技,https://www.163.com/dy/article/J7UA0SUH05564B6E.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_532,宁德时代首席科学家吴凯：新国标实施后 中国新能源车的自燃率会比燃油车低一个数量级,网易科技,https://www.163.com/dy/article/KU617KUN05198CJN.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_533,“国王工人”人均奖金数百万元，而普通白领薪资缩水，前途迷茫！韩国“同代人命运分叉”，经济命脉却握在美国手里,网易科技,https://www.163.com/dy/article/KU6HR81V0512B07B.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_534,面对价格战，马斯克也无能为力了,网易科技,https://www.163.com/dy/article/J7U465G90527822Q.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_535,“最懂苹果”分析师郭明錤：苹果将停产iPhone 17 Plus,网易科技,https://www.163.com/dy/article/J7UQ5M2L05198NMR.html,2024-07-25,苹果,iPhone 17,,,2024-07-25,3,OptimizedRegexExtractor
+ir_536,全国首个绿色算力全栈AI平台在呼和浩特正式上线,网易科技,https://www.163.com/dy/article/KU6SD9Q605198CJN.html,2026-05-30,网易,全国首个绿色算力全栈AI平台,上线,,2026-05-30,4,OptimizedRegexExtractor
+ir_537,OpenAI老板做的全民发钱实验，结果出来了！,网易科技,https://www.163.com/dy/article/J7SMODLV05198NMR.html,2024-07-24,OpenAI,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_538,众擎机器人深圳智能制造基地启用,网易科技,https://www.163.com/dy/article/KU6S1N8I0534A4SC.html,2026-05-30,网易,众擎机器人,,,2026-05-30,3,OptimizedRegexExtractor
+ir_539,“烧Token”游戏将终结？亚马逊关停词元跟踪榜单 直呼“不要为了用AI而用AI”,网易科技,https://www.163.com/dy/article/KU8LTK8Q05198CJN.html,2026-05-31,网易,烧Token,,,2026-05-31,3,OptimizedRegexExtractor
+ir_540,本田拟削减燃油车产能：149万辆→100万辆，关闭或停产两家工厂,网易科技,https://www.163.com/dy/article/J7V47TFA0511B8LM.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_541,美股七巨头一夜市值蒸发近6万亿元，创下12年以来最大单日跌幅,网易科技,https://www.163.com/dy/article/J7UHQE7O0514R9P4.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_542,ID.ERA 9X交付超7000辆，合资新能源大车挤入大三排竞争,网易科技,https://www.163.com/dy/article/KU6N41UH0534A4SC.html,2026-05-30,网易,ID.ERA 9,,,2026-05-30,3,OptimizedRegexExtractor
+ir_543,全球最大清洁能源滚装船完成交付，上汽自营船队扩容至 32 艘,网易科技,https://www.163.com/dy/article/J7U53BVN0511B8LM.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_544,起步价1.5元只能骑10分钟，哈啰单车变相涨价,网易科技,https://www.163.com/dy/article/J7SU69NT051492T3.html,2024-07-24,网易,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_545,小米汽车：近年内还没有在海外市场销售汽车的计划,网易科技,https://www.163.com/dy/article/J7T90BH20511B8LM.html,2024-07-24,小米,小米汽车,,,2024-07-24,3,OptimizedRegexExtractor
+ir_546,华为与光明科学城公司、深圳先进院签署产学研协同创新合作备忘录,网易科技,https://www.163.com/dy/article/KU782EFK0534A4SC.html,2026-05-30,华为,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_547,开盘暴涨80%，年亏1.8亿：“消费级3D打印第一股”的风口与风险,网易科技,https://www.163.com/tech/article/KU3R0C4C00098IEO.html,2026-05-29,网易,消费级3D打印第一股,,80%,2026-05-29,4,OptimizedRegexExtractor
+ir_548,营收230亿元、现金储备943亿元，理想穿越产品换代期,网易科技,https://www.163.com/dy/article/KU701LHD0534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_549,深圳原创基础软件取得新突破,网易科技,https://www.163.com/dy/article/KU6BUVC70534A4SC.html,2026-05-30,网易,深圳原创基础软件,,,2026-05-30,3,OptimizedRegexExtractor
+ir_550,超百家品牌聚集粤港澳大湾区车展，增程赛道挤满新车,网易科技,https://www.163.com/dy/article/KU9336BI0534A4SC.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_551,国家安全部提示：警惕远程控制软件成“窃密通道”,网易科技,https://www.163.com/dy/article/KU89R3U30534A4SC.html,2026-05-31,网易,警惕远程控制软件,,,2026-05-31,3,OptimizedRegexExtractor
+ir_552,扎克伯格深度专访：中美AI竞争完全错误，美国别想长期领先中国,网易科技,https://www.163.com/dy/article/J7SP2K20051180F7.html,2024-07-24,网易,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_553,京东：618开场四小时，百大品牌成交额平均增长超五倍,网易科技,https://www.163.com/dy/article/KU8EPNMR0534A4SC.html,2026-05-31,京东,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_554,微软Bing搜索结果引入AI摘要功能，逐步推进智能搜索体验,网易科技,https://www.163.com/dy/article/J7UBV0LU0514R9OJ.html,2024-07-25,微软,微软Bing搜索,,,2024-07-25,3,OptimizedRegexExtractor
+ir_555,天津发布2025年度人工智能十大应用标杆场景，总投资超6亿元,网易科技,https://www.163.com/dy/article/KU637MUS0534A4SC.html,2026-05-30,网易,天津发布2025年度人工智能十大应用,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_556,社评：超算成“暗战”？美技术恐怖主义是元凶,网易科技,https://www.163.com/dy/article/J7TBFVAI0514R9OJ.html,2024-07-24,网易,NBA CBA,,,2024-07-24,3,OptimizedRegexExtractor
+ir_557,北京太空智算研究院在北京亦庄成立,网易科技,https://www.163.com/dy/article/KU6TU8J30534A4SC.html,2026-05-30,网易,NBA CBA,,,2026-05-30,3,OptimizedRegexExtractor
+ir_558,李斌回应蔚来“千站计划”迟缓问题：最多推迟一两个月,网易科技,https://www.163.com/dy/article/J7UI2RGL05476C4F.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_559,俞敏洪透露董宇辉离职幕后：深陷舆论风暴,网易科技,https://www.163.com/tech/article/J7VCGOM600098IEO.html,2024-07-25,网易,NBA CBA,,,2024-07-25,3,OptimizedRegexExtractor
+ir_560,价格暴涨近1000%！国产存储成硬通货：海外巨头争相抢购,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6170157.shtml,2026-05-31,腾讯,全球存储芯片,升级,1000%,2026-05-31,5,OptimizedRegexExtractor
+ir_561,vivo S60系列发布：搭载4K Live原相机，售价2899元起,新浪科技,https://finance.sina.com.cn/chanjing/gsnews/2026-05-30/doc-inhzsham8706660.shtml,2026-05-30,vivo,S60从系统,发布,7.79,2026-05-30,5,OptimizedRegexExtractor
+ir_562,没车卖只能卖才艺了！全国张雪机车门店变张雪传媒：马头琴、喷火、金枪刺喉花式比拼,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqptf9413771.shtml,2026-05-29,华为,诺基亚 200 4G,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_563,AI算力霸榜，25只基金近一年回报超300％，前十最低也赚了360％,新浪科技,https://finance.sina.com.cn/roll/2026-05-29/doc-inhzpnfu8014534.shtml,2026-05-29,腾讯,沪港深乐享生活以406.1,开源,300%,2026-05-29,5,OptimizedRegexExtractor
+ir_564,国产也要有LPU芯片了：能让豆包变聪明,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzshan7200979.shtml,2026-05-30,NVIDIA,国产也要有LPU芯片,发布,10倍,2026-05-30,5,OptimizedRegexExtractor
+ir_565,搜狐2023年营收6.01亿美元 Q4营收1.41亿美元,新浪科技,https://finance.sina.com.cn/tech/other/cncs/2024-03-04/doc-inamcvpp0826613.shtml,2024-03-04,苹果,股票回购计划金额追加,发布,80%,2024-03-04,5,OptimizedRegexExtractor
+ir_566,搜狐2024年总收入5.98亿美元 同比持平,新浪科技,https://finance.sina.com.cn/tech/other/intra/2025-02-18/doc-inekwqmf7210588.shtml,2025-02-18,Meta,哪吒 2,,1105万台,2025-02-18,4,OptimizedRegexExtractor
+ir_567,全球首个智驾“双兜底”车企 比亚迪的底气何来？,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6270923.shtml,2026-05-31,腾讯,CNOA 城市领航安全兜底,发布,5.0,2026-05-31,5,OptimizedRegexExtractor
+ir_568,天工AI发布SkyClaw,新浪科技,https://finance.sina.com.cn/tech/it/2026-05-26/doc-inhzfshk8938918.shtml,2026-05-26,腾讯,深度适配各类真实智能体,开源,v1.0,2026-05-26,5,OptimizedRegexExtractor
+ir_569,最新研究：人类很快就会灭绝！亚洲是第一个,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-26/doc-inhzffsk2869574.shtml,2026-05-26,腾讯,概率模型,,66%,2026-05-26,4,OptimizedRegexExtractor
+ir_570,消息人士：Meta计划于明年启动一款AI吊坠测试,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-30/doc-inhzrrex7167759.shtml,2026-05-30,OpenAI,若想在硬件利润之外打造可持续业务,发布,1000万台,2026-05-30,5,OptimizedRegexExtractor
+ir_571,马斯克表态与 IPO 申报文件内容出现出入，看空SpaceX的人士再度心生担忧,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptk0778131.shtml,2026-05-29,腾讯,IPO,,,2026-05-29,3,OptimizedRegexExtractor
+ir_572,田曦薇代言！vivo S60下周首销：行业最强Live神机 3099元,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-30/doc-inhzswye6915787.shtml,2026-05-30,vivo,S60已在各大平台,发布,5.0,2026-05-30,5,OptimizedRegexExtractor
+ir_573,接近字节人士：AI4S团队完成调整，由杨震原负责，没有考虑分拆,新浪科技,https://finance.sina.com.cn/roll/2026-05-29/doc-inhzqimp7624093.shtml,2026-05-29,腾讯,猪肉抗生素超标38倍,,38倍,2026-05-29,4,OptimizedRegexExtractor
+ir_574,知乎：全球发售2600万股销售股份，每股发售价51.8港元,新浪科技,https://finance.sina.com.cn/tech/2022-04-11/doc-imcwipii3532209.shtml,2022-04-11,小米,小米汽车,发布,15%,2022-04-11,5,OptimizedRegexExtractor
+ir_575,泡泡玛特大涨，段永平单日盈利近10亿港元,新浪科技,https://finance.sina.com.cn/roll/2026-05-29/doc-inhzqccm9501901.shtml,2026-05-29,腾讯,段永平在雪球平台,发布,12%,2026-05-29,5,OptimizedRegexExtractor
+ir_576,华为“韬定律”要打败“摩尔定律”？,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhznrai7973498.shtml,2026-05-29,英特尔,在5月25日举行的国际电路与系统,,7纳米,2026-05-29,4,OptimizedRegexExtractor
+ir_577,商业航天“国家队”添新丁 捷龙三号火箭有何特点？,新浪科技,https://finance.sina.com.cn/tech/discovery/2022-12-09/doc-imxwakzt1435249.shtml,2022-12-09,腾讯,,,,2022-12-09,2,OptimizedRegexExtractor
+ir_578,朋友圈刮起一阵“素颜风”：好友的表达方式变了,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzsssf8563214.shtml,2026-05-30,腾讯,日期的显示形式也同步做了精简,发布,8.0.71版,2026-05-30,5,OptimizedRegexExtractor
+ir_579,警惕假传钱学森“名言”背后的“流量陷阱”,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzr6094944.shtml,2026-05-31,腾讯,,,,2026-05-31,2,OptimizedRegexExtractor
+ir_580,亿咖通科技与TPK联合打造ORCA激光雷达平台,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzr6088067.shtml,2026-05-31,腾讯,亿咖通科技与TPK联合打造ORCA激光雷达平台,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_581,林沐然申请从中戏转学到高职，有何不可？,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6167095.shtml,2026-05-31,腾讯,在社交平台,,,2026-05-31,3,OptimizedRegexExtractor
+ir_582,影响美国载人登月 蓝色起源火箭大爆炸被指与印度制造有关：供应发动机核心部件,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-30/doc-inhzshan7190599.shtml,2026-05-30,腾讯,,,,2026-05-30,2,OptimizedRegexExtractor
+ir_583,台积电首次回应华为韬定律：概念早就有了 芯片耗电量才是关键 黄仁勋：依旧领先十年,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-29/doc-inhzpspr9540350.shtml,2026-05-29,Meta,成为未来电脑芯片,发布,2nm,2026-05-29,5,OptimizedRegexExtractor
+ir_584,吃瓜前线与大福肉丸子公开致歉：发表小米及雷总不当言论引发误解 今后加强审核,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-30/doc-inhzsssh7007650.shtml,2026-05-30,小米,社交平台,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_585,印度法院关于谷歌关键词广告的裁决或将重塑网络广告格局,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-30/doc-inhzrzus0258111.shtml,2026-05-30,腾讯,Hindware,适配,,2026-05-30,4,OptimizedRegexExtractor
+ir_586,MONA系列首款SUV！小鹏L03罗兰紫色实车曝光：2026年内发布,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6260859.shtml,2026-05-31,腾讯,Max版配单颗图灵芯片,发布,2.0,2026-05-31,5,OptimizedRegexExtractor
+ir_587,编程脚手架狂揽 20 万星，Agent 基础设施成 GitHub 新战场,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzr6087186.shtml,2026-05-31,腾讯,社区带来的流量,开源,,2026-05-31,4,OptimizedRegexExtractor
+ir_588,DPReview认可尼康ZR综合实力，“金奖”诠释专业视频创作价值,新浪科技,https://finance.sina.com.cn/tech/digi/dc/n/2026-05-29/doc-inhzqccq0858950.shtml,2026-05-29,腾讯,结合灵敏易控的自动对焦系统,优化,,2026-05-29,4,OptimizedRegexExtractor
+ir_589,美团令鸿嘉：各方协同构建无人车安全体系,新浪科技,https://finance.sina.com.cn/hy/hyjz/2026-05-30/doc-inhzrzup8804975.shtml,2026-05-30,腾讯,2026未来汽车,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_590,关于印发新冠重点人群健康服务工作方案的通知,新浪科技,https://finance.sina.com.cn/tech/discovery/2022-12-09/doc-imxwaetv1408155.shtml,2022-12-09,腾讯,,优化,,2022-12-09,3,OptimizedRegexExtractor
+ir_591,台积电3nm核心负责人辞职归国！带整个团队加盟中科大,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzpsps8039715.shtml,2026-05-29,腾讯,技术成果应用,,3nm,2026-05-29,4,OptimizedRegexExtractor
+ir_592,MiniMax启动A股上市辅导,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzrrex7217982.shtml,2026-05-30,腾讯,大模型双雄,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_593,拼多多深化海淘商品溯源能力建设 前置防范进口准入风险,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6268578.shtml,2026-05-31,腾讯,境外线上平台在售,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_594,英国首相斯塔默的热门继任者呼吁对产业及人工智能实施强有力的公共管控,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimp7665770.shtml,2026-05-29,腾讯,我们不能忘记,,,2026-05-29,3,OptimizedRegexExtractor
+ir_595,中国留学生因印度高温提前回国：热到内脏沸腾,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzu4927410.shtml,2026-05-31,特斯拉,热到内脏沸腾,,14次,2026-05-31,4,OptimizedRegexExtractor
+ir_596,三星、SK海力士暴涨“冲击”基金持仓封顶线 引发强制抛盘,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimn0805977.shtml,2026-05-29,腾讯,随着这两家韩国芯片,,10%,2026-05-29,4,OptimizedRegexExtractor
+ir_597,快递市场激战存量“蛋糕” 业绩新增长点待解,新浪科技,https://finance.sina.com.cn/tech/2022-07-25/doc-imizirav5245825.shtml,2022-07-25,腾讯,,,增长5.4%,2022-07-25,3,OptimizedRegexExtractor
+ir_598,九号2026新品发布会连推4款新车型 覆盖从通勤到酷玩等多元场景,新浪科技,https://finance.sina.com.cn/tech/it/2026-05-30/doc-inhzrvnr8883001.shtml,2026-05-30,腾讯,会连推4款新车型,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_599,埃夫特连亏10年、高溢价收购新增6亿商誉 负债率创纪录、交易再增5.5亿资金缺口,新浪科技,https://finance.sina.com.cn/stock/observe/2026-05-29/doc-inhzqccr7635734.shtml,2026-05-29,腾讯,下游应用,发布,100%,2026-05-29,5,OptimizedRegexExtractor
+ir_600,中顺洁柔副总裁林天德2025年涨薪超百万至310.2万元 比总裁高波还高,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6170412.shtml,2026-05-31,腾讯,2025年业绩报告,发布,7.72%,2026-05-31,5,OptimizedRegexExtractor
+ir_601,欧足联宣布阿里巴巴为官方独家AI、云计算和电商合作伙伴,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzrvnv7096469.shtml,2026-05-30,阿里,阿里巴巴将运用包括千问大模型,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_602,宁德时代首席科学家吴凯：今年将实现钠离子电池规模量产,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-30/doc-inhzrvnu0373201.shtml,2026-05-30,vivo,推动新能源汽车,发布,175W,2026-05-30,5,OptimizedRegexExtractor
+ir_603,印度航空波音飞行员起飞时认错跑道灯光 客机和跑道双双被毁,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzuetq6331928.shtml,2026-05-31,腾讯,跑道照明系统,,,2026-05-31,3,OptimizedRegexExtractor
+ir_604,贝壳车评丨加码物理AI，小鹏的科技叙事该如何讲下去？,新浪科技,http://finance.sina.com.cn/jjxw/2026-05-29/doc-inhzqtzc9306251.shtml,2026-05-29,腾讯,物理AI应用,,17.6%,2026-05-29,4,OptimizedRegexExtractor
+ir_605,北京市生成式人工智能服务已登记信息公告（2026年5月29日）,新浪科技,https://finance.sina.com.cn/wm/2026-05-29/doc-inhzqimi9442072.shtml,2026-05-29,腾讯,猪肉抗生素超标38倍,上线,38倍,2026-05-29,5,OptimizedRegexExtractor
+ir_606,蓝色起源火箭在发射台爆炸 波及亚马逊卫星网络部署,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimi9407952.shtml,2026-05-29,腾讯,猎鹰9号,,,2026-05-29,3,OptimizedRegexExtractor
+ir_607,上半年仅6月盈利 奈雪的茶站上业绩拐点？,新浪科技,https://finance.sina.com.cn/tech/2022-08-08/doc-imizmscv5258384.shtml,2022-08-08,腾讯,公告称,发布,20.7,2022-08-08,5,OptimizedRegexExtractor
+ir_608,诺基亚发布首款微聊手机：可与小程序视频通话，售价199元,新浪科技,https://finance.sina.com.cn/roll/2026-05-29/doc-inhzqccq0890432.shtml,2026-05-29,腾讯,诺基亚发布首款微聊手机,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_609,小马智行彭军：小马智行事故率比人类低近十倍,新浪科技,https://finance.sina.com.cn/hy/hyjz/2026-05-30/doc-inhzrzup8797134.shtml,2026-05-30,腾讯,2026未来汽车,,,2026-05-30,3,OptimizedRegexExtractor
+ir_610,精度跃升数百倍，芯片级陀螺仪来了,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-29/doc-inhzpnfx7648306.shtml,2026-05-29,腾讯,要么做得像芯片,,300倍,2026-05-29,4,OptimizedRegexExtractor
+ir_611,法拉利发布首款电动车，股价大跌,新浪科技,https://finance.sina.com.cn/jjxw/2026-05-29/doc-inhzpfxv9618916.shtml,2026-05-29,苹果,2035年欧洲新售燃油轿车和小货车零排放协议,发布,5.26%,2026-05-29,5,OptimizedRegexExtractor
+ir_612,受益于 AI 热潮及超预期的预计营收，戴尔股价一度上涨近四成,新浪科技,https://finance.sina.com.cn/tech/digi/2026-05-29/doc-inhzqptk0826455.shtml,2026-05-29,腾讯,AI 机遇没有任何放缓迹象,,38%,2026-05-29,4,OptimizedRegexExtractor
+ir_613,“盐中甜×果实进化”联合打造江西AI智慧工厂,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzrvns7338679.shtml,2026-05-30,腾讯,参观者将手机,发布,47%,2026-05-30,5,OptimizedRegexExtractor
+ir_614,加快培育文旅新质生产力 北京发布“人工智能+文旅”三年行动计划,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4805055.shtml,2026-05-31,腾讯,以场景应用,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_615,亿万富翁带队！Space X首趟私人火星飞行来了,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-28/doc-inhzmayt1137705.shtml,2026-05-28,腾讯,Space,发布,,2026-05-28,4,OptimizedRegexExtractor
+ir_616,不止伴舞还开嗓演唱！宇树机器人亮相王力宏演唱会 拿起话筒那一刻全场嗨翻,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzsssh7030867.shtml,2026-05-30,荣耀,宇树机器人,发布,6台,2026-05-30,5,OptimizedRegexExtractor
+ir_617,AI正在重写医药研发的人才结构,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-28/doc-inhzmayw0240962.shtml,2026-05-28,腾讯,类脑芯片,适配,12%,2026-05-28,5,OptimizedRegexExtractor
+ir_618,传赛力斯将推出全新汽车品牌：字节跳动旗下火山引擎深度参与，计划6月发布,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzrzuq7261030.shtml,2026-05-30,腾讯,传赛力斯将推出全新汽车,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_619,哈根达斯跌落神坛:一年关店超90家 网红茶饮拟收购中国业务,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6286050.shtml,2026-05-31,腾讯,国产也要有LPU芯片,,,2026-05-31,3,OptimizedRegexExtractor
+ir_620,北京太空智算研究院成立 太空算力产业发展迈出关键一步,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6163753.shtml,2026-05-31,腾讯,研究院将围绕星载算力芯片,,,2026-05-31,3,OptimizedRegexExtractor
+ir_621,AI短剧低门槛外行蜂拥投资，从业者预计99%亏损,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6269094.shtml,2026-05-31,腾讯,AI视频模型,上线,99%,2026-05-31,5,OptimizedRegexExtractor
+ir_622,vivo S60：4K原生实况 重新发明Live,新浪科技,https://finance.sina.com.cn/tech/mobile/n/c/2026-05-29/doc-inhzmtwq8653369.shtml,2026-05-29,苹果,时尚手机,升级,86%,2026-05-29,5,OptimizedRegexExtractor
+ir_623,中东网红阿波哥中国行探访荣耀阿尔法全球旗舰店，荣耀向其赠送一台荣耀600 Pro,新浪科技,https://finance.sina.com.cn/roll/2026-05-29/doc-inhzqccm9523518.shtml,2026-05-29,荣耀,AI终端智慧生活创新工坊,,,2026-05-29,3,OptimizedRegexExtractor
+ir_624,OpenAI推出生物防御专项计划,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimp7590234.shtml,2026-05-29,OpenAI,向从事生物防御工具研发的可信合作开发者开放专属大模型,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_625,雷鸟创新发布首款专业影视级AR眼镜GT系列，售价1899元起,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzrvnu0344274.shtml,2026-05-30,腾讯,次世代 AI 眼镜,发布,3.0,2026-05-30,5,OptimizedRegexExtractor
+ir_626,智利国家铜业公司新掌门强调利润优先与治理整顿 或放慢扩产步伐,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimp7577568.shtml,2026-05-29,腾讯,Codelco,,,2026-05-29,3,OptimizedRegexExtractor
+ir_627,跑赢英伟达的，为什么是这群PC“老登”？,新浪科技,https://finance.sina.com.cn/wm/2026-05-30/doc-inhzrzuq7276853.shtml,2026-05-30,英伟达,错过AI浪潮,,234.74%,2026-05-30,4,OptimizedRegexExtractor
+ir_628,中概股周二收盘涨跌互现 趣头条涨超7%哔哩哔哩跌超4%,新浪科技,https://finance.sina.com.cn/tech/2022-05-04/doc-imcwipii7894653.shtml,2022-05-04,腾讯,小鹏汽车,,7%,2022-05-04,4,OptimizedRegexExtractor
+ir_629,知情人士称SpaceX下调IPO估值，马斯克辟谣,新浪科技,https://finance.sina.com.cn/roll/2026-05-30/doc-inhzswyf9916781.shtml,2026-05-30,腾讯,SpaceX首席执行官马斯克29日在社交平台,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_630,城事日记津彩有你｜科幻照进现实！不用手不用嘴，脑机真的可以改变生活,新浪科技,https://finance.sina.com.cn/roll/2026-05-31/doc-inhztymy5078291.shtml,2026-05-31,腾讯,脑机接口系统,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_631,刘庆峰：有信心，讯飞AI眼镜会成为每个人眼前的超级助理,新浪科技,https://finance.sina.com.cn/stock/marketresearch/2026-05-29/doc-inhzqccq0843261.shtml,2026-05-29,腾讯,我们有信心,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_632,生物新方法重建青藏高原东北部快速隆升历史,新浪科技,https://finance.sina.com.cn/tech/discovery/2022-12-09/doc-imqqsmrp9087286.shtml,2022-12-09,腾讯,利用3088个现代表层孢粉样品数据库,,,2022-12-09,3,OptimizedRegexExtractor
+ir_633,测完几个Agent工具 我发现他们能代打游戏了,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6263167.shtml,2026-05-31,腾讯,应用商店,,,2026-05-31,3,OptimizedRegexExtractor
+ir_634,被eBay拒绝后仍未言弃：GameStop拟增发25亿股 继续推进收购,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzsnkn0102420.shtml,2026-05-30,腾讯,,,,2026-05-30,2,OptimizedRegexExtractor
+ir_635,博物馆青铜剑被疑拼接，“慢三拍”处置是舆情导火索,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzp9304153.shtml,2026-05-31,腾讯,情况通报称,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_636,东风奕派M8亮相粤港澳车展：搭载华为乾崑技术，将于三季度正式上市,新浪科技,https://finance.sina.com.cn/roll/2026-05-30/doc-inhzsnki8663011.shtml,2026-05-30,华为,技术领先不是终极目的,发布,5.2,2026-05-30,5,OptimizedRegexExtractor
+ir_637,全国先进个体工商户表彰大会在北京召开,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4806074.shtml,2026-05-31,腾讯,京市东城区私营个体经济协会等260个单位全国各级个私协会系统,优化,,2026-05-31,4,OptimizedRegexExtractor
+ir_638,vivo S60系列正式发布：田曦薇代言 主打4K Live原相机,新浪科技,https://finance.sina.com.cn/tech/mobile/n/n/2026-05-29/doc-inhzqtzi7503870.shtml,2026-05-29,vivo,时尚手机,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_639,苹果陷入创新断层 新任首席执行官能否破局？,新浪科技,http://finance.sina.com.cn/stock/usstock/c/2026-05-26/doc-inhzfshk8935210.shtml,2026-05-26,OpenAI,嘿Siri,发布,,2026-05-26,4,OptimizedRegexExtractor
+ir_640,德国5月通胀率回落，但核心通胀走高,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptf9371590.shtml,2026-05-29,腾讯,初步数据显示,发布,2.9,2026-05-29,5,OptimizedRegexExtractor
+ir_641,成本中心到利润杠杆：SealSeekAI创作重新定义电商内容产能,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzu4917976.shtml,2026-05-31,腾讯,AI内容超级工厂,,,2026-05-31,3,OptimizedRegexExtractor
+ir_642,BBA放下身段！奥迪E7X门槛降至25.78万迎爆单 高管：成本价出售,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzrzup8816090.shtml,2026-05-30,腾讯,智享驾控大五座SUV,发布,70%,2026-05-30,5,OptimizedRegexExtractor
+ir_643,受中东局势相关协议消息影响，华尔街股市有望实现周线收涨,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptk0799028.shtml,2026-05-29,腾讯,这得益于延长停火框架,,增长1.6%,2026-05-29,4,OptimizedRegexExtractor
+ir_644,新东方直播带货“火出圈” 蹚出教培转型新模式？,新浪科技,https://finance.sina.com.cn/tech/2022-06-20/doc-imizirau9467964.shtml,2022-06-20,腾讯,人生30年没这么离谱过,发布,增长576%,2022-06-20,5,OptimizedRegexExtractor
+ir_645,研究提出日冕仪杂散光校正新方法,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzukzp9313180.shtml,2026-05-31,腾讯,传统方法依赖频繁人工清洁或经验统计模型,,,2026-05-31,3,OptimizedRegexExtractor
+ir_646,国际月经日：让“月经”被大方谈论,新浪科技,https://finance.sina.com.cn/tech/it/2026-05-28/doc-inhzmihs7932034.shtml,2026-05-28,苹果,90将搭载韬定律芯片,适配,11000台,2026-05-28,5,OptimizedRegexExtractor
+ir_647,电子烟国标落地 已有门店关门,新浪科技,https://finance.sina.com.cn/tech/2022-10-03/doc-imqqsmrp1335735.shtml,2022-10-03,腾讯,我们30日晚上打烊后就已经把所有水果味的都返厂了,发布,,2022-10-03,4,OptimizedRegexExtractor
+ir_648,给钱我都不坐！多名特斯拉前员工坦言：马斯克吹的FSD根本不安全,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzu4908261.shtml,2026-05-31,特斯拉,我们都见过FSD出问题,升级,10倍,2026-05-31,5,OptimizedRegexExtractor
+ir_649,戴尔股价暴涨32%创历史最佳单日表现，AI服务器营收飙升,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-30/doc-inhzrkwy0448538.shtml,2026-05-30,英伟达,他们每项数据都超越了模型,发布,32%,2026-05-30,5,OptimizedRegexExtractor
+ir_650,“南天门计划”最新进展曝光！多款空天装备细节公开,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6161294.shtml,2026-05-31,腾讯,通用垂直起降平台,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_651,深圳市自动驾驶安全实验室副主任郎丹：安全是自动驾驶商业化的绝对底线,新浪科技,https://finance.sina.com.cn/hy/hyjz/2026-05-30/doc-inhzrvnu0371935.shtml,2026-05-30,腾讯,2026未来汽车,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_652,新石器慧通余恩源：无人车行业绝对不能成为一个老头乐行业,新浪科技,https://finance.sina.com.cn/hy/hyjz/2026-05-30/doc-inhzrzus0258910.shtml,2026-05-30,腾讯,2026未来汽车,,,2026-05-30,3,OptimizedRegexExtractor
+ir_653,匈牙利总理：将与欧盟委员会主席冯德莱恩就欧盟资金问题达成政治协议,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptf9374892.shtml,2026-05-29,腾讯,动态表示,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_654,日本部分金融机构将获OpenAI最新模型使用权限 以强化网络安全防御,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimn0809975.shtml,2026-05-29,OpenAI,日本部分金融机构将获OpenAI最新模型,,,2026-05-29,3,OptimizedRegexExtractor
+ir_655,Meta支付900万美元 了结肯塔基州社媒危害诉讼,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-30/doc-inhzrrex7169112.shtml,2026-05-30,Meta,Meta的平台,发布,,2026-05-30,4,OptimizedRegexExtractor
+ir_656,全程超6000公里零干预！特斯拉FSD完成全球首次横穿加拿大自动驾驶,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzn6272692.shtml,2026-05-31,特斯拉,一群热衷电动汽车,升级,V14.3.3版,2026-05-31,5,OptimizedRegexExtractor
+ir_657,搜狐2024年第三季度营收1.52亿美元 同比增长5%,新浪科技,https://finance.sina.com.cn/tech/other/intra/2024-11-12/doc-incvutka8323854.shtml,2024-11-12,华为,2024年第三季度,升级,增长5%,2024-11-12,5,OptimizedRegexExtractor
+ir_658,行业利润率降至2.9%，阿维塔王辉：没有利润的销量是伪销量,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzr6092099.shtml,2026-05-31,特斯拉,给钱我都不坐 Robotaxi,发布,2.9%,2026-05-31,5,OptimizedRegexExtractor
+ir_659,美团：6.2亿用户助力建成超5000座乡村儿童操场,新浪科技,https://finance.sina.com.cn/tech/internet/2026-05-31/doc-inhzukzu4922461.shtml,2026-05-31,华为,用381款芯片,发布,6.2,2026-05-31,5,OptimizedRegexExtractor
+ir_660,模仿黄仁勋意外走红引争议，当事人回应！,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6163191.shtml,2026-05-31,英伟达,Bianews,,,2026-05-31,3,OptimizedRegexExtractor
+ir_661,首次走进企业！第19届全国大学生软件创新大赛决赛在OPPO落地,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzukzr6098254.shtml,2026-05-31,OPPO,第19届全国大学生软件,,,2026-05-31,3,OptimizedRegexExtractor
+ir_662,至高可选锐龙 AI 7 445 处理器：华硕破晓 7 Pro 笔记本 14/16 英寸开启预约，7999 元起,IT之家,https://www.ithome.com/0/957/814.htm,2026-5-31,AMD,AI 7,适配,445 处理器,2026-05-31,5,OptimizedRegexExtractor
+ir_663,英伟达 N1X、N1 芯片规格泄露：10+10+48SM 与 8+4+20SM,IT之家,https://www.ithome.com/0/957/813.htm,2026-5-31,NVIDIA,675,发布,128GB,2026-05-31,5,OptimizedRegexExtractor
+ir_664,宏碁展示 Aspire Go 15 笔记本：骁龙 C 系列芯片、15.6 英寸 FHD 屏幕，预计售价 399 美元,IT之家,https://www.ithome.com/0/957/820.htm,2026-5-31,苹果,系列芯片,发布,15.6,2026-05-31,5,OptimizedRegexExtractor
+ir_665,发售指日可待？V社将 Steam Machine 欢迎向导添加到 Steam 后台,IT之家,https://www.ithome.com/0/957/806.htm,2026-5-31,,欢迎使用 Steam Machine,发布,512GB,2026-05-31,4,OptimizedRegexExtractor
+ir_666,全国网站建设公司权威盘点：2026十大网站设计制作服务商综合实力排行对比推荐指南,IT之家,https://www.ithome.com/0/957/819.htm,2026-5-31,,智能管理系统及三十余项软件,升级,18.7,2026-05-31,4,OptimizedRegexExtractor
+ir_667,历经 22 年，图像编辑软件 Paint.NET 终于拿到 paint.net 域名,IT之家,https://www.ithome.com/0/957/809.htm,2026-5-31,,我拿到这个域名了！终于拿到了！ 我为此努力了 22 年,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_668,35kg 承重 + 自带 LED 照明：小米米家智能晾衣机 1S 国补后 949 → 492 元,IT之家,https://www.ithome.com/0/957/811.htm,2026-5-31,小米,LED,适配,20%,2026-05-31,5,OptimizedRegexExtractor
+ir_669,铜川舰公开亮相，052D 型驱逐舰新舰画面曝光,IT之家,https://www.ithome.com/0/957/808.htm,2026-5-31,,导弹系统,发布,6.5,2026-05-31,4,OptimizedRegexExtractor
+ir_670,2026 电竞世俱杯赛程日历公布：7 月齐聚巴黎，争夺 7500 万美元奖金,IT之家,https://www.ithome.com/0/957/812.htm,2026-5-31,荣耀,DOTA2,发布,5.09,2026-05-31,5,OptimizedRegexExtractor
+ir_671,"华硕 ROG 预热“全球首款电竞 OLED 显示器”：24.5"" 小尺寸 + 540Hz 超高刷",IT之家,https://www.ithome.com/0/957/807.htm,2026-5-31,京东,全球首款电竞 OLED 显示器,发布,24.5,2026-05-31,5,OptimizedRegexExtractor
+ir_672,联力下周展出 O11D EVO RGB V2、UX100、LANCOOL 207 XL 机箱,IT之家,https://www.ithome.com/0/957/821.htm,2026-5-31,360,LANCOOL 207,发布,490.75,2026-05-31,5,OptimizedRegexExtractor
+ir_673,领克 10 开启首批车主交付，上市限时价 16.99 万元起,IT之家,https://www.ithome.com/0/957/815.htm,2026-5-31,,Flyme Auto,发布,16.99,2026-05-31,4,OptimizedRegexExtractor
+ir_674,14 年来首个华人“统计学诺奖”得主：北大数院“黄金二代”苏炜杰官宣加入 OpenAI，沃顿休学期间参与模型训练,IT之家,https://www.ithome.com/0/957/818.htm,2026-5-31,OpenAI,沃顿休学期间参与模型,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_675,2499 → 1498 元：小米智能门锁 4 Pro 天猫直降，隔空刷掌秒开锁,IT之家,https://www.ithome.com/0/957/816.htm,2026-5-31,小米,同时还支持小米手机,适配,1%,2026-05-31,5,OptimizedRegexExtractor
+ir_676,科技,人民网科技,http://scitech.people.com.cn/GB/index5.html,2026-05-11,,AI+影视,升级,,2026-05-11,3,OptimizedRegexExtractor
+ir_677,关停3年！天涯社区上线重启者数字徽章：限量9999枚 售价1999元/枚,凤凰网科技,https://tech.ifeng.com/c/8tZtzYl2HJW,2026-6-1,,同时持有人可提交平台,发布,,2026-06-01,3,OptimizedRegexExtractor
+ir_678,22年，一个免费软件的域名之战,凤凰网科技,https://tech.ifeng.com/c/8tZrXbXfZyt,2026-05-31,,我拿到这个域名了！终于拿到了！ 我为此努力了 22 年,发布,,2026-05-31,3,OptimizedRegexExtractor
+ir_679,NASA官宣！登月宇航员名单即将揭晓,凤凰网科技,https://tech.ifeng.com/c/8tZoR24mrq4,2026-05-31,,阿尔忒弥斯 3 号,,,2026-05-31,2,OptimizedRegexExtractor
+ir_680,英特尔、AMD的芯片上，早就有了华为τ定律的影子？,凤凰网科技,https://tech.ifeng.com/c/8tZn5N3F6qN,2026-05-31,苹果,AMD的芯片,优化,2.5,2026-05-31,5,OptimizedRegexExtractor
+ir_681,六成怪自己，四成怪行业！许单单复盘拉勾倒闭，心软错留合伙人,凤凰网科技,https://tech.ifeng.com/c/8tZpg56BGR5,2026-05-31,,,,2.2,2026-05-31,2,OptimizedRegexExtractor
+ir_682,COMPUTEX 2026前瞻：新CPU、AI PC一篇看全,凤凰网科技,https://tech.ifeng.com/c/8tZpqkNak3z,2026-05-31,英伟达,COMPUTEX 2026,,2026台,2026-05-31,4,OptimizedRegexExtractor
+ir_683,"华硕ROG预热“全球首款电竞OLED显示器”：24.5""540Hz",凤凰网科技,https://tech.ifeng.com/c/8tZr0rHAYFM,2026-05-31,,全球首款电竞OLED显示器,发布,24.5,2026-05-31,4,OptimizedRegexExtractor
+ir_684,乘联分会崔东树：1,凤凰网科技,https://tech.ifeng.com/c/8tZoiewQrCN,2026-05-31,,成为拉动行业增长的核心引擎,发布,51%,2026-05-31,4,OptimizedRegexExtractor
+ir_685,美韩担忧成真？中国“史诗级扩产”，内存芯片价格要崩？,凤凰网科技,https://tech.ifeng.com/c/8tZn5N3F6qL,2026-05-31,三星,内存芯片,,15%,2026-05-31,4,OptimizedRegexExtractor
+ir_686,华为鸿蒙3D影像壁纸最新适配计划公开，覆盖Mate70等系列机型,凤凰网科技,https://tech.ifeng.com/c/8tZk0EIrKGG,2026-05-31,华为,系列手机,升级,6.1.0.120,2026-05-31,5,OptimizedRegexExtractor
+ir_687,美公司被曝拟在乌战场测试升级版人形机器人,网易科技,https://www.163.com/dy/article/KU997INN0534A4SC.html,2026-05-31,网易,美公司被曝拟在乌战场测试升级版人形机器人,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_688,唯特偶：光模块、先进封装等领域营收贡献尚处于较低水平,网易科技,https://www.163.com/dy/article/KU98D15P0512B07B.html,2026-05-31,网易,NBA CBA,,,2026-05-31,3,OptimizedRegexExtractor
+ir_689,从“看景”到“入戏” NPC互动解锁文旅新体验,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6187770.shtml,2026-05-31,腾讯,90后,升级,,2026-05-31,4,OptimizedRegexExtractor
+ir_690,OpenAI再揽北大数学天才 苏炜杰官宣加入,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6195081.shtml,2026-05-31,OpenAI,我目前处于沃顿商学院的休学期间,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_691,安卓17适配计划公布！谷歌Pixel首发尝鲜 国产手机也能升,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-30/doc-inhzswyi6690313.shtml,2026-05-30,Intel,国产手机,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_692,看屏幕、用键鼠，我的 OpenClaw「睁眼」了,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurim9215361.shtml,2026-05-31,腾讯,Agent 的眼睛,上线,,2026-05-31,4,OptimizedRegexExtractor
+ir_693,上汽集团拟向JSW进一步出售印度合资车企10%股权,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptm7580065.shtml,2026-05-29,腾讯,猪肉抗生素超标38倍,发布,10%,2026-05-29,5,OptimizedRegexExtractor
+ir_694,AI靠简单食材替换实现健康低脂、省钱饮食,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6180714.shtml,2026-05-31,腾讯,一套人工智能系统,,47%,2026-05-31,4,OptimizedRegexExtractor
+ir_695,伊朗议会议长卡利巴夫：在对方采取行动之前 不会采取任何行动,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptm7582269.shtml,2026-05-29,腾讯,猪肉抗生素超标38倍,,38倍,2026-05-29,4,OptimizedRegexExtractor
+ir_696,华为韬定律首次上车！启境GT7搭载华为乾崑赤兔平台,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqccm9486374.shtml,2026-05-29,华为,启境GT7搭载华为乾崑赤兔平台,发布,,2026-05-29,4,OptimizedRegexExtractor
+ir_697,盲人跑者挑战长城越野：一根陪跑绳与十余年的坚守,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6190376.shtml,2026-05-31,腾讯,冬残奥会开幕式,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_698,Win 11开始菜单大改：想关啥就关啥 可空白一片,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzsnki8654709.shtml,2026-05-30,微软,Win 11,发布,26300.8553,2026-05-30,5,OptimizedRegexExtractor
+ir_699,传柠季拟收购哈根达斯中国门店,新浪科技,https://finance.sina.com.cn/tech/2026-05-30/doc-inhzshan7174524.shtml,2026-05-30,腾讯,BUG,,3%,2026-05-30,4,OptimizedRegexExtractor
+ir_700,赛力斯张正萍：问界智驾不输FSD，我们要做到超越人的状态,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6197203.shtml,2026-05-31,特斯拉,给钱我都不坐 Robotaxi,发布,6颗,2026-05-31,5,OptimizedRegexExtractor
+ir_701,头排发车获第8名！张雪机车德比斯回应：换上新胎比赛没感觉了,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4802828.shtml,2026-05-31,腾讯,国产也要有LPU芯片,,,2026-05-31,3,OptimizedRegexExtractor
+ir_702,企业办赛首秀：第19届全国大学生软件创新大赛决赛落户OPPO,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6197614.shtml,2026-05-31,OPPO,第19届全国大学生软件,,,2026-05-31,3,OptimizedRegexExtractor
+ir_703,中高端爆款 传OPPO Reno16首销登顶安卓销量榜,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurim9235673.shtml,2026-05-31,OPPO,OPPO Reno16,上线,3.5,2026-05-31,5,OptimizedRegexExtractor
+ir_704,加拿大经济陷入技术性衰退 为2020年以来首次,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqptk0804452.shtml,2026-05-29,腾讯,报告,发布,0.1%,2026-05-29,5,OptimizedRegexExtractor
+ir_705,马来西亚邮轮旅游持续升温，华京旅游携爱达·地中海号进驻巴生港,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6199330.shtml,2026-05-31,腾讯,2026马来西亚旅游年,适配,,2026-05-31,4,OptimizedRegexExtractor
+ir_706,联发科预计AI业务收入将在2027年迎来爆发式增长,新浪科技,https://finance.sina.com.cn/stock/usstock/c/2026-05-29/doc-inhzqimp7590997.shtml,2026-05-29,腾讯,以智能手机芯片,适配,15%,2026-05-29,5,OptimizedRegexExtractor
+ir_707,一场发布会，比亚迪完成从车企到科技公司的身份重构,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqptf9375355.shtml,2026-05-29,英伟达,电动化上半场看电池,发布,4nm,2026-05-29,5,OptimizedRegexExtractor
+ir_708,新闻中心,新浪科技,http://news.sina.com.cn/w/2026-05-28/doc-inhzkwsw8012141.shtml,2026-05-27,腾讯,境外手机间谍软件,,,2026-05-27,3,OptimizedRegexExtractor
+ir_709,最敬业代言！王力宏演唱会上被夸是法拉利 马上摆手否认：我现在是比亚迪,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6192354.shtml,2026-05-31,腾讯,最好的地方II,发布,,2026-05-31,4,OptimizedRegexExtractor
+ir_710,小姐姐很难不心动！吉利熊猫勇士明日上市：售价或4.69万起,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6172937.shtml,2026-05-31,腾讯,支持手机,发布,30%,2026-05-31,5,OptimizedRegexExtractor
+ir_711,“不是我操作的，我被控制了”,新浪科技,http://finance.sina.com.cn/roll/2026-05-31/doc-inhztuea5159387.shtml,2026-05-31,腾讯,有人安装了远程控制软件,上线,,2026-05-31,4,OptimizedRegexExtractor
+ir_712,全球首个培育新生心肌细胞的人体临床试验启动,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6185067.shtml,2026-05-31,腾讯,,修复,50%,2026-05-31,4,OptimizedRegexExtractor
+ir_713,科学家摸清脑部废物排出路线，揭秘老年痴呆诱因,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6179035.shtml,2026-05-31,腾讯,注入的示踪物质会扰乱我们本要观测的这套系统,,,2026-05-31,3,OptimizedRegexExtractor
+ir_714,五台新款问界M9投影联动展示千里江山图 网友：以后团建不用带投影仪了,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhztymy5087048.shtml,2026-05-31,腾讯,问界M9的前排投影大灯有点东西啊,发布,98%,2026-05-31,5,OptimizedRegexExtractor
+ir_715,高温威胁心脏健康，美多地心脏病风险将大幅攀升,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurik6180742.shtml,2026-05-31,腾讯,研究团队采用全球疾病负担数据库,,增长200%,2026-05-31,4,OptimizedRegexExtractor
+ir_716,预售价21.99万元起，启境GT7同时瞄准尚界与小米SU7！,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4822218.shtml,2026-05-31,特斯拉,给钱我都不坐 Robotaxi,发布,30.99,2026-05-31,5,OptimizedRegexExtractor
+ir_717,京东一季度净亏30亿，徐雷：5月订单情况已有好转,新浪科技,https://finance.sina.com.cn/tech/2022-05-18/doc-imcwipik0478401.shtml,2022-05-18,腾讯,的财报显示,发布,增长18%,2022-05-18,5,OptimizedRegexExtractor
+ir_718,号称“不加一滴水”的雪糕 配料表首位就是水！,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-30/doc-inhzrret8945502.shtml,2026-05-30,腾讯,诺基亚 200 4G,升级,,2026-05-30,4,OptimizedRegexExtractor
+ir_719,三星与OpenAI芯片合作被搁置 战略分歧致谈判暂停,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzurip5994471.shtml,2026-05-31,OpenAI,三星与OpenAI芯片,发布,2纳米,2026-05-31,5,OptimizedRegexExtractor
+ir_720,为什么做梦有意识、深睡没有？科学家找到关键脑信号,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzuris4822245.shtml,2026-05-31,腾讯,,,,2026-05-31,2,OptimizedRegexExtractor
+ir_721,四道题评测 Qwen3.7,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6176721.shtml,2026-05-31,Intel,天一款旗舰模型,发布,v4.0,2026-05-31,5,OptimizedRegexExtractor
+ir_722,【5月第五周】庄家的连环局被我识破，抄底的好机会来了！,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurik6171501.shtml,2026-05-31,荣耀,国产也要有LPU芯片,,1.08,2026-05-31,4,OptimizedRegexExtractor
+ir_723,华为与广汽联手打造，启境GT7预售21.99万起，首搭ADS 5定义智能猎装新标杆,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-29/doc-inhzqptm7605933.shtml,2026-05-29,华为,ADS 5,发布,30.99,2026-05-29,5,OptimizedRegexExtractor
+ir_724,低比特模型会是推理降本的关键组件吗？,新浪科技,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4817522.shtml,2026-05-31,腾讯,低比特模型,上线,,2026-05-31,4,OptimizedRegexExtractor
+ir_725,难治肺癌迎新选择，靶向药疗效优于传统化疗,新浪科技,https://finance.sina.com.cn/tech/discovery/2026-05-31/doc-inhzuris4824262.shtml,2026-05-31,腾讯,NSCLC,,58.9,2026-05-31,4,OptimizedRegexExtractor
+ir_726,神仙打架之外：环卫车里长出的世界模型什么样,新浪科技,http://finance.sina.com.cn/roll/2026-05-30/doc-inhzswyf9927553.shtml,2026-05-30,OpenAI,环卫车里长出的世界模型,发布,2.0,2026-05-30,5,OptimizedRegexExtractor
+ir_727,​刚需？​医药配送竞速“无人化”,新浪科技,http://finance.sina.com.cn/roll/2026-05-30/doc-inhzrvnr8901668.shtml,2026-05-30,腾讯,这一曾经被视为前沿探索的技术应用,优化,64%,2026-05-30,5,OptimizedRegexExtractor
+ir_728,免税红利回来了，中国商人飞越半个地球去巴西丨出海头条,新浪科技,http://finance.sina.com.cn/wm/2026-05-30/doc-inhzrvnr8902145.shtml,2026-05-30,腾讯,在巴西探索成功的中国出海平台,,,2026-05-30,3,OptimizedRegexExtractor
+ir_729,哈工大“种”出 1 克拉钻石送新人，来自甲烷与氢气的“硬核浪漫”,IT之家,https://www.ithome.com/0/957/822.htm,2026-5-31,,,,,2026-05-31,1,OptimizedRegexExtractor
+ir_730,AI 增效公司？裁掉了人，却养不起 token,凤凰网科技,https://tech.ifeng.com/c/8tZufzqfhxw,2026-05-31,,了一份调查,发布,95%,2026-05-31,4,OptimizedRegexExtractor
+ir_732,2026年5月GEO优化服务商专业度综合报告：谁在定义行业的技术标准？,未知来源,https://www.ithome.com/0/957/824.htm,2026-5-31,火山引擎,全民 GEO,优化,122%,2026-05-31,5,OptimizedRegexExtractor
+ir_733,2025,未知来源,https://www.ithome.com/0/957/826.htm,2026-5-31,,2025 年全球智能家居设备市场预测,发布,18%,2026-05-31,4,OptimizedRegexExtractor
+ir_734,2026年5月GEO优化服务商排行榜：五家标杆企业深度推荐指南,未知来源,https://www.ithome.com/0/957/823.htm,2026-5-31,阿里,中国 GEO 市场产业图谱,发布,122%,2026-05-31,5,OptimizedRegexExtractor
+ir_736,小乌梅 5.0：小天鹅轻享版洗烘套装 9499 → 6445 元 24 期免息，支持 6 年质保,未知来源,https://www.ithome.com/0/957/829.htm,2026-5-31,京东,配备可清洁双投系统,适配,5.0,2026-05-31,5,OptimizedRegexExtractor
+ir_738,七载匠心沉淀，智影赋能成长 —— 好影教育七周年,未知来源,https://www.ithome.com/0/957/828.htm,2026-5-31,,AI + 影视后期,升级,,2026-05-31,3,OptimizedRegexExtractor
+ir_739,25,未知来源,https://www.ithome.com/0/957/830.htm,2026-5-31,,而是高压平台,适配,30%,2026-05-31,4,OptimizedRegexExtractor
+ir_779,74岁老人随手烧杨絮闯大祸！20辆汽车被引燃,未知来源,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzurip6016687.shtml,2026-05-31,腾讯,20辆汽车,,,2026-05-31,3,OptimizedRegexExtractor
+ir_781,Claude贵到烧不起 微软将推自研AI编程大模型：全球G佬狂喜,未知来源,https://finance.sina.com.cn/tech/roll/2026-05-31/doc-inhzuris4843393.shtml,2026-05-31,OpenAI,微软将推自研AI编程大模型,发布,,2026-05-31,4,OptimizedRegexExtractor

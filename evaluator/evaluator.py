@@ -48,7 +48,7 @@ class EvaluationSystem:
     def _auto_load_latest(self):
         files = sorted(glob.glob(os.path.join(EVAL_DIR, "..", "raw_news", "*.json")))
         if not files:
-            print("❌ 未找到爬虫数据文件，请先运行爬虫！")
+            print("❌ 未找到本地语料文件，请先构建作业3语料！")
             return
         self._load_articles(files[-1])
 
@@ -323,7 +323,7 @@ class EvaluationSystem:
             total = len(self.articles)
 
             print(f"\n{'═' * 60}")
-            print(f"  交互式人工评价系统 - 娱乐圈事件")
+            print(f"  交互式人工评价系统 - 科技事件抽取")
             print(f"  已标注: {annotated}/{total} 篇")
             print(f"{'═' * 60}")
             print(f"  1. 📝 批量标注（继续未完成的）")

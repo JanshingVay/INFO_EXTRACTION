@@ -1,134 +1,210 @@
-# 特定领域多媒体信息抽取系统
+# 中文科技事件信息抽取系统
 
-## 项目概述
+本项目是作业3的信息抽取实验系统，基于作业2信息检索系统已经采集并本地存储的中文科技新闻语料实现。系统面向“核心技术产品发布与升级事件”，抽取 5 个能够组合成事件的信息点，并提供图形化展示、人工评价和多媒体 OCR 信息抽取尝试。
 
-这是一个面向**科技企业投融资事件**的信息抽取实验系统，完整实现了：
-- 智能级联爬虫（真实互联网新闻源）
-- 双引擎抽取（规则抽取 + NLP/LLM抽取）
-- 交互式人工标注与评价（Precision/Recall/F1）
-- 跨模态OCR信息抽取（图片→文本→事件）
+## 任务对应关系
+
+| 作业3要求 | 本项目实现 |
+| --- | --- |
+| 特定领域语料，不低于100篇 | 复用作业2中文科技新闻语料，转换后共739篇 |
+| 本地存储 | `data/raw_news/from_info_retrieve.json` |
+| 抽取不少于5个信息点 | `developer / tech_product / action_type / version_metric / date` |
+| 信息点能组合成事件 | “研发主体在某日期对某技术产品执行某动作，并伴随版本或指标变化” |
+| 至少实现正则表达式抽取 | `BasicRegexExtractor` + `OptimizedRegexExtractor` |
+| 抽取结果展示 | Streamlit界面、Tkinter兜底界面、JSON/CSV结果文件 |
+| 人工评价 | 图形化标注，字段级 Precision / Recall / F1 |
+| 扩展创新 | 规则优化对比、多媒体 OCR 到事件抽取 |
+| 可持续发展考虑 | 复用本地语料，避免重复爬取；只处理公开新闻；结果本地缓存 |
+
+## 事件字段
+
+| 字段 | 含义 | 示例 |
+| --- | --- | --- |
+| `developer` | 研发主体 / 发布主体 | 华为、OpenAI、腾讯 |
+| `tech_product` | 技术产品 / 模型 / 平台 / 芯片 / 软件 | GPT-5、HarmonyOS、AI芯片 |
+| `action_type` | 事件动作 | 发布、推出、升级、开源、修复、上线 |
+| `version_metric` | 版本号 / 参数量 / 性能指标 / 规模数据 | v1.2、70B参数、提升40%、4928万次 |
+| `date` | 事件日期 | 2026-05-31 |
 
 ## 目录结构
 
-```
+```text
 INFO_EXTRACTION/
-├── main.py                      # 综合 CLI 主入口
-├── config.py                    # 全局配置
-├── requirements.txt             # 项目依赖
-├── README.md                    # 项目说明（本文件）
-│
-├── crawler/                     # 爬虫模块
-│   ├── __init__.py              # 导出接口
-│   ├── news_crawler.py          # 智能级联爬虫调度引擎
-│   └── sources.py               # 真实数据源：36氪/投资界/IT桔子/钛媒体/亿欧网
-│
-├── extractor/                   # 抽取引擎
-│   ├── __init__.py
-│   ├── base.py                  # 抽象基类
-│   ├── regex_extractor.py       # 正则抽取器（高精度）
-│   └── nlp_extractor.py         # NLP/LLM抽取器（OpenAI兼容）
-│
-├── evaluator/                   # 评价系统
-│   ├── __init__.py
-│   └── evaluator.py             # 交互式标注与评测
-│
-├── multimodal/                  # 跨模态模块
-│   ├── __init__.py
-│   └── multimodal_extraction.py # OCR+抽取管线
-│
-├── data/                        # 数据目录
-│   ├── raw_news/                # 原始新闻数据
-│   ├── images/                  # OCR图片
-│   └── evaluations/             # 标注与评测结果
-│
-└── utils/
-    ├── __init__.py
-    └── helpers.py
+├── app.py                         # Streamlit图形界面
+├── desktop_app.py                 # Tkinter标准库兜底界面
+├── main.py                        # 命令行入口
+├── config.py                      # 路径与字段配置
+├── 实验报告.md                    # 作业3实验报告
+├── scripts/
+│   ├── build_from_retrieve.py     # 从作业2语料构建作业3语料
+│   ├── run_extraction.py          # 运行基础/优化正则抽取
+│   └── evaluate_extraction.py     # 根据人工标注计算评价指标
+├── extractor/
+│   ├── base.py
+│   ├── regex_extractor.py         # 基础正则与优化正则
+│   └── nlp_extractor.py           # LLM抽取，可自动回退正则
+├── evaluator/
+│   ├── evaluator.py               # 命令行人工评价
+│   └── metrics.py                 # 字段级评价指标
+├── multimodal/
+│   └── multimodal_extraction.py   # OCR图片信息抽取
+├── utils/
+│   ├── helpers.py
+│   └── pipeline.py                # 数据转换、批量抽取、统计
+└── data/
+    ├── raw_news/from_info_retrieve.json
+    ├── extraction_results/basic_regex_results.json
+    ├── extraction_results/regex_results.json
+    ├── extraction_results/regex_results.csv
+    ├── evaluations/
+    └── images/
 ```
 
-## 快速开始
+## 快速运行
 
 ### 1. 安装依赖
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. 配置 LLM API（可选，推荐）
-如果需要使用智能 NLP 抽取器（NLPExtractor）：
+如果只使用 `desktop_app.py`，不需要 Streamlit；如果使用 OCR，需要安装 `easyocr` 或 `pytesseract`。
+
+### 2. 构建作业3语料
+
+开发阶段可从作业2目录转换语料：
 
 ```bash
-# 复制配置模板
-cp .env.example .env
-
-# 编辑 .env 文件，填入你的 OpenAI API Key
-# LLM_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+python scripts/build_from_retrieve.py
 ```
 
-- 获取 API Key: https://platform.openai.com/api-keys
-- 如不配置，系统将自动使用 RegexExtractor（规则抽取）
+该步骤会生成：
 
-### 3. 运行主程序
+```text
+data/raw_news/from_info_retrieve.json
+```
+
+生成后，作业3已经不再依赖 `INFO_RETRIEVE/` 目录。
+
+### 3. 运行抽取
+
 ```bash
-python main.py
+python scripts/run_extraction.py
 ```
 
-## 项目特点
+输出文件：
 
-### 1. 真实互联网数据源（绿色计算）
-- 5个主流科技媒体源：36氪/投资界/IT桔子/钛媒体/亿欧网
-- 智能级联调度：主源 -> 备用源，直到≥120篇新闻
-- 随机 User-Agent 轮换，指数退避（Exponential Backoff）延迟
-- 最小请求间隔，避免反爬与服务器压力
+```text
+data/extraction_results/basic_regex_results.json
+data/extraction_results/regex_results.json
+data/extraction_results/regex_results.csv
+```
 
-### 2. 双引擎抽取架构
-- **RegexExtractor**：5个事件要素（Investor/Target/Amount/Round/Date）
-- **NLPExtractor**：OpenAI API 兼容，API不可用时自动回退到 Regex
+当前已生成结果规模：
 
-### 3. 完整评价体系
-- 交互式人工标注（断点续标）
-- 自动计算 Precision/Recall/F1
-- 分字段指标 + 整体 Macro Average
+| 指标 | 数值 |
+| --- | ---: |
+| 语料文档数 | 739 |
+| 抽取记录数 | 739 |
+| 较完整事件数（至少4字段） | 506 |
+| developer覆盖数 | 569 |
+| tech_product覆盖数 | 717 |
+| action_type覆盖数 | 516 |
+| version_metric覆盖数 | 400 |
+| date覆盖数 | 738 |
 
-### 4. 跨模态OCR管线
-- EasyOCR（推荐，高中文精度）
-- PyTesseract（备选，轻量CPU）
-- 完整图片 -> OCR文本 -> 事件抽取管线
+也可以选择单独运行某一种抽取器：
 
-## 事件要素说明
+```bash
+# 优化正则，全量离线抽取
+python scripts/run_extraction.py --extractor optimized
 
-| 要素 | 说明 |
-|-----|-----|
-| Investor | 投资方（分号分隔） |
-| Target | 被投企业 |
-| Amount | 融资金额（原始表述） |
-| Round | 融资轮次（A轮/B轮/C轮/Pre-IPO轮/天使轮/战略融资等） |
-| Date | 发布日期（YYYY-MM-DD） |
+# 基础正则 baseline
+python scripts/run_extraction.py --extractor basic
 
-## 评分标准达成情况（对应作业要求）
+# NLP/API 抽取，建议先限制少量样本，避免API费用失控
+python scripts/run_extraction.py --extractor nlp --limit 5
+```
 
-| 等级 | 要求 | 状态 |
-|------|------|------|
-| 60分 | 基本功能：特定领域、信息点≥5、交互式、可运行 | ✅ |
-| 71-80分 | +实验报告撰写 | ⚠️ 可生成 |
-| 81-90分 | +抽取结果准确率人工评价 | ✅ |
-| 91-100分 | +多媒体信息抽取/创新思考/算法优化 | ✅ 多媒体抽取已完成 |
+NLP/API 抽取结果会保存到：
 
-## 环境与社会可持续发展考虑
+```text
+data/extraction_results/nlp_results.json
+data/extraction_results/nlp_results.csv
+```
 
-1. 爬虫策略：绿色计算，最小网络请求，指数退避，尊重目标网站
-2. 只抓取公开内容，不涉及个人隐私
-3. 模块化设计，便于复用与扩展
-4. 依赖清晰，虚拟环境隔离，便于复现
+如需使用 MiniMax API，请复制 `.env.example` 为 `.env` 并填写：
 
-## 项目亮点
+```env
+LLM_API_URL=https://api.minimaxi.com/v1
+LLM_API_KEY=你的MiniMax_API_Key
+LLM_MODEL=MiniMax-M2.7-highspeed
+```
 
-- 120篇真实风格新闻
-- 完整的评价体系
-- 双引擎抽取架构
-- 跨模态OCR管线
-- 命令行友好界面
+`.env` 已加入 `.gitignore`，不要提交真实 Key。
 
-## 开发说明
+### 4. 启动图形界面
 
-如需添加新数据源，编辑 `crawler/sources.py` 中的 `ALL_SOURCES` 字典；
-如需扩展OCR引擎，编辑 `multimodal/multimodal_extraction.py`。
+推荐使用 Streamlit：
+
+```bash
+streamlit run app.py
+```
+
+如果没有安装 Streamlit，可以使用标准库界面：
+
+```bash
+python desktop_app.py
+```
+
+### 5. 人工评价
+
+在 Streamlit 的“人工评价”页面逐条修正字段，系统会保存：
+
+```text
+data/evaluations/annotations_from_info_retrieve.json
+```
+
+之后在“评价指标”页面或命令行计算：
+
+```bash
+python scripts/evaluate_extraction.py
+```
+
+指标文件：
+
+```text
+data/evaluations/metrics_from_info_retrieve.json
+```
+
+## 算法优化说明
+
+系统实现两类正则抽取器：
+
+- `BasicRegexExtractor`：仅基于标题和简单模式抽取，作为 baseline。
+- `OptimizedRegexExtractor`：加入领域词典、动作归一化、标题优先与正文补充、日期归一化、版本/指标模式等规则。
+
+当前批量结果显示，优化正则相较基础正则显著提高了字段覆盖和较完整事件数量：
+
+| 算法 | developer | tech_product | action_type | version_metric | date | 较完整事件 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 基础正则 | 146 | 437 | 139 | 100 | 738 | 57 |
+| 优化正则 | 569 | 717 | 516 | 400 | 738 | 506 |
+
+## 多媒体信息抽取
+
+系统支持图片到事件的抽取流程：
+
+```text
+科技发布海报/截图 -> OCR文字识别 -> 正则事件抽取 -> 5字段结构化展示
+```
+
+可在 Streamlit “多媒体抽取”页面上传图片，也可以使用 `multimodal/multimodal_extraction.py` 中的演示管线。
+
+## 可持续发展考虑
+
+1. 复用作业2已落盘语料，避免为了作业3重复爬取网络资源。
+2. 语料、抽取结果、评价结果全部本地缓存，减少重复计算。
+3. 数据来自公开科技新闻，不采集个人隐私数据。
+4. 抽取结果用于课程实验和知识组织，不用于自动化决策。
+5. 模块化设计便于复用与维护，减少后续重复开发成本。
