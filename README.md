@@ -191,15 +191,54 @@ data/evaluations/metrics_from_info_retrieve.json
 | 基础正则 | 146 | 437 | 139 | 100 | 738 | 57 |
 | 优化正则 | 569 | 717 | 516 | 400 | 738 | 506 |
 
-## 多媒体信息抽取
+## 多媒体信息抽取（图片 → 事件）
 
-系统支持图片到事件的抽取流程：
+系统实现完整的多媒体信息抽取管线，支持从图像中识别文本并抽取科技事件。采用**三引擎自动回退架构**，按优先级 `PaddleOCR > EasyOCR > PyTesseract` 自动选择最佳可用引擎。
 
-```text
-科技发布海报/截图 -> OCR文字识别 -> 正则事件抽取 -> 5字段结构化展示
+### 引擎对比
+
+| 引擎 | 安装命令 | 中文精度 | 速度 | 推荐场景 |
+|------|----------|:---:|:---:|----------|
+| **PaddleOCR** | `pip install paddleocr paddlepaddle` | ★★★★★ | ★★★ | 推荐，中文识别最强 |
+| **EasyOCR** | `pip install easyocr` | ★★★★ | ★★ | 已安装即用，中英文均可 |
+| **PyTesseract** | `pip install pytesseract` + 安装 tesseract | ★★★ | ★★★★★ | 轻量备选 |
+
+### 图像预处理增强
+
+```
+原图 → 对比度增强(1.5x) → 锐度增强(2x) → 灰度 → 自适应二值化 → 中值滤波降噪 → OCR
 ```
 
-可在 Streamlit “多媒体抽取”页面上传图片，也可以使用 `multimodal/multimodal_extraction.py` 中的演示管线。
+### 使用方式
+
+**1. 上传图片（Streamlit 前端）**
+
+启动前端后，进入「多媒体抽取」页面：
+- 上传科技海报/发布会截图/PPT 页面
+- 点击「运行 OCR 事件抽取」
+- 查看 OCR 文本 + 结构化 5 字段结果
+- 支持「生成演示海报」一键体验完整流程
+- 可选「NLP 增强」用 LLM 对 OCR 结果做二次抽取
+
+**2. 命令行演示**
+
+```bash
+python -m multimodal.multimodal_extraction
+```
+
+**3. API 调用**
+
+```python
+from multimodal import MultimodalExtractor
+
+extractor = MultimodalExtractor()
+result = extractor.process_image("data/images/poster.png")
+print(result["extraction"])  # {developer, tech_product, action_type, ...}
+
+# 批量处理
+results = extractor.process_directory("data/images/")
+extractor.save_results(results)
+```
 
 ## 可持续发展考虑
 

@@ -8,6 +8,7 @@ venv
 data/raw_news/*
 data/extraction_results/*
 data/evaluations/*
+data/multimodal_api_config.json
 !data/raw_news/.gitkeep
 !data/extraction_results/.gitkeep
 !data/evaluations/.gitkeep

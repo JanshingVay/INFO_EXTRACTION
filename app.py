@@ -23,6 +23,8 @@ from config import (
     EXTRACTION_FIELDS,
     IMAGES_DIR,
     RAW_NEWS_DIR,
+    load_multimodal_api_config,
+    save_multimodal_api_config,
 )
 from evaluator.metrics import calculate_extraction_metrics
 from extractor.regex_extractor import BasicRegexExtractor, RegexExtractor
@@ -452,25 +454,248 @@ def page_metrics():
 # ──────────────────────────────────────────────────
 
 def page_multimodal():
-    st.header("多媒体信息抽取")
-    uploaded = st.file_uploader("上传科技发布海报或截图", type=["png", "jpg", "jpeg", "bmp"])
-    if uploaded is None:
-        st.caption("上传图片后，系统会先 OCR 识别文字，再复用事件抽取器抽取 5 个字段。")
+    st.header("🎬 多媒体信息抽取（图片/视频 → 事件）")
+    st.caption("支持 OCR 引擎提取 + 多模态大模型直接理解媒体内容，两种方式抽取 5 个科技事件字段。")
+
+    # ── 提取方式选择 ──
+    mode = st.radio(
+        "📌 提取方式",
+        ["🔧 OCR + 正则引擎（本地/免费）", "🧠 多模态大模型 API（云端/高精度）"],
+        horizontal=True,
+    )
+
+    use_api = mode.startswith("🧠")
+
+    # ── 多模态 API 配置面板 ──
+    if use_api:
+        with st.expander("⚙️ 多模态 API 配置", expanded=True):
+            api_config = load_multimodal_api_config()
+
+            col1, col2 = st.columns(2)
+            with col1:
+                api_url = st.text_input(
+                    "API 地址 (Base URL)",
+                    value=api_config.get("api_url", ""),
+                    placeholder="https://api.openai.com/v1 （自动补 /chat/completions）",
+                    key="mm_api_url",
+                )
+                model = st.text_input(
+                    "模型名称",
+                    value=api_config.get("model", "gpt-4o"),
+                    placeholder="gpt-4o / claude-3-opus / MiniMax-M2",
+                    key="mm_model",
+                )
+            with col2:
+                api_key = st.text_input(
+                    "API Key",
+                    value=api_config.get("api_key", ""),
+                    type="password",
+                    placeholder="sk-...",
+                    key="mm_api_key",
+                )
+
+            system_prompt = st.text_area(
+                "System Prompt（系统提示词）",
+                value=api_config.get("system_prompt", ""),
+                height=200,
+                key="mm_prompt",
+                help="发送给大模型的系统指令，定义抽取格式和要求。",
+            )
+
+            c_save1, c_save2, c_reset = st.columns([1, 1, 1])
+            with c_save1:
+                if st.button("💾 保存配置", type="primary", use_container_width=True,
+                             help="配置将持久化存储，重启后无需重新配置"):
+                    new_config = {
+                        "api_url": api_url,
+                        "api_key": api_key,
+                        "model": model,
+                        "system_prompt": system_prompt,
+                    }
+                    path = save_multimodal_api_config(new_config)
+                    st.success(f"✅ 已保存至 {path}")
+            with c_reset:
+                if st.button("🔄 重置为默认", use_container_width=True):
+                    import os as _os
+                    default_prompt = (
+                        "你是一个专业的科技事件信息抽取系统。请仔细观察图片内容，"
+                        "从中抽取出科技发布事件的核心要素。\n\n"
+                        "请严格按照以下JSON格式返回结果，不要包含任何其他内容：\n\n"
+                        "{\n"
+                        '  "developer": "研发主体（公司/基金会/研究机构），没有则为null",\n'
+                        '  "tech_product": "核心技术/产品/开源项目名，没有则为null",\n'
+                        '  "action_type": "事件动作（如：发布、开源、升级、修复漏洞等），没有则为null",\n'
+                        '  "version_metric": "版本号或关键指标数据（如v1.30、70B参数、性能提升40%），没有则为null",\n'
+                        '  "date": "事件日期（YYYY-MM-DD格式），没有则为null"\n'
+                        "}"
+                    )
+                    save_multimodal_api_config({
+                        "api_url": "https://api.openai.com/v1/chat/completions",
+                        "api_key": "",
+                        "model": "gpt-4o",
+                        "system_prompt": default_prompt,
+                    })
+                    st.success("已重置为默认配置，请刷新页面。")
+                    st.rerun()
+
+    else:
+        # OCR 模式：探测可用引擎
+        from multimodal.multimodal_extraction import MultimodalExtractor
+        engines = MultimodalExtractor.detect_available_engines()
+        if not engines:
+            st.error("⚠️ 未检测到 OCR 引擎！请安装: `pip install easyocr`")
+            st.code("pip install easyocr", language="bash")
+            return
+
+        engine_names = {
+            "paddleocr": "PaddleOCR (中文最强)",
+            "easyocr": "EasyOCR (中英文均可)",
+            "pytesseract": "PyTesseract (轻量备选)",
+        }
+        engine_labels = [f"{engine_names.get(e, e)}" for e in engines]
+        st.info(f"🟢 检测到 {len(engines)} 个 OCR 引擎可用：{' / '.join(engine_labels)}")
+
+    st.divider()
+
+    # ── 图片上传 + 演示海报 ──
+    col_demo_left, col_demo_right = st.columns([2, 1])
+    with col_demo_right:
+        if st.button("🎲 生成演示海报", use_container_width=True):
+            from multimodal import generate_demo_image
+            demo_path = generate_demo_image()
+            if demo_path:
+                st.session_state["demo_image"] = demo_path
+                st.success("演示海报已生成！")
+                st.rerun()
+
+        demo_image = st.session_state.get("demo_image", "")
+        if demo_image:
+            if st.button("🗑️ 清除演示海报", use_container_width=True):
+                if os.path.exists(demo_image):
+                    os.remove(demo_image)
+                st.session_state.pop("demo_image", None)
+                st.rerun()
+
+    with col_demo_left:
+        uploaded = st.file_uploader(
+            "📤 上传科技海报/截图/视频",
+            type=["png", "jpg", "jpeg", "bmp", "webp", "mp4", "mov", "avi", "webm"],
+            key="mm_upload",
+        )
+
+    # 显示媒体
+    demo_image = st.session_state.get("demo_image", "")
+    if demo_image and not uploaded:
+        st.image(demo_image, caption="🎲 自动生成的演示海报", use_container_width=True)
+        filepath = demo_image
+        is_video = False
+    elif uploaded:
+        os.makedirs(IMAGES_DIR, exist_ok=True)
+        filepath = os.path.join(IMAGES_DIR, uploaded.name)
+        with open(filepath, "wb") as f:
+            f.write(uploaded.getbuffer())
+        is_video = os.path.splitext(uploaded.name)[1].lower() in {".mp4", ".mov", ".avi", ".webm", ".mkv"}
+        if is_video:
+            st.video(filepath)
+        else:
+            st.image(filepath, use_container_width=True)
+    else:
+        st.caption("👆 上传图片/视频或点击「生成演示海报」开始体验。")
         return
 
-    os.makedirs(IMAGES_DIR, exist_ok=True)
-    image_path = os.path.join(IMAGES_DIR, uploaded.name)
-    with open(image_path, "wb") as f:
-        f.write(uploaded.getbuffer())
+    # ── 运行抽取 ──
+    if not use_api and is_video:
+        st.warning("⚠️ 视频文件不支持本地 OCR 提取，请切换到「多模态大模型 API」模式。")
+        return
 
-    st.image(image_path, use_container_width=True)
-    if st.button("运行 OCR 事件抽取", type="primary"):
-        extractor = MultimodalExtractor()
-        result = extractor.process_image(image_path)
-        st.subheader("OCR 文本")
-        st.write(result.get("ocr_text", ""))
-        st.subheader("事件字段")
-        st.json(result.get("extraction", {}))
+    c_extract, c_nlp = st.columns([2, 1])
+    with c_extract:
+        run_ocr = st.button(
+            "🧠 多模态 API 抽取" if use_api else "🔍 运行 OCR 事件抽取",
+            type="primary", use_container_width=True,
+        )
+    with c_nlp:
+        if not use_api:
+            use_nlp = st.checkbox("NLP增强", help="用 LLM 对 OCR 结果做二次抽取（需配置 API Key）")
+        else:
+            use_nlp = False
+
+    if run_ocr:
+        if use_api:
+            # ── 多模态 API 路径 ──
+            api_config = load_multimodal_api_config()
+            if not api_config.get("api_key"):
+                st.error("❌ 请先在配置面板中填写 API Key")
+            else:
+                from multimodal.api_client import extract_with_multimodal_api
+                media_label = "视频" if is_video else "图片"
+                with st.spinner(f"正在调用 {api_config['model']} 分析{media_label}..."):
+                    result = extract_with_multimodal_api(
+                        media_path=filepath,
+                        api_url=api_url,
+                        api_key=api_key,
+                        model=model,
+                        system_prompt=system_prompt,
+                    )
+
+                if result.get("error"):
+                    st.error(result["error"])
+                else:
+                    # 结果展示
+                    c1, c2, c3 = st.columns(3)
+                    c1.metric("API 引擎", result.get("api_engine", "-"))
+                    c2.metric("耗时", f"{result.get('api_latency', 0):.1f}s")
+                    extraction = result.get("extraction", {})
+                    c3.metric("命中字段", sum(1 for v in extraction.values() if v))
+
+                    st.subheader("🎯 抽取事件 5 字段")
+                    field_cols = st.columns(5)
+                    for col, field in zip(field_cols, EXTRACTION_FIELDS):
+                        val = extraction.get(field) or "—"
+                        col.metric(FIELD_LABELS[field], val)
+
+                    if result.get("raw_response"):
+                        with st.expander("📝 API 原始响应"):
+                            st.text(result["raw_response"])
+        else:
+            # ── OCR 路径 ──
+            from multimodal.multimodal_extraction import MultimodalExtractor
+            extractor = MultimodalExtractor()
+            with st.spinner("OCR 识别中..."):
+                result = extractor.process_image(filepath, use_nlp=use_nlp)
+
+            if result.get("error"):
+                st.error(result["error"])
+                return
+
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("OCR 引擎", result.get("ocr_engine", "-"))
+            c2.metric("识别字符数", result.get("ocr_text_length", 0))
+            c3.metric("置信度", f"{result.get('ocr_confidence', 0):.1%}")
+            c4.metric("正则命中", sum(1 for v in result["extraction"].values() if v))
+
+            st.subheader("📝 OCR 识别文本")
+            st.text_area("OCR 结果", result.get("ocr_text", ""), height=150, disabled=True)
+
+            st.subheader("🎯 抽取事件 5 字段")
+            field_cols = st.columns(5)
+            extraction = result.get("extraction", {})
+            for col, field in zip(field_cols, EXTRACTION_FIELDS):
+                val = extraction.get(field) or "—"
+                col.metric(FIELD_LABELS[field], val)
+
+            if result.get("nlp_used") and "extraction_nlp" in result:
+                st.subheader("🧠 NLP 增强抽取")
+                nlp_cols = st.columns(5)
+                for col, field in zip(nlp_cols, EXTRACTION_FIELDS):
+                    val = result["extraction_nlp"].get(field) or "—"
+                    col.metric(f"{FIELD_LABELS[field]} (LLM)", val)
+
+        st.divider()
+        if use_api:
+            st.caption("💡 提示：多模态 API 直接让大模型『看』图片并理解内容，对模糊截图/海报/图表均有较好效果。")
+        else:
+            st.caption("💡 提示：也可以切换到「多模态大模型 API」模式，用 GPT-4V 等直接理解图片内容。")
 
 
 # ──────────────────────────────────────────────────

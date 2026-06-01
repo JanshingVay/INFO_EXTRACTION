@@ -7,10 +7,10 @@ Pillow>=10.0.0
 pandas>=2.0.0
 streamlit>=1.35.0
 
-# 可选 OCR 引擎（安装至少一个）
-easyocr>=1.7.0
-# 或:
-# pytesseract>=0.3.10
+# 可选 OCR 引擎（安装至少一个即可）
+easyocr>=1.7.0          # 推荐，中英文均可，pip install easyocr
+# paddleocr>=2.7.0      # 中文最强，但依赖较大: pip install paddleocr paddlepaddle
+# pytesseract>=0.3.10   # 轻量备选，需额外安装 tesseract 系统包
 
 # 可选 LLM 抽取支持（不配置 API Key 会自动回退到 Regex）
 openai>=1.0.0

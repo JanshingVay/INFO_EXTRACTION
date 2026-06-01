@@ -270,3 +270,62 @@ OCR_CONFIG = {
     "engine": "easyocr",
     "languages": ["ch_sim", "en"],
 }
+
+# ============================================================
+# 多模态 API 配置（图片 → 多模态大模型 → 事件抽取）
+# 前端可配置，配置自动持久化到 data/multimodal_api_config.json
+# 优先级：JSON 文件 > .env 环境变量 > 默认值
+# ============================================================
+
+MULTIMODAL_API_CONFIG_FILE = os.path.join(DATA_DIR, "multimodal_api_config.json")
+
+MULTIMODAL_API_CONFIG_DEFAULTS = {
+    "api_url": os.getenv("MULTIMODAL_API_URL", "https://api.openai.com/v1/chat/completions"),
+    "api_key": os.getenv("MULTIMODAL_API_KEY", ""),
+    "model": os.getenv("MULTIMODAL_MODEL", "gpt-4o"),
+    "system_prompt": (
+        "你是一个专业的科技事件信息抽取系统。请仔细观察图片内容，"
+        "从中抽取出科技发布事件的核心要素。\n\n"
+        "请严格按照以下JSON格式返回结果，不要包含任何其他内容：\n\n"
+        "{\n"
+        '  "developer": "研发主体（公司/基金会/研究机构），没有则为null",\n'
+        '  "tech_product": "核心技术/产品/开源项目名，没有则为null",\n'
+        '  "action_type": "事件动作（如：发布、开源、升级、修复漏洞等），没有则为null",\n'
+        '  "version_metric": "版本号或关键指标数据（如v1.30、70B参数、性能提升40%），没有则为null",\n'
+        '  "date": "事件日期（YYYY-MM-DD格式），没有则为null"\n'
+        "}"
+    ),
+}
+
+
+def load_multimodal_api_config() -> dict:
+    """
+    加载多模态 API 配置。
+    优先级：持久化 JSON > .env 默认值
+    """
+    config = dict(MULTIMODAL_API_CONFIG_DEFAULTS)
+    if os.path.exists(MULTIMODAL_API_CONFIG_FILE):
+        try:
+            import json
+            with open(MULTIMODAL_API_CONFIG_FILE, "r", encoding="utf-8") as f:
+                saved = json.load(f)
+            config.update(saved)
+        except Exception:
+            pass
+    return config
+
+
+def save_multimodal_api_config(config: dict) -> str:
+    """持久化多模态 API 配置到 JSON 文件。"""
+    import json
+    os.makedirs(DATA_DIR, exist_ok=True)
+    # 只保存与默认值不同的字段 + 总是保存敏感字段
+    persist_keys = {"api_url", "api_key", "model", "system_prompt"}
+    to_save = {k: v for k, v in config.items() if k in persist_keys}
+    with open(MULTIMODAL_API_CONFIG_FILE, "w", encoding="utf-8") as f:
+        json.dump(to_save, f, ensure_ascii=False, indent=2)
+    return MULTIMODAL_API_CONFIG_FILE
+
+
+# 模块级加载（可被前端刷新）
+MULTIMODAL_API_CONFIG = load_multimodal_api_config()
