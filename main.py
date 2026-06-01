@@ -1,372 +1,79 @@
 #!/usr/bin/env python3
 """
-核心技术产品发布与升级大事件抽取系统 —— 主入口
+核心技术产品发布与升级大事件抽取系统 —— 前端入口
+
+默认启动 Streamlit 图形界面，未安装则回退到 Tkinter 标准库界面。
 """
 import os
+import signal
+import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import glob
-import json
-import asyncio
-import logging
-from typing import Dict, Any, Optional
-
-from config import (
-    BASE_DIR, RAW_NEWS_DIR, IMAGES_DIR,
-    LLM_CONFIGURED, EXTRACTION_FIELDS,
-    DOCUMENTS_FILE,
-)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    stream=sys.stdout,
-)
-logger = logging.getLogger(__name__)
+from config import LLM_CONFIGURED
 
 
-def print_banner():
-    banner = """
+def _print_banner():
+    print("""
 ╔═══════════════════════════════════════════════════════════════════╗
 ║                                                                   ║
 ║    核心技术产品发布与升级大事件抽取系统                          ║
 ║    Tech Event Extraction System                                   ║
 ║                                                                   ║
 ║    5要素: 研发主体/技术产品/事件动作/版本指标/发布时间              ║
-║    developer / tech_product / action_type / version_metric / date ║
-║                                                                   ║
 ║    数据源: IT之家/36氪/新华网/人民网/凤凰网/网易/新浪/环球/澎湃     ║
-║    高性能异步爬虫引擎 · 100%真实数据 · 零假生成                   ║
+║    100%真实数据 · 零假生成                                       ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
-"""
-    print(banner)
-    if LLM_CONFIGURED:
-        print(" ✅ LLM API Key 已配置，可使用 NLPExtractor")
-    else:
-        print(" ⚠️  LLM API Key 未配置，将使用 RegexExtractor")
-        print("    请在 config.py 中配置 api_key 或设置环境变量 LLM_API_KEY")
-    print()
+""")
 
 
-def print_main_menu():
-    print("\n" + "=" * 50)
-    print("  📋 主菜单")
-    print("=" * 50)
-    print("  1. 🕷️  运行爬虫（采集科技技术新闻）")
-    print("  2. 🔍  抽取科技事件要素")
-    print("  3. 📝  交互式人工标注/评测")
-    print("  4. 📷  跨模态 OCR 抽取（海报 → 事件）")
-    print("  5. 🎬  快速演示全流程")
-    print("")
-    print("  0. 🚪 退出")
-    print("=" * 50)
-
-
-def run_crawler_menu():
-    print("\n" + "-" * 45)
-    print("  🕷️  爬虫菜单")
-    print("-" * 45)
-    print("  1. 运行高性能异步爬虫（IT之家/36氪/新浪/网易等10大源）")
-    print("  2. 查看已爬取文档数量")
-    print("  0. 返回主菜单")
-
-    choice = input("\n请选择: ").strip()
-
-    if choice == "1":
-        logger.info("启动高性能异步爬虫...")
-        from crawler import AsyncWebCrawler, save_as_articles
-
+def _launch_streamlit():
+    app_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app.py")
+    print("🚀 正在启动 Streamlit 图形界面...")
+    print("   浏览器打开后即可使用完整功能。")
+    print("   按 Ctrl+C 可安全退出。\n")
+    proc = subprocess.Popen(
+        [sys.executable, "-m", "streamlit", "run", app_path,
+         "--server.headless", "true",
+         "--browser.gatherUsageStats", "false"],
+    )
+    try:
+        proc.wait()
+    except KeyboardInterrupt:
+        print("\n🛑 正在安全关闭...")
+        proc.send_signal(signal.SIGINT)
         try:
-            crawler = AsyncWebCrawler()
-            docs = asyncio.run(crawler.crawl_all())
-            if docs:
-                filepath = save_as_articles(docs)
-                logger.info("已保存 %d 篇文档至 %s", len(docs), filepath)
-            else:
-                logger.warning("未获取到任何文档")
-        except Exception as e:
-            logger.error("爬虫异常: %s", e)
-            print(f"\n❌ {e}")
-
-    elif choice == "2":
-        from crawler import load_crawled_documents
-        docs = load_crawled_documents()
-        print(f"\n📊 当前已存储 {len(docs)} 篇文档")
-        if docs:
-            sources = set(d.get("url", "").split("/")[2] for d in docs if d.get("url"))
-            print(f"   来源域名: {sources}")
-
-    elif choice == "0":
-        return
-    else:
-        print("❌ 无效选项")
+            proc.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            proc.terminate()
+            proc.wait()
+        print("👋 系统已安全退出。")
 
 
-def select_extractor():
-    print("\n" + "-" * 45)
-    print("  🤖  选择抽取算法")
-    print("-" * 45)
-    print("  1. 🔧  RegexExtractor (正则表达式 - 推荐，无需配置)")
-    if LLM_CONFIGURED:
-        print("  2. 🧠  NLPExtractor (NLP/LLM - 智能，已配置API)")
-    else:
-        print("  2. 🧠  NLPExtractor (NLP/LLM - 需在 config.py 配置 API Key)")
-    print("-" * 45)
-
-    choice = input("请选择 [1-2]: ").strip()
-    if choice == "1":
-        from extractor.regex_extractor import RegexExtractor
-        return "RegexExtractor", RegexExtractor()
-    elif choice == "2":
-        from extractor.nlp_extractor import NLPExtractor
-        return "NLPExtractor", NLPExtractor()
-    else:
-        print("⚠️ 默认选择 RegexExtractor")
-        from extractor.regex_extractor import RegexExtractor
-        return "RegexExtractor", RegexExtractor()
-
-
-def _load_articles_for_extraction():
-    """加载文章：优先从 raw_news/*.json，其次从 documents.json 适配"""
-    files = sorted(glob.glob(os.path.join(RAW_NEWS_DIR, "*.json")))
-    if files:
-        with open(files[-1], "r", encoding="utf-8") as f:
-            data = json.load(f)
-        articles = data.get("articles", [])
-        if articles:
-            return articles, files
-
-    from crawler import load_crawled_documents, adapt_for_extraction
-    docs = load_crawled_documents()
-    if docs:
-        articles = adapt_for_extraction(docs)
-        return articles, files
-
-    return [], files
-
-
-def run_extractor_menu():
-    files = sorted(glob.glob(os.path.join(RAW_NEWS_DIR, "*.json")))
-    from crawler import load_crawled_documents
-    docs_count = len(load_crawled_documents())
-
-    has_data = len(files) > 0 or docs_count > 0
-
-    if not has_data:
-        print("⚠️  没有找到新闻数据，请先运行爬虫！")
-        return
-
-    print("\n" + "-" * 45)
-    print("  🔍  抽取引擎菜单")
-    print("-" * 45)
-
-    if files:
-        print(f"  已找到 {len(files)} 个数据文件：")
-        for i, f in enumerate(files, 1):
-            print(f"    {i}. {os.path.basename(f)}")
-    if docs_count > 0:
-        print(f"\n  💡 此外还有 {docs_count} 篇文档在 {os.path.basename(DOCUMENTS_FILE)} 中")
-
-    print(f"\n  a. 从 documents.json 加载（自动适配格式）")
-    print("  0. 返回主菜单")
-
+def _launch_tkinter():
+    from desktop_app import main as tk_main
+    print("⚠️  Streamlit 未安装，使用 Tkinter 标准库界面。")
+    print("   如需更好体验，请运行: pip install streamlit")
+    print("   按 Ctrl+C 可安全退出。\n")
     try:
-        choice = input("\n请选择: ").strip()
-        if choice == "0":
-            return
-
-        if choice.lower() == "a":
-            from crawler import load_crawled_documents, adapt_for_extraction
-            docs = load_crawled_documents()
-            if not docs:
-                print("❌ documents.json 为空")
-                return
-            articles = adapt_for_extraction(docs)
-            print(f"\n📄 已从 documents.json 加载并适配 {len(articles)} 篇文章")
-        else:
-            idx = int(choice) - 1
-            if idx < 0 or idx >= len(files):
-                print("❌ 无效选择")
-                return
-            filepath = files[idx]
-            print(f"\n📄 正在加载: {os.path.basename(filepath)}")
-            with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            articles = data.get("articles", [])
-
-        extractor_name, extractor = select_extractor()
-        print(f"\n⚙️  已初始化抽取器: {extractor_name}")
-
-        print(f"\n" + "=" * 100)
-        print(f"  {'序号':<4} {'标题':<40} {'研发主体':<12} {'技术产品':<16} {'事件动作':<12}")
-        print(f"  {'-'*4} {'-'*40} {'-'*12} {'-'*16} {'-'*12}")
-
-        for i, art in enumerate(articles[:15], 1):
-            res = extractor.extract(art)
-            title = art.get("title", "")[:38]
-            dev = (res.get("developer") or "-")[:10]
-            prod = (res.get("tech_product") or "-")[:14]
-            action = (res.get("action_type") or "-")[:10]
-            print(f"  {i:<4} {title:<40} {dev:<12} {prod:<16} {action:<12}")
-
-        print(f"  {'-'*4} {'-'*40} {'-'*12} {'-'*16} {'-'*12}")
-        print(f"  (仅显示前 15 条，{len(articles)} 条全部已抽取)")
-        print(f"\n💡 完整抽取包含 5 字段：developer / tech_product / action_type / version_metric / date")
-
-    except ValueError:
-        print("❌ 请输入有效数字")
-
-
-def run_evaluator_menu():
-    files = sorted(glob.glob(os.path.join(RAW_NEWS_DIR, "*.json")))
-    if not files:
-        print("⚠️  没有找到新闻数据，请先运行爬虫！")
-        return
-
-    print("\n" + "-" * 45)
-    print("  📝  评价系统菜单")
-    print("-" * 45)
-    print("  选择要标注/评测的数据源：")
-    for i, f in enumerate(files, 1):
-        print(f"    {i}. {os.path.basename(f)}")
-    print("\n  0. 返回主菜单")
-
-    try:
-        choice = input("\n请选择 (0 返回): ").strip()
-        if choice == "0":
-            return
-        idx = int(choice) - 1
-        if idx < 0 or idx >= len(files):
-            print("❌ 无效选择")
-            return
-
-        from evaluator import EvaluationSystem
-        evaluator = EvaluationSystem(files[idx])
-        evaluator.interactive_menu()
-
-    except ValueError:
-        print("❌ 请输入有效数字")
-
-
-def run_multimodal_menu():
-    print("\n" + "-" * 45)
-    print("  📷  跨模态 OCR 抽取")
-    print("-" * 45)
-    print("  1. 运行演示管线（生成科技海报 → OCR → 抽取）")
-    print("  2. 处理 data/images/ 目录下所有图片")
-    print("  3. 指定单个图片路径处理")
-    print("  0. 返回主菜单")
-
-    try:
-        choice = input("\n请选择: ").strip()
-        if choice == "1":
-            from multimodal import demo_pipeline
-            demo_pipeline()
-        elif choice == "2":
-            from multimodal import MultimodalExtractor
-            extractor = MultimodalExtractor()
-            results = extractor.process_directory(IMAGES_DIR)
-            if results:
-                extractor.save_results(results)
-        elif choice == "3":
-            path = input("\n请输入图片路径: ").strip()
-            if not os.path.exists(path):
-                print("❌ 文件不存在")
-                return
-            from multimodal import MultimodalExtractor
-            extractor = MultimodalExtractor()
-            result = extractor.process_image(path)
-            print(f"\n✅ 抽取结果：")
-            print(json.dumps(result.get("extraction", {}), ensure_ascii=False, indent=2))
-        elif choice == "0":
-            return
-        else:
-            print("❌ 无效选项")
-    except Exception as e:
-        logger.error("跨模态模块错误：%s", e)
-        print(f"\n⚠️  提示：OCR 功能需要安装 easyocr")
-        print("   运行：pip install easyocr")
-
-
-def run_quick_demo():
-    print("\n" + "=" * 55)
-    print("  🎬  快速演示全流程")
-    print("=" * 55)
-
-    print("\n" + "-" * 55)
-    print("  [1/3] 加载已有文档或运行爬虫")
-    print("-" * 55)
-
-    from crawler import load_crawled_documents, adapt_for_extraction
-    docs = load_crawled_documents()
-
-    if len(docs) < 50:
-        print(f"  当前仅有 {len(docs)} 篇文档，启动爬虫采集...")
-        from crawler import AsyncWebCrawler
-        crawler = AsyncWebCrawler()
-        try:
-            docs = asyncio.run(crawler.crawl_all())
-        except Exception as e:
-            logger.warning("爬虫异常: %s", e)
-
-    if not docs:
-        print("⚠️  未能获取文章，请检查网络连接")
-        return
-
-    articles = adapt_for_extraction(docs)
-    print(f"\n✅ 共有 {len(articles)} 篇真实科技新闻")
-
-    print("\n" + "-" * 55)
-    print("  [2/3] 抽取科技事件要素")
-    print("-" * 55)
-
-    from extractor.regex_extractor import RegexExtractor
-    extractor = RegexExtractor()
-
-    for i, art in enumerate(articles[:5], 1):
-        res = extractor.extract(art)
-        print(f"\n  文章 {i}: {art['title'][:55]}")
-        print(f"    developer:       {res.get('developer', '-')}")
-        print(f"    tech_product:    {res.get('tech_product', '-')}")
-        print(f"    action_type:     {res.get('action_type', '-')}")
-        print(f"    version_metric:  {res.get('version_metric', '-')}")
-        print(f"    date:            {res.get('date', '-')}")
-
-    print("\n" + "-" * 55)
-    print("  [3/3] 抽取管线准备完毕！")
-    print("-" * 55)
-    print("\n✅ 全流程演示完成！")
-    print(f"\n💡 共处理 {len(articles)} 篇文章，100%真实数据")
-    print("\n💡 下一步：")
-    print("   - 去运行主菜单的『交互式人工标注/评测』")
-    print("   - 或运行『跨模态 OCR 抽取』看看海报识别效果")
+        tk_main()
+    except KeyboardInterrupt:
+        print("\n👋 系统已安全退出。")
 
 
 def main():
-    print_banner()
+    _print_banner()
 
-    while True:
-        print_main_menu()
-        choice = input("  请选择: ").strip()
+    if not LLM_CONFIGURED:
+        print(" ⚠️  LLM API Key 未配置，NLP 抽取功能将在前端中被限制。")
 
-        if choice == "1":
-            run_crawler_menu()
-        elif choice == "2":
-            run_extractor_menu()
-        elif choice == "3":
-            run_evaluator_menu()
-        elif choice == "4":
-            run_multimodal_menu()
-        elif choice == "5":
-            run_quick_demo()
-        elif choice == "0":
-            print("\n👋 再见！")
-            break
-        else:
-            print("  ❌ 无效选项，请重新选择")
+    try:
+        import streamlit  # noqa: F401
+        _launch_streamlit()
+    except ImportError:
+        _launch_tkinter()
 
 
 if __name__ == "__main__":

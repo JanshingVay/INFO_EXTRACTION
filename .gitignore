@@ -11,3 +11,4 @@ data/evaluations/*
 !data/raw_news/.gitkeep
 !data/extraction_results/.gitkeep
 !data/evaluations/.gitkeep
+data/*.json
