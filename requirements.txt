@@ -1,3 +1,8 @@
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+aiofiles>=23.0
+jieba>=0.42.1
 Pillow>=10.0.0
 pandas>=2.0.0
 streamlit>=1.35.0
