@@ -329,6 +329,19 @@ class MultimodalExtractor:
 
         return result
 
+    # ── 本地多模态模型抽取 ──
+
+    @staticmethod
+    def process_with_local_vl(
+        media_path: str,
+        config: Optional[Dict[str, Any]] = None,
+    ) -> Dict[str, Any]:
+        """
+        使用本地开源多模态大模型处理媒体（图片/视频）并抽取事件。
+        """
+        from multimodal.local_vl import extract_with_local_vl
+        return extract_with_local_vl(media_path=media_path, config=config)
+
     # ── 批量处理 ──
 
     def process_directory(

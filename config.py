@@ -329,3 +329,62 @@ def save_multimodal_api_config(config: dict) -> str:
 
 # 模块级加载（可被前端刷新）
 MULTIMODAL_API_CONFIG = load_multimodal_api_config()
+
+# ============================================================
+# 本地多模态模型配置（图片/视频 → 本地开源大模型 → 事件抽取）
+# 前端可配置，配置自动持久化到 data/local_vl_config.json
+# ============================================================
+
+LOCAL_VL_CONFIG_FILE = os.path.join(DATA_DIR, "local_vl_config.json")
+
+LOCAL_VL_CONFIG_DEFAULTS = {
+    "enabled": False,
+    "model": os.getenv("LOCAL_VL_MODEL", "Qwen/Qwen2.5-VL-7B-Instruct"),
+    "device": os.getenv("LOCAL_VL_DEVICE", "auto"),
+    "max_tokens": int(os.getenv("LOCAL_VL_MAX_TOKENS", "2048")),
+    "temperature": float(os.getenv("LOCAL_VL_TEMPERATURE", "0.3")),
+    "system_prompt": (
+        "你是一个专业的科技事件信息抽取系统。请仔细观察图片/视频内容，"
+        "从中抽取出科技发布事件的核心要素。\n\n"
+        "请严格按照以下JSON格式返回结果，不要包含任何其他内容：\n\n"
+        "{\n"
+        '  "developer": "研发主体（公司/基金会/研究机构），没有则为null",\n'
+        '  "tech_product": "核心技术/产品/开源项目名，没有则为null",\n'
+        '  "action_type": "事件动作（如：发布、开源、升级、修复漏洞等），没有则为null",\n'
+        '  "version_metric": "版本号或关键指标数据（如v1.30、70B参数、性能提升40%），没有则为null",\n'
+        '  "date": "事件日期（YYYY-MM-DD格式），没有则为null"\n'
+        "}"
+    ),
+}
+
+
+def load_local_vl_config() -> dict:
+    """
+    加载本地多模态配置。
+    优先级：持久化 JSON > .env 默认值
+    """
+    config = dict(LOCAL_VL_CONFIG_DEFAULTS)
+    if os.path.exists(LOCAL_VL_CONFIG_FILE):
+        try:
+            import json
+            with open(LOCAL_VL_CONFIG_FILE, "r", encoding="utf-8") as f:
+                saved = json.load(f)
+            config.update(saved)
+        except Exception:
+            pass
+    return config
+
+
+def save_local_vl_config(config: dict) -> str:
+    """持久化本地多模态配置到 JSON 文件。"""
+    import json
+    os.makedirs(DATA_DIR, exist_ok=True)
+    persist_keys = {"enabled", "model", "device", "max_tokens", "temperature", "system_prompt"}
+    to_save = {k: v for k, v in config.items() if k in persist_keys}
+    with open(LOCAL_VL_CONFIG_FILE, "w", encoding="utf-8") as f:
+        json.dump(to_save, f, ensure_ascii=False, indent=2)
+    return LOCAL_VL_CONFIG_FILE
+
+
+# 模块级加载
+LOCAL_VL_CONFIG = load_local_vl_config()

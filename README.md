@@ -47,7 +47,10 @@ INFO_EXTRACTION/
 │   ├── evaluator.py               # 命令行人工评价
 │   └── metrics.py                 # 字段级评价指标
 ├── multimodal/
-│   └── multimodal_extraction.py   # OCR图片信息抽取
+│   ├── __init__.py
+│   ├── multimodal_extraction.py   # OCR图片信息抽取
+│   ├── api_client.py              # 第三方多模态 API 调用
+│   └── local_vl.py                # 本地开源多模态模型调用
 ├── utils/
 │   ├── helpers.py
 │   └── pipeline.py                # 数据转换、批量抽取、统计
@@ -56,6 +59,8 @@ INFO_EXTRACTION/
     ├── extraction_results/basic_regex_results.json
     ├── extraction_results/regex_results.json
     ├── extraction_results/regex_results.csv
+    ├── multimodal_api_config.json
+    ├── local_vl_config.json
     ├── evaluations/
     └── images/
 ```
@@ -69,6 +74,11 @@ pip install -r requirements.txt
 ```
 
 如果只使用 `desktop_app.py`，不需要 Streamlit；如果使用 OCR，需要安装 `easyocr` 或 `pytesseract`。
+
+**本地多模态模型可选依赖**（按需安装）：
+- 基础多模态：`pip install torch transformers accelerate pillow`
+- Qwen2.5-VL 增强：`pip install qwen-vl`
+- InternVL2：`pip install transformers pillow`
 
 ### 2. 构建作业3语料
 
@@ -191,11 +201,21 @@ data/evaluations/metrics_from_info_retrieve.json
 | 基础正则 | 146 | 437 | 139 | 100 | 738 | 57 |
 | 优化正则 | 569 | 717 | 516 | 400 | 738 | 506 |
 
-## 多媒体信息抽取（图片 → 事件）
+## 多媒体信息抽取（图片/视频 → 事件）
+
+系统实现三种多媒体信息抽取方式：
+
+1. **OCR + 正则引擎**：本地免费，纯离线，仅支持图片
+2. **本地开源多模态大模型**：直接理解视觉内容，支持图片和视频，无需联网（首推 Qwen2.5-VL）
+3. **云端多模态大模型 API**：精度最高，支持图片和视频，使用 OpenAI 兼容协议（Kimi/MiniMax/DeepSeek等）
+
+---
+
+### 方式1：OCR + 正则引擎（本地/免费）
 
 系统实现完整的多媒体信息抽取管线，支持从图像中识别文本并抽取科技事件。采用**三引擎自动回退架构**，按优先级 `PaddleOCR > EasyOCR > PyTesseract` 自动选择最佳可用引擎。
 
-### 引擎对比
+#### 引擎对比
 
 | 引擎 | 安装命令 | 中文精度 | 速度 | 推荐场景 |
 |------|----------|:---:|:---:|----------|
@@ -203,17 +223,18 @@ data/evaluations/metrics_from_info_retrieve.json
 | **EasyOCR** | `pip install easyocr` | ★★★★ | ★★ | 已安装即用，中英文均可 |
 | **PyTesseract** | `pip install pytesseract` + 安装 tesseract | ★★★ | ★★★★★ | 轻量备选 |
 
-### 图像预处理增强
+#### 图像预处理增强
 
 ```
 原图 → 对比度增强(1.5x) → 锐度增强(2x) → 灰度 → 自适应二值化 → 中值滤波降噪 → OCR
 ```
 
-### 使用方式
+#### 使用方式
 
 **1. 上传图片（Streamlit 前端）**
 
 启动前端后，进入「多媒体抽取」页面：
+- 选择「🔧 OCR + 正则引擎」
 - 上传科技海报/发布会截图/PPT 页面
 - 点击「运行 OCR 事件抽取」
 - 查看 OCR 文本 + 结构化 5 字段结果
@@ -238,6 +259,82 @@ print(result["extraction"])  # {developer, tech_product, action_type, ...}
 # 批量处理
 results = extractor.process_directory("data/images/")
 extractor.save_results(results)
+```
+
+---
+
+### 方式2：本地开源多模态大模型
+
+系统接入两个行业领先开源多模态大模型：
+
+| 模型 | 安装/加载说明 | 推荐配置 | 图片 | 视频 |
+|------|--------------|:---:|:---:|:---:|
+| **Qwen/Qwen2.5-VL-7B-Instruct** | `pip install transformers torch pillow accelerate`，加载 qwen-vl 工具包 | 16GB VRAM (GPU)，或 32GB RAM (CPU 量化) | ✅ | ✅ |
+| **OpenGVLab/InternVL2-8B-Instruct** | `pip install transformers torch pillow` | 16GB VRAM (GPU)，或 32GB RAM (CPU 量化) | ✅ | ⚠️ (仅首帧) |
+
+#### 本地多模态性能需求
+
+| 模式 | 内存需求 | 显存需求 | 单图推断耗时 |
+|------|:--------:|:--------:|:---------:|
+| **CPU量化** | 32GB+ RAM | 0 | 20-60秒 |
+| **GPU bfloat16 加载** | 16GB RAM | 16GB VRAM | 2-5秒 |
+| **GPU 4bit量化** | 16GB RAM | 8GB VRAM | 3-8秒 |
+
+#### 使用方式
+
+**1. Streamlit 前端**
+- 选择「🖥️ 本地开源多模态大模型」
+- 在配置面板填入模型名称和设备（如 `Qwen/Qwen2.5-VL-7B-Instruct`）
+- 上传图片或视频，点击「本地多模态模型抽取」
+
+**2. 代码调用**
+
+```python
+from multimodal import extract_with_local_vl
+
+# 默认使用 config.py 配置
+result = extract_with_local_vl("data/images/poster.png")
+
+# 或传入自定义配置
+config = {
+    "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "device": "auto",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "system_prompt": "你是科技事件抽取专家..."
+}
+result = extract_with_local_vl("data/images/poster.png", config)
+```
+
+---
+
+### 方式3：云端多模态大模型 API
+
+使用 OpenAI 兼容协议，支持 Kimi/MiniMax/DeepSeek 等厂商，图片和视频均支持（Kimi 支持视频 base64 上传）。
+
+#### 配置方式
+
+在 Streamlit 前端「多模态 API 配置」面板填写：
+- API 地址：`https://api.moonshot.cn/v1` 或其他厂商地址
+- API Key：你的 Kimi/MiniMax 等平台 Key
+- 模型名称：如 `kimi-k2.6`
+- System Prompt：抽取提示模板
+
+也可以通过 `.env` 配置默认值：
+
+```env
+MULTIMODAL_API_URL=https://api.moonshot.cn/v1
+MULTIMODAL_API_KEY=你的API_Key
+MULTIMODAL_MODEL=kimi-k2.6
+```
+
+#### 使用方式
+
+```python
+from multimodal import extract_with_multimodal_api
+
+result = extract_with_multimodal_api("data/images/poster.png")
+print(result["extraction"])
 ```
 
 ## 可持续发展考虑

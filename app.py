@@ -455,19 +455,107 @@ def page_metrics():
 
 def page_multimodal():
     st.header("🎬 多媒体信息抽取（图片/视频 → 事件）")
-    st.caption("支持 OCR 引擎提取 + 多模态大模型直接理解媒体内容，两种方式抽取 5 个科技事件字段。")
+    st.caption("支持三种抽取方式：本地 OCR 正则 / 本地开源多模态大模型 / 云端多模态大模型 API")
+
+    # ── 引入 config 函数 ──
+    from config import (
+        load_multimodal_api_config,
+        save_multimodal_api_config,
+        load_local_vl_config,
+        save_local_vl_config,
+    )
 
     # ── 提取方式选择 ──
     mode = st.radio(
         "📌 提取方式",
-        ["🔧 OCR + 正则引擎（本地/免费）", "🧠 多模态大模型 API（云端/高精度）"],
+        [
+            "🔧 OCR + 正则引擎（本地/免费）",
+            "🖥️ 本地开源多模态大模型（Qwen2.5-VL/InternVL2）",
+            "🧠 多模态大模型 API（云端/高精度）",
+        ],
         horizontal=True,
     )
 
     use_api = mode.startswith("🧠")
+    use_local_vl = mode.startswith("🖥️")
 
-    # ── 多模态 API 配置面板 ──
-    if use_api:
+    # ── 配置面板 ──
+    if use_local_vl:
+        with st.expander("⚙️ 本地多模态模型配置", expanded=True):
+            vl_config = load_local_vl_config()
+            col1, col2 = st.columns(2)
+            with col1:
+                model = st.text_input(
+                    "模型名称",
+                    value=vl_config.get("model", "Qwen/Qwen2.5-VL-7B-Instruct"),
+                    placeholder="Qwen/Qwen2.5-VL-7B-Instruct / OpenGVLab/InternVL2-8B-Instruct",
+                    key="local_vl_model",
+                )
+                device = st.text_input(
+                    "设备",
+                    value=vl_config.get("device", "auto"),
+                    placeholder="auto / cpu / cuda / mps",
+                    key="local_vl_device",
+                )
+            with col2:
+                temperature = st.number_input(
+                    "Temperature",
+                    value=float(vl_config.get("temperature", 0.3)),
+                    min_value=0.0, max_value=1.0, step=0.1,
+                    key="local_vl_temperature",
+                )
+                max_tokens = st.number_input(
+                    "Max Tokens",
+                    value=int(vl_config.get("max_tokens", 2048)),
+                    min_value=128, max_value=4096, step=128,
+                    key="local_vl_max_tokens",
+                )
+
+            system_prompt = st.text_area(
+                "System Prompt（系统提示词）",
+                value=vl_config.get("system_prompt", ""),
+                height=200,
+                key="local_vl_prompt",
+            )
+
+            c_save1, c_save2, c_reset = st.columns([1, 1, 1])
+            with c_save1:
+                if st.button("💾 保存配置", type="primary", use_container_width=True,
+                             help="配置将持久化存储到 data/local_vl_config.json"):
+                    new_config = {
+                        "model": model,
+                        "device": device,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens,
+                        "system_prompt": system_prompt,
+                    }
+                    path = save_local_vl_config(new_config)
+                    st.success(f"✅ 已保存至 {path}")
+            with c_reset:
+                if st.button("🔄 重置为默认", use_container_width=True):
+                    default_prompt = (
+                        "你是一个专业的科技事件信息抽取系统。请仔细观察图片/视频内容，"
+                        "从中抽取出科技发布事件的核心要素。\n\n"
+                        "请严格按照以下JSON格式返回结果，不要包含任何其他内容：\n\n"
+                        "{\n"
+                        '  "developer": "研发主体（公司/基金会/研究机构），没有则为null",\n'
+                        '  "tech_product": "核心技术/产品/开源项目名，没有则为null",\n'
+                        '  "action_type": "事件动作（如：发布、开源、升级、修复漏洞等），没有则为null",\n'
+                        '  "version_metric": "版本号或关键指标数据（如v1.30、70B参数、性能提升40%），没有则为null",\n'
+                        '  "date": "事件日期（YYYY-MM-DD格式），没有则为null"\n'
+                        "}"
+                    )
+                    save_local_vl_config({
+                        "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+                        "device": "auto",
+                        "temperature": 0.3,
+                        "max_tokens": 2048,
+                        "system_prompt": default_prompt,
+                    })
+                    st.success("已重置为默认配置，请刷新页面。")
+                    st.rerun()
+
+    elif use_api:
         with st.expander("⚙️ 多模态 API 配置", expanded=True):
             api_config = load_multimodal_api_config()
 
@@ -604,24 +692,60 @@ def page_multimodal():
         return
 
     # ── 运行抽取 ──
-    if not use_api and is_video:
-        st.warning("⚠️ 视频文件不支持本地 OCR 提取，请切换到「多模态大模型 API」模式。")
+    if not use_api and not use_local_vl and is_video:
+        st.warning("⚠️ 视频文件不支持本地 OCR 提取，请切换到「本地开源多模态大模型」或「多模态大模型 API」模式。")
         return
 
     c_extract, c_nlp = st.columns([2, 1])
     with c_extract:
+        if use_api:
+            btn_label = "🧠 多模态 API 抽取"
+        elif use_local_vl:
+            btn_label = "🖥️ 本地多模态模型抽取"
+        else:
+            btn_label = "🔍 运行 OCR 事件抽取"
         run_ocr = st.button(
-            "🧠 多模态 API 抽取" if use_api else "🔍 运行 OCR 事件抽取",
+            btn_label,
             type="primary", use_container_width=True,
         )
     with c_nlp:
-        if not use_api:
+        if not use_api and not use_local_vl:
             use_nlp = st.checkbox("NLP增强", help="用 LLM 对 OCR 结果做二次抽取（需配置 API Key）")
         else:
             use_nlp = False
 
     if run_ocr:
-        if use_api:
+        if use_local_vl:
+            # ── 本地多模态模型路径 ──
+            vl_config = load_local_vl_config()
+            media_label = "视频" if is_video else "图片"
+            from multimodal.local_vl import extract_with_local_vl
+            with st.spinner(f"正在加载并运行 {vl_config['model']} 分析{media_label}..."):
+                result = extract_with_local_vl(
+                    media_path=filepath,
+                    config=vl_config,
+                )
+
+            if result.get("error"):
+                st.error(result["error"])
+            else:
+                c1, c2, c3 = st.columns(3)
+                c1.metric("本地模型", result.get("local_model", "-"))
+                c2.metric("耗时", f"{result.get('latency', 0):.1f}s")
+                extraction = result.get("extraction", {})
+                c3.metric("命中字段", sum(1 for v in extraction.values() if v))
+
+                st.subheader("🎯 抽取事件 5 字段")
+                field_cols = st.columns(5)
+                for col, field in zip(field_cols, EXTRACTION_FIELDS):
+                    val = extraction.get(field) or "—"
+                    col.metric(FIELD_LABELS[field], val)
+
+                if result.get("raw_response"):
+                    with st.expander("📝 模型原始响应"):
+                        st.text(result["raw_response"])
+
+        elif use_api:
             # ── 多模态 API 路径 ──
             api_config = load_multimodal_api_config()
             if not api_config.get("api_key"):
