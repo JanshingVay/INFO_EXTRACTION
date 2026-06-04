@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "updated_at": "2026-06-04T22:54:43.471966",
+    "fields": [
+      "developer",
+      "tech_product",
+      "action_type",
+      "version_metric",
+      "date"
+    ],
+    "result_file": "E:\\BUPTStudy\\课程\\信息与知识获取\\final\\lab3\\INFO_EXTRACTION\\data\\extraction_results\\regex_results.json",
+    "result_name": "优化正则结果"
+  },
+  "annotations": {
+    "0": {
+      "developer": "三星显示",
+      "tech_product": "Ultra Slim 笔电 OLED 面板",
+      "action_type": "展示",
+      "version_metric": "外缘减薄20%，支持240Hz刷新率",
+      "date": "2026-06-02"
+    },
+    "2": {
+      "developer": "赛力斯",
+      "tech_product": "赛力斯新能源汽车",
+      "action_type": "销量公布",
+      "version_metric": "33476 台",
+      "date": "2026-06-01"
+    },
+    "3": {
+      "developer": "Marvell",
+      "tech_product": "Teralynx T100 交换芯片",
+      "action_type": "发布",
+      "version_metric": "102.4 Tbps，节能25%",
+      "date": "2026-06-03"
+    },
+    "4": {
+      "developer": "小米",
+      "tech_product": "米家电动直柄螺丝刀",
+      "action_type": "众筹",
+      "version_metric": "2000mAh，99元",
+      "date": "2026-06-03"
+    },
+    "6": {
+      "developer": "赛力斯、字节跳动",
+      "tech_product": "赛豆科技",
+      "action_type": "发布",
+      "version_metric": null,
+      "date": "2026-06-09"
+    },
+    "9": {
+      "developer": "比亚迪、中国石化",
+      "tech_product": "充电网络与闪充站",
+      "action_type": "合作",
+      "version_metric": null,
+      "date": "2026-06-03"
+    },
+    "10": {
+      "developer": "芝奇",
+      "tech_product": "CU-DIMM 内存条",
+      "action_type": "亮相",
+      "version_metric": "DDR5",
+      "date": "2026-06-03"
+    },
+    "13": {
+      "developer": "上海海思",
+      "tech_product": "HiSpark Studio",
+      "action_type": "开源",
+      "version_metric": null,
+      "date": "2026-06-03"
+    },
+    "14": {
+      "developer": "铠侠",
+      "tech_product": "BiCS10 1Tb TLC NAND 闪存",
+      "action_type": "出样",
+      "version_metric": "1Tb",
+      "date": "2026-06-03"
+    },
+    "16": {
+      "developer": "华为",
+      "tech_product": "半导体韬定律",
+      "action_type": "发布",
+      "version_metric": "2031年，1.4纳米",
+      "date": "2026-05-25"
+    },
+    "19": {
+      "developer": "比亚迪",
+      "tech_product": "腾势 Z9/Z9 GT OTA",
+      "action_type": "升级",
+      "version_metric": null,
+      "date": "2026-06-03"
+    },
+    "23": {
+      "developer": "苹果",
+      "tech_product": "macOS 27",
+      "action_type": "爆料",
+      "version_metric": null,
+      "date": "2026-05-27"
+    },
+    "30": {
+      "developer": "雷鸟",
+      "tech_product": "雷鸟 GT 系列 AR 眼镜",
+      "action_type": "发布",
+      "version_metric": "最大59度视场角，1899元起",
+      "date": "2026-05-27"
+    },
+    "33": {
+      "developer": "宾利",
+      "tech_product": "BENTLEY 宾利飞驰",
+      "action_type": "发布",
+      "version_metric": "2027款，S版",
+      "date": "2026-06-03"
+    },
+    "37": {
+      "developer": "LG Display",
+      "tech_product": "G10.5 OLED 产线",
+      "action_type": "暂缓投资",
+      "version_metric": "G10.5",
+      "date": "2026-06-04"
+    },
+    "41": {
+      "developer": "科赋",
+      "tech_product": "DDR5 内存条新品与 DRAM-less PCIe Gen5 存储设备",
+      "action_type": "展出",
+      "version_metric": "四大DDR5内存条新品，三款存储设备",
+      "date": "2026-06-03"
+    },
+    "43": {
+      "developer": "英特尔",
+      "tech_product": "18A 芯片",
+      "action_type": "供货不足",
+      "version_metric": "18A",
+      "date": "2026-06-03"
+    },
+    "46": {
+      "developer": "小米",
+      "tech_product": "小米自带线充电宝 10000 口袋版 2026",
+      "action_type": "发售",
+      "version_metric": "2C+1A，22.5W，129元",
+      "date": "2026-06-03"
+    },
+    "48": {
+      "developer": "微软 Microsoft",
+      "tech_product": "Win11",
+      "action_type": "定调",
+      "version_metric": null,
+      "date": "2026-06-03"
+    },
+    "50": {
+      "developer": "谷歌 Google",
+      "tech_product": "Android 虚假来电检测功能",
+      "action_type": "宣布",
+      "version_metric": null,
+      "date": "2026-06-03"
+    },
+    "53": {
+      "developer": "索尼",
+      "tech_product": "RIALTO 65 影像传感器模块",
+      "action_type": "研发",
+      "version_metric": "65mm，CineAltaV 2",
+      "date": "2026-06-03"
+    },
+    "55": {
+      "developer": "深开鸿",
+      "tech_product": "KaihongOS 桌面版",
+      "action_type": "适配",
+      "version_metric": "x86，QEMU",
+      "date": "2026-06-03"
+    },
+    "56": {
+      "developer": "微星",
+      "tech_product": "Prestige N16 Flip AI+ RTX Spark 翻转本",
+      "action_type": "发布",
+      "version_metric": "16英寸双层OLED，RTX Spark",
+      "date": "2026-06-01"
+    },
+    "59": {
+      "developer": "智元",
+      "tech_product": "Rich Interaction 具身数据集",
+      "action_type": "开源",
+      "version_metric": "行业首个",
+      "date": "2026-06-03"
+    },
+    "61": {
+      "developer": "华为",
+      "tech_product": "路由 X1 Pro 电竞涂装版",
+      "action_type": "发布",
+      "version_metric": "599.4元，11根天线，4个2.5G网口",
+      "date": "2026-06-01"
+    },
+    "65": {
+      "developer": "磐镭",
+      "tech_product": "YO2 迷你主机",
+      "action_type": "推出",
+      "version_metric": "AI Max+ 395，128GB+2TB，21999元",
+      "date": "2026-06-03"
+    },
+    "66": {
+      "developer": "微软",
+      "tech_product": "WinUI 3 / WinUI",
+      "action_type": "改名",
+      "version_metric": null,
+      "date": "2026-06-04"
+    },
+    "68": {
+      "developer": "华米海外",
+      "tech_product": "Amazfit Balance 3",
+      "action_type": "发布",
+      "version_metric": "3000尼特，369.99美元",
+      "date": "2026-06-03"
+    },
+    "69": {
+      "developer": "vivo",
+      "tech_product": "vivo S60 系列手机",
+      "action_type": "首销",
+      "version_metric": "4K Live，7200mAh，2899元起",
+      "date": "2026-06-03"
+    },
+    "71": {
+      "developer": "苹果",
+      "tech_product": "macOS 26.5.1",
+      "action_type": "发布",
+      "version_metric": "26.5.1 正式版，修正 M5 Mac 意外关机问题",
+      "date": "2026-06-02"
+    },
+    "73": {
+      "developer": "Microsoft",
+      "tech_product": "龙虾（OpenClaw）Scout",
+      "action_type": "发布",
+      "version_metric": "Outlook、OneDrive、365生态",
+      "date": "2026-06-03"
+    },
+    "74": {
+      "developer": "天马",
+      "tech_product": "27英寸电竞显示器面板",
+      "action_type": "展出",
+      "version_metric": "2560×1440，610Hz",
+      "date": "2026-06-03"
+    },
+    "78": {
+      "developer": "Google",
+      "tech_product": "Googlebook 安卓笔记本",
+      "action_type": "发布",
+      "version_metric": "至少8款",
+      "date": "2026-06-03"
+    },
+    "79": {
+      "developer": "雷鸟",
+      "tech_product": "雷鸟 GT Max / V4 智能眼镜",
+      "action_type": "评测",
+      "version_metric": "267吋巨幕",
+      "date": "2026-05-27"
+    },
+    "364": {
+      "developer": "宇树",
+      "tech_product": "智能机器人",
+      "action_type": "升级",
+      "version_metric": null,
+      "date": "2026-06-04"
+    },
+    "368": {
+      "developer": "戴盟机器人",
+      "tech_product": "戴盟机器人",
+      "action_type": "融资成功",
+      "version_metric": "亿元A轮融资",
+      "date": "2026-06-04"
+    },
+    "399": {
+      "developer": "宇树",
+      "tech_product": null,
+      "action_type": "通过上市审核",
+      "version_metric": "42.02亿元",
+      "date": "2026-06-02"
+    }
+  }
+}

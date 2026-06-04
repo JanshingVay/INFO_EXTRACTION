@@ -12,4 +12,6 @@ data/multimodal_api_config.json
 !data/raw_news/.gitkeep
 !data/extraction_results/.gitkeep
 !data/evaluations/.gitkeep
+!data/evaluations/annotations_regex.json
+!data/evaluations/metrics_regex.json
 data/*.json

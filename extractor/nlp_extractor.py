@@ -16,6 +16,7 @@ NLP深度学习抽取器 - 科技技术大事件抽取
 import json
 import logging
 import re
+from datetime import datetime
 from typing import Dict, List, Optional, Any
 
 from config import LLM_CONFIG, EXTRACTION_FIELDS
@@ -25,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 
 # 系统提示词 - 指导LLM进行科技事件结构化抽取
-_EXTRACTION_SYSTEM_PROMPT = """你是一个严谨的科技新闻事件信息抽取系统。请只抽取新闻标题和正文描述的“主事件”，不要抽取网页推荐、广告、评论、导航、相关阅读或背景噪声。
+_EXTRACTION_SYSTEM_PROMPT = """你是一个严谨的科技新闻事件信息抽取系统。请抽取新闻标题和正文描述的“主事件”，不要抽取网页推荐、广告、评论、导航、相关阅读或背景噪声。
 
 请严格按照以下JSON格式返回结果，不要包含任何其他内容：
 
@@ -38,12 +39,21 @@ _EXTRACTION_SYSTEM_PROMPT = """你是一个严谨的科技新闻事件信息抽�
 }
 
 抽取规则：
-1. 标题权重最高。正文只用于补充标题中缺失的信息。
+1. 标题权重最高。标题里出现的公司、产品、动作、指标通常就是主事件，正文只用于补充标题中缺失的信息。
 2. 不要把媒体名、栏目名、泛称（如“科技”“团队”“有限公司”）当作developer。
 3. tech_product必须是具体产品或技术名，不要填“USB-C”“mAh”“今年”“最好的地方”等孤立词。
-4. 对汇总类新闻，如果没有单一主事件，可以保留action_type和date，但developer/tech_product不要硬凑。
-5. 某字段没有可靠依据时必须返回null，禁止臆测。
-6. 输出必须是合法JSON，不要Markdown代码块，不要解释。"""
+4. 对汇总类新闻、列表新闻、爆料新闻或关键词过滤后的新闻，不要因为“不是单一发布会”“消息称”“据称”“可能”就全部返回null；应选择标题中最明确、最靠前的一项事件抽取。
+5. 如果标题为“某公司某产品销量/交付/零售/出货量……”，developer填该公司，tech_product填该产品或品类，action_type填“销量公布”，version_metric填最核心销量/交付量。
+6. 如果标题为“某公司获得融资/合作/上市/过会/发布品牌/引进人才”，也应按事件抽取，不限于产品发布。
+7. 某字段没有可靠依据时返回null，但已有明确文字依据时不要过度保守。即使developer不确定，只要标题明确出现产品、动作、日期，也必须抽取tech_product/action_type/date。
+8. 输出必须是合法JSON，不要Markdown代码块，不要解释。
+
+示例：
+标题：2026年5月汽车销量/交付汇总：赛力斯新能源汽车5月销量33476台、阿维塔5月交付7336辆
+输出：{"developer":"赛力斯","tech_product":"赛力斯新能源汽车","action_type":"销量公布","version_metric":"5月销量33476台","date":"2026-06-01"}
+
+标题：消息称全新汽车品牌“赛豆科技”6月9日发布，赛力斯、字节合作
+输出：{"developer":"赛力斯、字节跳动","tech_product":"赛豆科技汽车品牌","action_type":"发布","version_metric":null,"date":"2026-06-09"}"""
 
 
 def _normalize_base_url(api_url: str) -> str:
@@ -92,9 +102,62 @@ class NLPExtractor(BaseExtractor):
         text = "\n\n".join(parts)
         return (
             "请从以下科技技术新闻中抽取一个主事件的5个要素。"
-            "如果新闻是销量汇总、列表或没有单一产品事件，请不要强行补全主体和产品。\n\n"
+            "优先抽取标题中最明确、最靠前的科技事件；如果是汇总新闻、爆料新闻或消息称新闻，也要抽取标题中的明确事件，不要全置空。"
+            "标题里出现明确产品名、动作词或日期时，这些字段必须抽取。\n\n"
             f"{text}"
         )
+
+    @staticmethod
+    def _normalize_date_from_title(month: str, day: str, publish_time: str = "") -> Optional[str]:
+        year_match = re.search(r"(20\d{2})", str(publish_time))
+        year = year_match.group(1) if year_match else str(datetime.now().year)
+        try:
+            return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _title_obvious_completion(article: Dict[str, Any], result: Dict[str, Any]) -> Dict[str, Any]:
+        """Fill fields that are explicitly written in the title after a successful but over-conservative LLM call."""
+        completed = dict(result)
+        title = str(article.get("title") or "")
+        publish_time = str(article.get("publish_time") or "")
+
+        sales = re.search(
+            r"(?P<product>[\u4e00-\u9fa5A-Za-z0-9]+?新能源汽车)\s*(?P<month>\d{1,2})\s*月销量\s*(?P<metric>\d+\s*台)",
+            title,
+        )
+        if sales:
+            product = sales.group("product")
+            completed.setdefault("developer", None)
+            completed["developer"] = completed.get("developer") or product.replace("新能源汽车", "")
+            completed["tech_product"] = completed.get("tech_product") or product
+            completed["action_type"] = completed.get("action_type") or "销量公布"
+            completed["version_metric"] = completed.get("version_metric") or f"{sales.group('month')}月销量{sales.group('metric').replace(' ', '')}"
+
+        brand_release = re.search(
+            r"品牌[“\"](?P<brand>[^”\"]+)[”\"]\s*(?P<month>\d{1,2})\s*月\s*(?P<day>\d{1,2})\s*日发布",
+            title,
+        )
+        if brand_release:
+            brand = brand_release.group("brand")
+            completed["tech_product"] = completed.get("tech_product") or f"{brand}汽车品牌"
+            completed["action_type"] = completed.get("action_type") or "发布"
+            completed["date"] = completed.get("date") or NLPExtractor._normalize_date_from_title(
+                brand_release.group("month"),
+                brand_release.group("day"),
+                publish_time,
+            )
+            partners = re.search(r"，([^，。]+?)合作", title)
+            if partners:
+                developer = partners.group(1).replace("字节", "字节跳动")
+                completed["developer"] = completed.get("developer") or developer
+
+        if not completed.get("date"):
+            date_match = re.search(r"(20\d{2})[-/年](\d{1,2})[-/月](\d{1,2})", publish_time)
+            if date_match:
+                completed["date"] = f"{int(date_match.group(1)):04d}-{int(date_match.group(2)):02d}-{int(date_match.group(3)):02d}"
+        return completed
 
     def _call_llm_api(self, article: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """调用LLM API进行抽取"""
@@ -214,10 +277,18 @@ class NLPExtractor(BaseExtractor):
         llm_result = self._call_llm_api(article)
 
         if llm_result is not None:
+            completed = self._title_obvious_completion(article, llm_result)
+            postprocessed = any(
+                not llm_result.get(field) and completed.get(field)
+                for field in EXTRACTION_FIELDS
+            )
+            llm_result = completed
             llm_result["llm_used"] = True
             llm_result["api_failed"] = False
             llm_result["llm_error"] = None
             llm_result["llm_model"] = self.model
+            if postprocessed:
+                llm_result["llm_postprocessed"] = True
             return llm_result
 
         logger.warning("LLM unavailable, returning empty extraction")

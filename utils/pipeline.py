@@ -149,7 +149,7 @@ def _result_row(
     }
     for field in EXTRACTION_FIELDS:
         row[field] = extraction.get(field)
-    for key in ("llm_used", "api_failed", "llm_error", "llm_model"):
+    for key in ("llm_used", "api_failed", "llm_error", "llm_model", "llm_postprocessed"):
         if key in extraction:
             row[key] = extraction.get(key)
     row["event_complete_fields"] = sum(1 for field in EXTRACTION_FIELDS if row.get(field))
@@ -272,7 +272,7 @@ def save_results_csv(rows: Iterable[Dict[str, Any]], output_csv: str) -> None:
         "event_complete_fields",
         "extractor",
     ]
-    for key in ("llm_used", "api_failed", "llm_error", "llm_model"):
+    for key in ("llm_used", "api_failed", "llm_error", "llm_model", "llm_postprocessed"):
         if any(key in row for row in rows):
             fieldnames.append(key)
     with open(output_csv, "w", encoding="utf-8-sig", newline="") as f:

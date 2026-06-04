@@ -282,9 +282,9 @@ OCR_CONFIG = {
 MULTIMODAL_API_CONFIG_FILE = os.path.join(DATA_DIR, "multimodal_api_config.json")
 
 MULTIMODAL_API_CONFIG_DEFAULTS = {
-    "api_url": os.getenv("MULTIMODAL_API_URL", "https://api.openai.com/v1/chat/completions"),
+    "api_url": os.getenv("MULTIMODAL_API_URL", "https://api.moonshot.cn/v1"),
     "api_key": os.getenv("MULTIMODAL_API_KEY", ""),
-    "model": os.getenv("MULTIMODAL_MODEL", "gpt-4o"),
+    "model": os.getenv("MULTIMODAL_MODEL", "kimi-k2.6"),
     "system_prompt": (
         "你是一个专业的科技事件信息抽取系统。请仔细观察图片内容，"
         "从中抽取出科技发布事件的核心要素。\n\n"
@@ -311,6 +311,7 @@ def load_multimodal_api_config() -> dict:
             import json
             with open(MULTIMODAL_API_CONFIG_FILE, "r", encoding="utf-8") as f:
                 saved = json.load(f)
+            saved.pop("api_key", None)
             config.update(saved)
         except Exception:
             pass
@@ -321,8 +322,8 @@ def save_multimodal_api_config(config: dict) -> str:
     """持久化多模态 API 配置到 JSON 文件。"""
     import json
     os.makedirs(DATA_DIR, exist_ok=True)
-    # 只保存与默认值不同的字段 + 总是保存敏感字段
-    persist_keys = {"api_url", "api_key", "model", "system_prompt"}
+    # API Key 只从环境变量或前端当前会话读取，避免误提交到仓库。
+    persist_keys = {"api_url", "model", "system_prompt"}
     to_save = {k: v for k, v in config.items() if k in persist_keys}
     with open(MULTIMODAL_API_CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(to_save, f, ensure_ascii=False, indent=2)

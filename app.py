@@ -129,13 +129,14 @@ def _latest_csv_path():
     return max(existing, key=os.path.getmtime) if existing else None
 
 
-def _result_file_options():
+def _result_file_options(include_baseline: bool = True):
     options = [
         ("优化正则结果", DEFAULT_REGEX_RESULTS_FILE),
         ("开源 NLP 结果", DEFAULT_OPEN_NLP_RESULTS_FILE),
         ("DeepSeek API 结果", DEFAULT_NLP_RESULTS_FILE),
-        ("基础正则 baseline", DEFAULT_BASIC_RESULTS_FILE),
     ]
+    if include_baseline:
+        options.append(("基础正则 baseline", DEFAULT_BASIC_RESULTS_FILE))
     return [(label, path) for label, path in options if os.path.exists(path)]
 
 
@@ -151,8 +152,8 @@ def _metrics_path_for(result_path):
     return os.path.join(EVAL_DIR, f"metrics_{_result_key(result_path)}.json")
 
 
-def _load_selected_results(label="选择评价结果"):
-    options = _result_file_options()
+def _load_selected_results(label="选择评价结果", include_baseline: bool = True):
+    options = _result_file_options(include_baseline=include_baseline)
     if not options:
         return None, None, []
     labels = [
@@ -172,6 +173,18 @@ def _load_annotations(path=DEFAULT_EVAL_ANNOTATIONS_FILE):
     if isinstance(data, dict):
         return data.get("annotations", {})
     return {}
+
+
+def _load_all_annotations_count() -> int:
+    total = 0
+    if not os.path.exists(EVAL_DIR):
+        return 0
+    for name in os.listdir(EVAL_DIR):
+        if not name.startswith("annotations_") or not name.endswith(".json"):
+            continue
+        data = _load_annotations(os.path.join(EVAL_DIR, name))
+        total += len(data)
+    return total
 
 
 # ──────────────────────────────────────────────────
@@ -220,7 +233,7 @@ def page_overview():
 
     articles = _load_articles()
     results = _load_results()
-    annotations = _load_annotations()
+    annotation_count = _load_all_annotations_count()
     docs = _load_documents()
 
     c1, c2, c3, c4, c5 = st.columns(5)
@@ -228,7 +241,7 @@ def page_overview():
     c2.metric("已适配语料", len(articles), help="可供抽取的 articles 数量")
     c3.metric("抽取结果", len(results), help="已生成的抽取记录数")
     c4.metric("抽取字段", len(EXTRACTION_FIELDS))
-    c5.metric("人工标注", len(annotations))
+    c5.metric("人工标注", annotation_count)
 
     st.divider()
 
@@ -405,7 +418,7 @@ def page_extraction():
         ]
 
     show_cols = ["title", "source", "developer", "tech_product", "action_type", "version_metric", "date"]
-    for optional_col in ("llm_used", "api_failed", "llm_error", "llm_model"):
+    for optional_col in ("llm_used", "api_failed", "llm_error", "llm_model", "llm_postprocessed"):
         if optional_col in view.columns:
             show_cols.append(optional_col)
     show_cols.append("url")
@@ -470,7 +483,7 @@ def page_detail():
 def page_annotation():
     st.header("人工评价")
 
-    result_name, result_path, results = _load_selected_results()
+    result_name, result_path, results = _load_selected_results(include_baseline=False)
     if not results:
         st.warning("请先在「事件抽取」页面生成抽取结果。")
         return
@@ -536,7 +549,7 @@ def page_annotation():
 def page_metrics():
     st.header("评价指标")
 
-    result_name, result_path, results = _load_selected_results()
+    result_name, result_path, results = _load_selected_results(include_baseline=False)
     if not results:
         st.warning("请先生成抽取结果。")
         return
@@ -691,13 +704,13 @@ def page_multimodal():
                 api_url = st.text_input(
                     "API 地址 (Base URL)",
                     value=api_config.get("api_url", ""),
-                    placeholder="https://api.openai.com/v1 （自动补 /chat/completions）",
+                    placeholder="https://api.moonshot.cn/v1",
                     key="mm_api_url",
                 )
                 model = st.text_input(
                     "模型名称",
-                    value=api_config.get("model", "gpt-4o"),
-                    placeholder="gpt-4o / claude-3-opus / MiniMax-M2",
+                    value=api_config.get("model", "kimi-k2.6"),
+                    placeholder="kimi-k2.6",
                     key="mm_model",
                 )
             with col2:
@@ -720,7 +733,7 @@ def page_multimodal():
             c_save1, c_save2, c_reset = st.columns([1, 1, 1])
             with c_save1:
                 if st.button("💾 保存配置", type="primary", use_container_width=True,
-                             help="配置将持久化存储，重启后无需重新配置"):
+                             help="API 地址、模型和提示词会持久化；API Key 不写入 JSON，建议放在 .env 中"):
                     new_config = {
                         "api_url": api_url,
                         "api_key": api_key,
@@ -729,6 +742,8 @@ def page_multimodal():
                     }
                     path = save_multimodal_api_config(new_config)
                     st.success(f"✅ 已保存至 {path}")
+                    if api_key:
+                        st.info("API Key 已用于当前会话；为避免误提交，未写入配置文件。长期使用请写入 .env 的 MULTIMODAL_API_KEY。")
             with c_reset:
                 if st.button("🔄 重置为默认", use_container_width=True):
                     import os as _os
@@ -745,9 +760,9 @@ def page_multimodal():
                         "}"
                     )
                     save_multimodal_api_config({
-                        "api_url": "https://api.openai.com/v1/chat/completions",
+                        "api_url": "https://api.moonshot.cn/v1",
                         "api_key": "",
-                        "model": "gpt-4o",
+                        "model": "kimi-k2.6",
                         "system_prompt": default_prompt,
                     })
                     st.success("已重置为默认配置，请刷新页面。")
@@ -874,17 +889,17 @@ def page_multimodal():
 
         elif use_api:
             # ── 多模态 API 路径 ──
-            api_config = load_multimodal_api_config()
-            if not api_config.get("api_key"):
+            current_api_key = (api_key or "").strip()
+            if not current_api_key:
                 st.error("❌ 请先在配置面板中填写 API Key")
             else:
                 from multimodal.api_client import extract_with_multimodal_api
                 media_label = "视频" if is_video else "图片"
-                with st.spinner(f"正在调用 {api_config['model']} 分析{media_label}..."):
+                with st.spinner(f"正在调用 {model} 分析{media_label}..."):
                     result = extract_with_multimodal_api(
                         media_path=filepath,
                         api_url=api_url,
-                        api_key=api_key,
+                        api_key=current_api_key,
                         model=model,
                         system_prompt=system_prompt,
                     )

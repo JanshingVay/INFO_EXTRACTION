@@ -28,13 +28,15 @@ def calculate_extraction_metrics(
     extraction_rows: Iterable[Dict[str, Any]],
     annotations: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
+    extraction_rows = list(extraction_rows)
     rows = {str(row.get("article_id")): row for row in extraction_rows}
     common = sorted(set(rows) & set(str(k) for k in annotations.keys()))
 
     results: Dict[str, Any] = {
         "summary": {
             "total_annotated": len(common),
-            "total_extractions": len(rows),
+            "total_extractions": len(extraction_rows),
+            "total_unique_extractions": len(rows),
             "evaluated_at": datetime.now().isoformat(timespec="seconds"),
             "fields": EXTRACTION_FIELDS,
         },

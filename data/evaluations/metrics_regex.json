@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "total_annotated": 3,
+    "total_extractions": 3,
+    "total_unique_extractions": 3,
+    "evaluated_at": "2026-06-04T22:55:27",
+    "fields": [
+      "developer",
+      "tech_product",
+      "action_type",
+      "version_metric",
+      "date"
+    ],
+    "result_name": "优化正则结果",
+    "result_file": "E:\\BUPTStudy\\课程\\信息与知识获取\\final\\lab3\\INFO_EXTRACTION\\data\\extraction_results\\regex_results.json",
+    "annotation_file": "E:\\BUPTStudy\\课程\\信息与知识获取\\final\\lab3\\INFO_EXTRACTION\\data\\evaluations\\annotations_regex.json"
+  },
+  "by_field": {
+    "developer": {
+      "TP": 0,
+      "FP": 1,
+      "FN": 2,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1_Score": 0.0
+    },
+    "tech_product": {
+      "TP": 0,
+      "FP": 3,
+      "FN": 0,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1_Score": 0.0
+    },
+    "action_type": {
+      "TP": 1,
+      "FP": 2,
+      "FN": 0,
+      "Precision": 0.3333,
+      "Recall": 1.0,
+      "F1_Score": 0.5
+    },
+    "version_metric": {
+      "TP": 0,
+      "FP": 1,
+      "FN": 1,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1_Score": 0.0
+    },
+    "date": {
+      "TP": 3,
+      "FP": 0,
+      "FN": 0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1_Score": 1.0
+    }
+  },
+  "overall": {
+    "Macro_Avg_Precision": 0.2667,
+    "Macro_Avg_Recall": 0.4,
+    "Macro_Avg_F1_Score": 0.3
+  }
+}
