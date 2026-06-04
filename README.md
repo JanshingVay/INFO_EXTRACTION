@@ -69,6 +69,26 @@ INFO_EXTRACTION/
 
 ### 1. 安装依赖
 
+**推荐方式（自动检测 GPU，优先安装 GPU 版 PyTorch，推理快 10~100 倍）：**
+
+```bash
+python scripts/install_dependencies.py
+```
+
+该脚本会：
+1. 通过 `nvidia-smi` 检测本地是否有 NVIDIA GPU
+2. 检测到则安装 GPU 版 PyTorch（默认 CUDA 12.1），否则安装 CPU 版
+3. 自动安装 `requirements.txt` 中其他依赖
+
+可选参数：
+```bash
+python scripts/install_dependencies.py --gpu --cuda 124   # 强制 GPU 版，指定 CUDA 12.4
+python scripts/install_dependencies.py --cpu              # 强制 CPU 版
+python scripts/install_dependencies.py --skip-requirements # 只安装 PyTorch
+```
+
+**手动方式（不推荐，默认会装 CPU 版 PyTorch）：**
+
 ```bash
 pip install -r requirements.txt
 ```

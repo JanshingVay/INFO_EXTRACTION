@@ -15,9 +15,19 @@ easyocr>=1.7.0          # 推荐，中英文均可，pip install easyocr
 # 可选 LLM/多模态 API 支持
 openai>=1.0.0           # NLP 增强和云端多模态 API 都需要
 
-# 可选本地多模态模型支持（按需安装）
-# RTX 4060 / CUDA 环境建议先安装 GPU 版 PyTorch:
-# pip install --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cu126
+# ---------------------------------------------------------------
+# 本地多模态模型支持
+# ---------------------------------------------------------------
+# ⚠️ 强烈建议使用 scripts/install_dependencies.py 安装：
+#     python scripts/install_dependencies.py
+# 该脚本会自动检测本地 GPU，并优先安装 GPU 版 PyTorch（推理快 10~100 倍）。
+#
+# 若直接 pip install -r requirements.txt：
+#   - transformers 会自动拉取 torch，默认是 CPU 版！
+#   - 如需 GPU 加速，请先卸载再安装 GPU 版：
+#       pip uninstall -y torch torchvision torchaudio
+#       pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# ---------------------------------------------------------------
 transformers>=4.49.0
 accelerate>=0.33.0
 qwen-vl-utils>=0.0.14
