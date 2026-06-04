@@ -1,9 +1,9 @@
 {
   "summary": {
-    "total_annotated": 3,
-    "total_extractions": 3,
-    "total_unique_extractions": 3,
-    "evaluated_at": "2026-06-04T22:55:27",
+    "total_annotated": 2,
+    "total_extractions": 76,
+    "total_unique_extractions": 76,
+    "evaluated_at": "2026-06-05T00:49:45",
     "fields": [
       "developer",
       "tech_product",
@@ -17,49 +17,49 @@
   },
   "by_field": {
     "developer": {
-      "TP": 0,
+      "TP": 1,
       "FP": 1,
-      "FN": 2,
-      "Precision": 0.0,
-      "Recall": 0.0,
-      "F1_Score": 0.0
+      "FN": 0,
+      "Precision": 0.5,
+      "Recall": 1.0,
+      "F1_Score": 0.6667
     },
     "tech_product": {
-      "TP": 0,
-      "FP": 3,
+      "TP": 1,
+      "FP": 1,
       "FN": 0,
-      "Precision": 0.0,
-      "Recall": 0.0,
-      "F1_Score": 0.0
+      "Precision": 0.5,
+      "Recall": 1.0,
+      "F1_Score": 0.6667
     },
     "action_type": {
       "TP": 1,
-      "FP": 2,
+      "FP": 1,
       "FN": 0,
-      "Precision": 0.3333,
+      "Precision": 0.5,
       "Recall": 1.0,
-      "F1_Score": 0.5
+      "F1_Score": 0.6667
     },
     "version_metric": {
-      "TP": 0,
-      "FP": 1,
-      "FN": 1,
-      "Precision": 0.0,
-      "Recall": 0.0,
-      "F1_Score": 0.0
-    },
-    "date": {
-      "TP": 3,
+      "TP": 1,
       "FP": 0,
       "FN": 0,
       "Precision": 1.0,
       "Recall": 1.0,
       "F1_Score": 1.0
+    },
+    "date": {
+      "TP": 1,
+      "FP": 1,
+      "FN": 0,
+      "Precision": 0.5,
+      "Recall": 1.0,
+      "F1_Score": 0.6667
     }
   },
   "overall": {
-    "Macro_Avg_Precision": 0.2667,
-    "Macro_Avg_Recall": 0.4,
-    "Macro_Avg_F1_Score": 0.3
+    "Macro_Avg_Precision": 0.6,
+    "Macro_Avg_Recall": 1.0,
+    "Macro_Avg_F1_Score": 0.7334
   }
 }

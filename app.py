@@ -115,7 +115,7 @@ def _load_articles():
 
 
 def _load_results():
-    existing = [p for _label, p in _result_file_options()]
+    existing = [p for _label, p in _result_file_options(include_baseline=False)]
     if not existing:
         return []
     latest = max(existing, key=os.path.getmtime)
@@ -152,7 +152,7 @@ def _metrics_path_for(result_path):
     return os.path.join(EVAL_DIR, f"metrics_{_result_key(result_path)}.json")
 
 
-def _load_selected_results(label="选择评价结果", include_baseline: bool = True):
+def _load_selected_results(label="选择评价结果", include_baseline: bool = False):
     options = _result_file_options(include_baseline=include_baseline)
     if not options:
         return None, None, []
@@ -442,7 +442,7 @@ def page_detail():
     st.header("事件详情")
 
     articles = _load_articles()
-    result_name, _result_path, results = _load_selected_results("选择查看的抽取结果")
+    result_name, _result_path, results = _load_selected_results("选择查看的抽取结果", include_baseline=False)
     if not results:
         st.warning("请先在「事件抽取」页面生成抽取结果。")
         return
