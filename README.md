@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 **本地多模态模型可选依赖**（按需安装）：
 - 基础多模态：`pip install torch transformers accelerate pillow`
-- Qwen2.5-VL 增强：`pip install qwen-vl`
+- Qwen2.5-VL 增强：`pip install qwen-vl-utils`
 - InternVL2：`pip install transformers pillow`
 
 ### 2. 构建作业3语料
@@ -143,12 +143,12 @@ data/extraction_results/nlp_results.json
 data/extraction_results/nlp_results.csv
 ```
 
-如需使用 MiniMax API，请复制 `.env.example` 为 `.env` 并填写：
+如需使用 DeepSeek API，请复制 `.env.example` 为 `.env` 并填写：
 
 ```env
-LLM_API_URL=https://api.minimaxi.com/v1
-LLM_API_KEY=你的MiniMax_API_Key
-LLM_MODEL=MiniMax-M2.7-highspeed
+LLM_API_URL=https://api.deepseek.com
+LLM_API_KEY=你的DeepSeek_API_Key
+LLM_MODEL=deepseek-v4-flash
 ```
 
 `.env` 已加入 `.gitignore`，不要提交真实 Key。
@@ -269,22 +269,20 @@ extractor.save_results(results)
 
 | 模型 | 安装/加载说明 | 推荐配置 | 图片 | 视频 |
 |------|--------------|:---:|:---:|:---:|
-| **Qwen/Qwen2.5-VL-7B-Instruct** | `pip install transformers torch pillow accelerate`，加载 qwen-vl 工具包 | 16GB VRAM (GPU)，或 32GB RAM (CPU 量化) | ✅ | ✅ |
-| **OpenGVLab/InternVL2-8B-Instruct** | `pip install transformers torch pillow` | 16GB VRAM (GPU)，或 32GB RAM (CPU 量化) | ✅ | ⚠️ (仅首帧) |
+| **Qwen/Qwen2.5-VL-3B-Instruct** | `pip install transformers torch pillow accelerate qwen-vl-utils` | 8GB VRAM (GPU) 更适合作业演示 | ✅ | ✅ |
 
 #### 本地多模态性能需求
 
 | 模式 | 内存需求 | 显存需求 | 单图推断耗时 |
 |------|:--------:|:--------:|:---------:|
 | **CPU量化** | 32GB+ RAM | 0 | 20-60秒 |
-| **GPU bfloat16 加载** | 16GB RAM | 16GB VRAM | 2-5秒 |
-| **GPU 4bit量化** | 16GB RAM | 8GB VRAM | 3-8秒 |
+| **GPU bfloat16 加载** | 16GB RAM | 8GB VRAM 建议使用 3B | 3-10秒 |
 
 #### 使用方式
 
 **1. Streamlit 前端**
 - 选择「🖥️ 本地开源多模态大模型」
-- 在配置面板填入模型名称和设备（如 `Qwen/Qwen2.5-VL-7B-Instruct`）
+- 在配置面板填入模型名称和设备（如 `Qwen/Qwen2.5-VL-3B-Instruct`）
 - 上传图片或视频，点击「本地多模态模型抽取」
 
 **2. 代码调用**
@@ -297,7 +295,7 @@ result = extract_with_local_vl("data/images/poster.png")
 
 # 或传入自定义配置
 config = {
-    "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "model": "Qwen/Qwen2.5-VL-3B-Instruct",
     "device": "auto",
     "temperature": 0.3,
     "max_tokens": 2048,

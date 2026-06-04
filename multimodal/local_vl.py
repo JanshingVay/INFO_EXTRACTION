@@ -62,7 +62,7 @@ def extract_with_local_vl(
     使用本地开源多模态大模型从图片/视频中抽取事件。
 
     支持模型:
-      - Qwen/Qwen2.5-VL-7B-Instruct
+      - Qwen/Qwen2.5-VL-3B-Instruct
       - OpenGVLab/InternVL2-8B-Instruct
       - ... 其他兼容 OpenAI Completions 接口的本地模型
 
@@ -79,7 +79,7 @@ def extract_with_local_vl(
     is_video = ext in {".mp4", ".mov", ".avi", ".webm", ".mkv"}
     media_type = "video" if is_video else "image"
 
-    model_name = config.get("model", "Qwen/Qwen2.5-VL-7B-Instruct")
+    model_name = config.get("model", "Qwen/Qwen2.5-VL-3B-Instruct")
     device = config.get("device", "auto")
     system_prompt = config.get("system_prompt", "")
     temperature = config.get("temperature", 0.3)
@@ -131,13 +131,18 @@ def _call_qwen_vl(
     max_tokens: int,
     device: str,
 ) -> Dict[str, Any]:
-    from transformers import AutoProcessor, Qwen2VLForConditionalGeneration
-    from PIL import Image
+    from transformers import AutoProcessor
+    from qwen_vl_utils import process_vision_info
     import torch
 
     t0 = time.perf_counter()
 
-    model = Qwen2VLForConditionalGeneration.from_pretrained(
+    if "2.5" in model_name or "2_5" in model_name:
+        from transformers import Qwen2_5_VLForConditionalGeneration as QwenVLModel
+    else:
+        from transformers import Qwen2VLForConditionalGeneration as QwenVLModel
+
+    model = QwenVLModel.from_pretrained(
         model_name,
         torch_dtype=torch.bfloat16,
         device_map=device,
@@ -148,36 +153,38 @@ def _call_qwen_vl(
     ext = os.path.splitext(media_path)[1].lower()
     is_video = ext in {".mp4", ".mov", ".avi", ".webm", ".mkv"}
 
-    messages = [
-        {"role": "system", "content": system_prompt},
-    ]
+    messages = [{"role": "system", "content": system_prompt}]
 
     if is_video:
-        from qwen_vl_utils import process_video
-        video_info = process_video(media_path, fps=1, max_num=16)
         messages.append(
             {
                 "role": "user",
                 "content": [
-                    {"type": "video", "video": video_info},
+                    {"type": "video", "video": media_path, "fps": 1.0, "max_pixels": 1280 * 720},
                     {"type": "text", "text": "请从这段视频中抽取出科技发布事件的核心要素。"},
                 ],
             }
         )
     else:
-        image = Image.open(media_path).convert("RGB")
         messages.append(
             {
                 "role": "user",
                 "content": [
-                    {"type": "image", "image": image},
+                    {"type": "image", "image": media_path, "max_pixels": 1280 * 720},
                     {"type": "text", "text": "请从这张图片中抽取出科技发布事件的核心要素。"},
                 ],
             }
         )
 
     text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    inputs = processor(text=text, images=[] if is_video else [image], videos=[] if not is_video else [video_info], return_tensors="pt").to(model.device)
+    image_inputs, video_inputs = process_vision_info(messages)
+    inputs = processor(
+        text=[text],
+        images=image_inputs,
+        videos=video_inputs,
+        padding=True,
+        return_tensors="pt",
+    ).to(model.device)
 
     with torch.no_grad():
         generated_ids = model.generate(**inputs, max_new_tokens=max_tokens, temperature=temperature)

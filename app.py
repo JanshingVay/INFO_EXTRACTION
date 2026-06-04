@@ -15,18 +15,28 @@ import pandas as pd
 import streamlit as st
 
 from config import (
+    DEFAULT_BASIC_RESULTS_FILE,
     DEFAULT_EVAL_ANNOTATIONS_FILE,
     DEFAULT_EVAL_METRICS_FILE,
+    DEFAULT_NLP_RESULTS_CSV,
+    DEFAULT_NLP_RESULTS_FILE,
+    DEFAULT_OPEN_NLP_RESULTS_CSV,
+    DEFAULT_OPEN_NLP_RESULTS_FILE,
     DEFAULT_REGEX_RESULTS_CSV,
     DEFAULT_REGEX_RESULTS_FILE,
     DOCUMENTS_FILE,
+    EVAL_DIR,
     EXTRACTION_FIELDS,
     IMAGES_DIR,
+    LLM_CONFIG,
+    LLM_CONFIGURED,
     RAW_NEWS_DIR,
     load_multimodal_api_config,
     save_multimodal_api_config,
 )
 from evaluator.metrics import calculate_extraction_metrics
+from extractor.nlp_extractor import NLPExtractor
+from extractor.opensource_nlp_extractor import OpenSourceNLPExtractor
 from extractor.regex_extractor import BasicRegexExtractor, RegexExtractor
 from multimodal import MultimodalExtractor
 from utils.helpers import load_json, save_json
@@ -35,7 +45,13 @@ from utils.helpers import load_json, save_json
 st.set_page_config(page_title="科技事件信息抽取系统", layout="wide")
 st.markdown(
     """<style>
-    .block-container { padding-top: 1.3rem; padding-bottom: 2rem; }
+    .block-container { padding-top: 2.4rem; padding-bottom: 2rem; }
+    h1, h2, h3 {
+        line-height: 1.28 !important;
+        padding-top: 0.18rem;
+        padding-bottom: 0.18rem;
+        overflow: visible;
+    }
     .event-panel { border:1px solid #e5e7eb; border-radius:8px; padding:14px 16px; background:#fff; }
     .crawl-log { max-height:300px; overflow-y:auto; background:#f8f9fa; border-radius:6px; padding:12px; font-family:monospace; font-size:13px; }
     </style>""",
@@ -99,12 +115,60 @@ def _load_articles():
 
 
 def _load_results():
-    data = load_json(DEFAULT_REGEX_RESULTS_FILE) if os.path.exists(DEFAULT_REGEX_RESULTS_FILE) else {}
+    existing = [p for _label, p in _result_file_options()]
+    if not existing:
+        return []
+    latest = max(existing, key=os.path.getmtime)
+    data = load_json(latest)
     return data.get("results", [])
 
 
-def _load_annotations():
-    data = load_json(DEFAULT_EVAL_ANNOTATIONS_FILE) if os.path.exists(DEFAULT_EVAL_ANNOTATIONS_FILE) else {}
+def _latest_csv_path():
+    candidates = [DEFAULT_REGEX_RESULTS_CSV, DEFAULT_OPEN_NLP_RESULTS_CSV, DEFAULT_NLP_RESULTS_CSV]
+    existing = [p for p in candidates if os.path.exists(p)]
+    return max(existing, key=os.path.getmtime) if existing else None
+
+
+def _result_file_options():
+    options = [
+        ("优化正则结果", DEFAULT_REGEX_RESULTS_FILE),
+        ("开源 NLP 结果", DEFAULT_OPEN_NLP_RESULTS_FILE),
+        ("DeepSeek API 结果", DEFAULT_NLP_RESULTS_FILE),
+        ("基础正则 baseline", DEFAULT_BASIC_RESULTS_FILE),
+    ]
+    return [(label, path) for label, path in options if os.path.exists(path)]
+
+
+def _result_key(path):
+    return Path(path).stem.replace("_results", "")
+
+
+def _annotation_path_for(result_path):
+    return os.path.join(EVAL_DIR, f"annotations_{_result_key(result_path)}.json")
+
+
+def _metrics_path_for(result_path):
+    return os.path.join(EVAL_DIR, f"metrics_{_result_key(result_path)}.json")
+
+
+def _load_selected_results(label="选择评价结果"):
+    options = _result_file_options()
+    if not options:
+        return None, None, []
+    labels = [
+        f"{name} ({Path(path).name}, {datetime.fromtimestamp(os.path.getmtime(path)).strftime('%m-%d %H:%M')})"
+        for name, path in options
+    ]
+    selected = st.selectbox(label, labels)
+    idx = labels.index(selected)
+    name, path = options[idx]
+    data = load_json(path)
+    rows = data.get("results", []) if isinstance(data, dict) else []
+    return name, path, rows
+
+
+def _load_annotations(path=DEFAULT_EVAL_ANNOTATIONS_FILE):
+    data = load_json(path) if os.path.exists(path) else {}
     if isinstance(data, dict):
         return data.get("annotations", {})
     return {}
@@ -240,26 +304,71 @@ def page_extraction():
     with c_alg:
         algorithm = st.selectbox(
             "抽取算法",
-            ["优化正则（推荐）", "基础正则 baseline"],
+            ["优化正则（推荐）", "开源 NLP（jieba 分词/词性）", "大模型 API 抽取（DeepSeek）"],
         )
+        extraction_keyword = st.text_input(
+            "抽取前关键词过滤（可选）",
+            "",
+            help="只对标题、摘要或正文中包含该关键词的文章运行抽取；留空则抽取全部语料。",
+        )
+        api_limit = None
+        if "API" in algorithm:
+            api_limit = st.number_input(
+                "API 抽取篇数",
+                min_value=1,
+                max_value=len(articles),
+                value=min(5, len(articles)),
+                step=1,
+                help="API 调用会消耗额度，建议先小批量测试。",
+            )
+            st.caption(
+                f"当前 API 配置：{LLM_CONFIG.get('model')} / "
+                f"{'已配置 Key' if LLM_CONFIGURED else '未配置 Key，API 抽取会失败并显示错误'}"
+            )
     with c_act:
         run_btn = st.button("开始抽取", type="primary", use_container_width=True)
 
     if run_btn:
-        if algorithm.startswith("基础"):
-            out_json = os.path.join(os.path.dirname(DEFAULT_REGEX_RESULTS_FILE), "basic_regex_results.json")
-            out_csv = None
-            extractor_cls = BasicRegexExtractor
+        candidate_articles = articles
+        if extraction_keyword.strip():
+            kw = extraction_keyword.strip().lower()
+            candidate_articles = [
+                art for art in articles
+                if kw in str(art.get("title", "")).lower()
+                or kw in str(art.get("summary", "")).lower()
+                or kw in str(art.get("content", "")).lower()
+            ]
+            if not candidate_articles:
+                st.warning(f"没有找到包含「{extraction_keyword.strip()}」的文章，请更换关键词或清空过滤条件。")
+                return
+
+        if algorithm.startswith("开源"):
+            out_json = DEFAULT_OPEN_NLP_RESULTS_FILE
+            out_csv = DEFAULT_OPEN_NLP_RESULTS_CSV
+            extractor_cls = OpenSourceNLPExtractor
+            run_articles = candidate_articles
+        elif "API" in algorithm:
+            out_json = DEFAULT_NLP_RESULTS_FILE
+            out_csv = DEFAULT_NLP_RESULTS_CSV
+            extractor_cls = NLPExtractor
+            run_articles = candidate_articles[: int(api_limit or 5)]
         else:
             out_json = DEFAULT_REGEX_RESULTS_FILE
             out_csv = DEFAULT_REGEX_RESULTS_CSV
             extractor_cls = RegexExtractor
+            run_articles = candidate_articles
 
-        with st.spinner(f"正在对所有 {len(articles)} 篇文章运行 {algorithm}..."):
-            result_data = _run_regex_extraction(articles, extractor_cls, out_json)
+        keyword_note = f"（关键词：{extraction_keyword.strip()}）" if extraction_keyword.strip() else ""
+        with st.spinner(f"正在对 {len(run_articles)} 篇文章运行 {algorithm}{keyword_note}..."):
+            result_data = _run_regex_extraction(run_articles, extractor_cls, out_json)
             if out_csv:
                 _results_to_csv(result_data, out_csv)
-        st.success(f"抽取完成！共 {result_data['metadata']['total']} 条记录")
+        st.success(f"抽取完成！共 {result_data['metadata']['total']} 条记录{keyword_note}")
+        if algorithm and "API" in algorithm:
+            rows = result_data.get("results", [])
+            failed_count = sum(1 for r in rows if r.get("api_failed"))
+            if failed_count:
+                st.error(f"有 {failed_count} 条 API 调用失败，未进行正则回退，请查看 llm_error 字段。")
         st.rerun()
 
     # 展示已抽取结果
@@ -281,7 +390,7 @@ def page_extraction():
         action_options = ["全部"] + sorted(x for x in df["action_type"].dropna().unique() if x)
         action = st.selectbox("事件动作筛选", action_options)
     with right:
-        keyword = st.text_input("标题/产品关键词搜索", "")
+        keyword = st.text_input("结果表关键词筛选", "")
 
     view = df.copy()
     if source != "全部":
@@ -295,15 +404,19 @@ def page_extraction():
             | view["tech_product"].fillna("").str.contains(kw, case=False, regex=False)
         ]
 
-    show_cols = ["title", "source", "developer", "tech_product", "action_type", "version_metric", "date", "url"]
+    show_cols = ["title", "source", "developer", "tech_product", "action_type", "version_metric", "date"]
+    for optional_col in ("llm_used", "api_failed", "llm_error", "llm_model"):
+        if optional_col in view.columns:
+            show_cols.append(optional_col)
+    show_cols.append("url")
     st.dataframe(view[show_cols], use_container_width=True, hide_index=True)
 
-    csv_path = DEFAULT_REGEX_RESULTS_CSV
-    if os.path.exists(csv_path):
+    csv_path = _latest_csv_path()
+    if csv_path:
         st.download_button(
             "下载 CSV 抽取结果",
             data=Path(csv_path).read_bytes(),
-            file_name="regex_results.csv",
+            file_name=Path(csv_path).name,
             mime="text/csv",
         )
 
@@ -316,13 +429,13 @@ def page_detail():
     st.header("事件详情")
 
     articles = _load_articles()
-    results = _load_results()
+    result_name, _result_path, results = _load_selected_results("选择查看的抽取结果")
     if not results:
         st.warning("请先在「事件抽取」页面生成抽取结果。")
         return
+    st.caption(f"当前查看：{result_name}")
 
     art_map = {str(a.get("id")): a for a in articles}
-    df = pd.DataFrame(results)
     options = [f"{r.get('article_id', '?')} | {str(r.get('title', ''))[:60]}" for r in results]
     selected = st.selectbox("选择事件", options)
     aid = selected.split(" | ", 1)[0]
@@ -357,12 +470,13 @@ def page_detail():
 def page_annotation():
     st.header("人工评价")
 
-    results = _load_results()
+    result_name, result_path, results = _load_selected_results()
     if not results:
         st.warning("请先在「事件抽取」页面生成抽取结果。")
         return
 
-    annotations = _load_annotations()
+    annotation_path = _annotation_path_for(result_path)
+    annotations = _load_annotations(annotation_path)
     rows = results
 
     c1, c2 = st.columns([2, 1])
@@ -370,6 +484,7 @@ def page_annotation():
         mode = st.radio("样本范围", ["优先未标注", "全部样本"], horizontal=True)
     with c2:
         st.metric("已标注", len(annotations))
+    st.caption(f"当前评价对象：{result_name}；标注文件：{annotation_path}")
 
     candidates = rows
     if mode == "优先未标注":
@@ -404,10 +519,12 @@ def page_annotation():
                 "metadata": {
                     "updated_at": datetime.now().isoformat(),
                     "fields": EXTRACTION_FIELDS,
+                    "result_file": result_path,
+                    "result_name": result_name,
                 },
                 "annotations": annotations,
             }
-            save_json(output, DEFAULT_EVAL_ANNOTATIONS_FILE)
+            save_json(output, annotation_path)
             st.success("标注已保存")
             st.rerun()
 
@@ -419,24 +536,34 @@ def page_annotation():
 def page_metrics():
     st.header("评价指标")
 
-    results = _load_results()
-    annotations = _load_annotations()
+    result_name, result_path, results = _load_selected_results()
+    if not results:
+        st.warning("请先生成抽取结果。")
+        return
+
+    annotation_path = _annotation_path_for(result_path)
+    metrics_path = _metrics_path_for(result_path)
+    annotations = _load_annotations(annotation_path)
 
     if not results:
         st.warning("请先生成抽取结果。")
         return
     if not annotations:
-        st.info("尚未标注样本。请先在「人工评价」页面保存标注。")
+        st.info(f"当前结果尚未标注。请先在「人工评价」页面保存标注：{annotation_path}")
         return
 
     metrics = calculate_extraction_metrics(results, annotations)
-    save_json(metrics, DEFAULT_EVAL_METRICS_FILE)
+    metrics.setdefault("summary", {})
+    metrics["summary"]["result_name"] = result_name
+    metrics["summary"]["result_file"] = result_path
+    metrics["summary"]["annotation_file"] = annotation_path
+    save_json(metrics, metrics_path)
 
     c1, c2, c3 = st.columns(3)
     c1.metric("Macro Precision", metrics["overall"]["Macro_Avg_Precision"])
     c2.metric("Macro Recall", metrics["overall"]["Macro_Avg_Recall"])
     c3.metric("Macro F1", metrics["overall"]["Macro_Avg_F1_Score"])
-    st.caption(f"评价样本数：{metrics['summary']['total_annotated']}")
+    st.caption(f"评价对象：{result_name}；评价样本数：{metrics['summary']['total_annotated']}；指标文件：{metrics_path}")
 
     table_rows = []
     for field in EXTRACTION_FIELDS:
@@ -487,8 +614,8 @@ def page_multimodal():
             with col1:
                 model = st.text_input(
                     "模型名称",
-                    value=vl_config.get("model", "Qwen/Qwen2.5-VL-7B-Instruct"),
-                    placeholder="Qwen/Qwen2.5-VL-7B-Instruct / OpenGVLab/InternVL2-8B-Instruct",
+                    value=vl_config.get("model", "Qwen/Qwen2.5-VL-3B-Instruct"),
+                    placeholder="Qwen/Qwen2.5-VL-3B-Instruct",
                     key="local_vl_model",
                 )
                 device = st.text_input(
@@ -546,7 +673,7 @@ def page_multimodal():
                         "}"
                     )
                     save_local_vl_config({
-                        "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+                        "model": "Qwen/Qwen2.5-VL-3B-Instruct",
                         "device": "auto",
                         "temperature": 0.3,
                         "max_tokens": 2048,

@@ -18,12 +18,16 @@ from config import (
     DEFAULT_CORPUS_FILE,
     DEFAULT_NLP_RESULTS_CSV,
     DEFAULT_NLP_RESULTS_FILE,
+    DEFAULT_OPEN_NLP_RESULTS_CSV,
+    DEFAULT_OPEN_NLP_RESULTS_FILE,
     DEFAULT_REGEX_RESULTS_CSV,
     DEFAULT_REGEX_RESULTS_FILE,
     EXTRACTION_FIELDS,
     INFO_RETRIEVE_DOCUMENTS_FILE,
+    RAW_NEWS_DIR,
 )
 from extractor.regex_extractor import BasicRegexExtractor, RegexExtractor
+from extractor.opensource_nlp_extractor import OpenSourceNLPExtractor
 from utils.helpers import load_json, save_json
 
 
@@ -101,6 +105,17 @@ def load_corpus(corpus_file: str = DEFAULT_CORPUS_FILE) -> Dict[str, Any]:
     if not os.path.exists(corpus_file):
         if os.path.exists(INFO_RETRIEVE_DOCUMENTS_FILE):
             return convert_retrieve_documents(output_file=corpus_file)
+        if corpus_file == DEFAULT_CORPUS_FILE:
+            candidates = [
+                os.path.join(RAW_NEWS_DIR, name)
+                for name in os.listdir(RAW_NEWS_DIR)
+                if name.endswith(".json")
+            ]
+            if candidates:
+                latest = max(candidates, key=os.path.getmtime)
+                data = load_json(latest)
+                if isinstance(data, dict) and isinstance(data.get("articles"), list):
+                    return data
         raise FileNotFoundError(f"未找到作业3语料文件: {corpus_file}")
     data = load_json(corpus_file)
     if isinstance(data, dict) and isinstance(data.get("articles"), list):
@@ -134,6 +149,9 @@ def _result_row(
     }
     for field in EXTRACTION_FIELDS:
         row[field] = extraction.get(field)
+    for key in ("llm_used", "api_failed", "llm_error", "llm_model"):
+        if key in extraction:
+            row[key] = extraction.get(key)
     row["event_complete_fields"] = sum(1 for field in EXTRACTION_FIELDS if row.get(field))
     return row
 
@@ -153,6 +171,8 @@ def run_extraction(
 
     if extractor_name == "basic":
         extractor = BasicRegexExtractor()
+    elif extractor_name in ("open_nlp", "opensource_nlp", "jieba"):
+        extractor = OpenSourceNLPExtractor()
     elif extractor_name in ("nlp", "llm", "api"):
         from extractor.nlp_extractor import NLPExtractor
 
@@ -214,6 +234,14 @@ def run_selectable_extraction(
             extractor_name="nlp",
             limit=limit,
         )
+    if normalized in ("open_nlp", "opensource_nlp", "jieba"):
+        return run_extraction(
+            corpus_file=corpus_file,
+            output_file=DEFAULT_OPEN_NLP_RESULTS_FILE,
+            output_csv=DEFAULT_OPEN_NLP_RESULTS_CSV,
+            extractor_name="open_nlp",
+            limit=limit,
+        )
     if normalized == "basic":
         return run_extraction(
             corpus_file=corpus_file,
@@ -244,6 +272,9 @@ def save_results_csv(rows: Iterable[Dict[str, Any]], output_csv: str) -> None:
         "event_complete_fields",
         "extractor",
     ]
+    for key in ("llm_used", "api_failed", "llm_error", "llm_model"):
+        if any(key in row for row in rows):
+            fieldnames.append(key)
     with open(output_csv, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

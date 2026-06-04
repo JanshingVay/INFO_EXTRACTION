@@ -18,7 +18,7 @@ def _load_dotenv(filepath: str) -> None:
             key, value = line.split("=", 1)
             key = key.strip()
             value = value.strip().strip('"').strip("'")
-            os.environ.setdefault(key, value)
+            os.environ[key] = value
 
 
 _load_dotenv(os.path.join(BASE_DIR, ".env"))
@@ -33,6 +33,8 @@ DEFAULT_CORPUS_FILE = os.path.join(RAW_NEWS_DIR, "from_info_retrieve.json")
 DEFAULT_REGEX_RESULTS_FILE = os.path.join(EXTRACTION_RESULTS_DIR, "regex_results.json")
 DEFAULT_REGEX_RESULTS_CSV = os.path.join(EXTRACTION_RESULTS_DIR, "regex_results.csv")
 DEFAULT_BASIC_RESULTS_FILE = os.path.join(EXTRACTION_RESULTS_DIR, "basic_regex_results.json")
+DEFAULT_OPEN_NLP_RESULTS_FILE = os.path.join(EXTRACTION_RESULTS_DIR, "opensource_nlp_results.json")
+DEFAULT_OPEN_NLP_RESULTS_CSV = os.path.join(EXTRACTION_RESULTS_DIR, "opensource_nlp_results.csv")
 DEFAULT_NLP_RESULTS_FILE = os.path.join(EXTRACTION_RESULTS_DIR, "nlp_results.json")
 DEFAULT_NLP_RESULTS_CSV = os.path.join(EXTRACTION_RESULTS_DIR, "nlp_results.csv")
 DEFAULT_EVAL_ANNOTATIONS_FILE = os.path.join(EVAL_DIR, "annotations_from_info_retrieve.json")
@@ -257,9 +259,9 @@ EXTRACTION_FIELDS = ["developer", "tech_product", "action_type", "version_metric
 # ============================================================
 
 LLM_CONFIG = {
-    "api_url": os.getenv("LLM_API_URL", "https://api.minimaxi.com/v1"),
+    "api_url": os.getenv("LLM_API_URL", "https://api.deepseek.com"),
     "api_key": os.getenv("LLM_API_KEY", ""),
-    "model": os.getenv("LLM_MODEL", "MiniMax-M2.7-highspeed"),
+    "model": os.getenv("LLM_MODEL", "deepseek-v4-flash"),
     "temperature": float(os.getenv("LLM_TEMPERATURE", "0.1")),
     "max_tokens": int(os.getenv("LLM_MAX_TOKENS", "800")),
 }
@@ -339,7 +341,7 @@ LOCAL_VL_CONFIG_FILE = os.path.join(DATA_DIR, "local_vl_config.json")
 
 LOCAL_VL_CONFIG_DEFAULTS = {
     "enabled": False,
-    "model": os.getenv("LOCAL_VL_MODEL", "Qwen/Qwen2.5-VL-7B-Instruct"),
+    "model": os.getenv("LOCAL_VL_MODEL", "Qwen/Qwen2.5-VL-3B-Instruct"),
     "device": os.getenv("LOCAL_VL_DEVICE", "auto"),
     "max_tokens": int(os.getenv("LOCAL_VL_MAX_TOKENS", "2048")),
     "temperature": float(os.getenv("LOCAL_VL_TEMPERATURE", "0.3")),

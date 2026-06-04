@@ -19,9 +19,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="作业3信息抽取")
     parser.add_argument(
         "--extractor",
-        choices=["comparison", "optimized", "basic", "nlp"],
+        choices=["comparison", "optimized", "basic", "open_nlp", "nlp"],
         default="comparison",
-        help="comparison=基础正则+优化正则；nlp=API/LLM抽取",
+        help="comparison=基础正则+优化正则；open_nlp=jieba开源NLP抽取；nlp=API/LLM抽取",
     )
     parser.add_argument(
         "--limit",
@@ -41,6 +41,9 @@ def main() -> None:
         if args.extractor == "nlp":
             print(f"API/LLM抽取结果: {DEFAULT_NLP_RESULTS_FILE}")
             print(f"API/LLM CSV结果: {DEFAULT_NLP_RESULTS_CSV}")
+        elif args.extractor == "open_nlp":
+            print("开源NLP抽取结果: data/extraction_results/opensource_nlp_results.json")
+            print("开源NLP CSV结果: data/extraction_results/opensource_nlp_results.csv")
         elif args.extractor == "basic":
             print(f"基础正则结果: {DEFAULT_BASIC_RESULTS_FILE}")
         else:
